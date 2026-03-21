@@ -1,8 +1,67 @@
 [gd_scene format=3 uid="uid://btisp5pgag4ms"]
 
 [ext_resource type="Script" uid="uid://b8mlot14bs6mt" path="res://player.gd" id="1_f3sb7"]
+[ext_resource type="Texture2D" uid="uid://ddsmubd5h4lxv" path="res://icon.svg" id="1_tlwt5"]
+[ext_resource type="Script" uid="uid://c8rxibphgh46o" path="res://disconnected.gd" id="2_fj7yv"]
+
+[sub_resource type="Gradient" id="Gradient_f3sb7"]
+colors = PackedColorArray(0.06290217, 6.958503e-05, 0.1883601, 1, 0.1682674, 0.08009157, 0.24023923, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fj7yv"]
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tlwt5"]
+noise = SubResource("FastNoiseLite_fj7yv")
+color_ramp = SubResource("Gradient_f3sb7")
+
+[sub_resource type="SystemFont" id="SystemFont_f3sb7"]
+font_names = PackedStringArray("Product Sans")
 
 [node name="World" type="Node2D" unique_id=297035322]
 
-[node name="Player" type="Node2D" parent="." unique_id=39458825]
+[node name="Level" type="Node2D" parent="." unique_id=1636698308]
+
+[node name="Background" type="Sprite2D" parent="Level" unique_id=1609640838]
+scale = Vector2(50.753906, 50.753906)
+texture = SubResource("NoiseTexture2D_tlwt5")
+
+[node name="Player" type="Sprite2D" parent="Level" unique_id=1398808930]
+texture = ExtResource("1_tlwt5")
 script = ExtResource("1_f3sb7")
+
+[node name="Camera2D" type="Camera2D" parent="Level/Player" unique_id=1006447527]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1682686743]
+
+[node name="Disconnected" type="PanelContainer" parent="UI" unique_id=701705592]
+offset_right = 240.0
+offset_bottom = 70.0
+script = ExtResource("2_fj7yv")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Disconnected" unique_id=473438371]
+layout_mode = 2
+color = Color(0.9019608, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Disconnected" unique_id=392924429]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="UI/Disconnected/MarginContainer" unique_id=152013993]
+layout_mode = 2
+color = Color(0.6, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Disconnected/MarginContainer" unique_id=1536796372]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="UI/Disconnected/MarginContainer/MarginContainer" unique_id=208751867]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_f3sb7")
+theme_override_font_sizes/font_size = 32
+text = "disconnected"
