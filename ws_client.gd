@@ -22,6 +22,18 @@ func _ready():
 		set_process(false)
 
 
+func emit_message(packet_text: String):
+	var effective_text = packet_text
+	var is_voice = false
+	if packet_text.begins_with(voice_prefix):
+		effective_text = packet_text.substr(voice_prefix.length())
+		is_voice = true
+	effective_text = effective_text.strip_edges()
+	if effective_text.is_empty():
+		return
+	chat_message.emit(effective_text, is_voice)
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# Call this in `_process()` or `_physics_process()`.
@@ -38,12 +50,7 @@ func _process(delta):
 			var packet = socket.get_packet()
 			if socket.was_string_packet():
 				var packet_text = packet.get_string_from_utf8()
-				var effective_text = packet_text
-				var is_voice = false
-				if packet_text.begins_with(voice_prefix):
-					effective_text = packet_text.substr(voice_prefix.length())
-					is_voice = true
-				chat_message.emit(effective_text, is_voice)
+				emit_message(packet_text)
 
 	# `WebSocketPeer.STATE_CLOSING` means the socket is closing.
 	# It is important to keep polling for a clean close.
