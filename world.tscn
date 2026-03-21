@@ -37,6 +37,7 @@ texture = ExtResource("1_tlwt5")
 script = ExtResource("1_f3sb7")
 
 [node name="Camera2D" type="Camera2D" parent="Level/Player" unique_id=1006447527]
+zoom = Vector2(0.5, 0.5)
 
 [node name="DebugCommand" type="Label" parent="Level/Player" unique_id=591670123]
 anchors_preset = 8
@@ -51,7 +52,7 @@ offset_bottom = -148.23497
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = SubResource("SystemFont_tlwt5")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 vertical_alignment = 1
 
