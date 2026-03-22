@@ -19,7 +19,11 @@ import { WebSocketServer } from "ws";
   });
   const wss = new WebSocketServer({ port: 5733 });
 
+  let resolveReady: (value: undefined) => void = () => {};
+  const ready = new Promise(resolve => resolveReady = resolve);
+
   const sendAll = (msg: string) => {
+    console.log('heard', msg)
     for (const ws of wss.clients) {
       ws.send(msg);
     }
@@ -31,10 +35,11 @@ import { WebSocketServer } from "ws";
 
   client.on(Events.ClientReady, (readyClient) => {
     console.log(`Logged in as ${readyClient.user.tag}!`);
+    resolveReady(undefined);
   });
 
   client.on(Events.MessageCreate, async (message) => {
-    if (message.channelId !== "1484684032422969355") return;
+    if (message.channelId !== process.env.CHANNEL) return;
     if (!message.content) return;
 
     sendAll(message.content)
@@ -42,16 +47,18 @@ import { WebSocketServer } from "ws";
 
   client.login(process.env.TOKEN);
 
-  const guild = await client.guilds.fetch("282219466589208576");
+  const guild = await client.guilds.fetch(process.env.GUILD!);
   if (!guild) {
     console.log("no guild");
     return;
   }
-  const voiceChannel = await guild.channels.fetch("1484686856556904560");
+  const voiceChannel = await guild.channels.fetch(process.env.CHANNEL!);
   if (!voiceChannel) {
     console.log("no channel");
     return;
   }
+
+  await ready
 
   const connection = joinVoiceChannel({
     channelId: voiceChannel.id,
@@ -61,17 +68,18 @@ import { WebSocketServer } from "ws";
     selfMute: true,
   });
 
-  console.log("Joined voice")
-
   // set DEEPGRAM_API_KEY in env
   const deepgram = new DeepgramClient();
+  const connections = new Set<string>()
 
   connection.receiver.speaking.on("start", async (userId) => {
+    if (connections.has(userId)) return;
+    connections.add(userId);
     try {
       const opusStream = connection.receiver.subscribe(userId, {
         end: {
           behavior: EndBehaviorType.AfterSilence,
-          duration: 1000 * 15, // billed per minute of activity, not # of spinups; seems to be no reason to keep this on longer than necessary
+          duration: 1000,
         },
       });
 
@@ -81,44 +89,78 @@ import { WebSocketServer } from "ws";
         channels: 2,
         frameSize: 960,
       });
+
+      const chunks: Buffer[] = [];
+
+      // save chunks
+      decoder.on("data", (pcm) => {
+        chunks.push(Buffer.from(pcm));
+      });
+
+      decoder.on("error", (err) => {
+        console.warn("Decoder error:", err.message);
+      });
+      
       opusStream.pipe(decoder);
 
-      // the docs don't mention the "Authorization" param and idk why further auth would be required so im ignoring it
-      const connectArgs: Omit<Parameters<typeof deepgram.listen.v1.connect>[0], 'Authorization'> = {
-        model: "nova-3", // could omit to default to a cheaper/lesser model ("base"?)
-        language: "en",
-        punctuate: "true",
-        interim_results: "true",
-      }
-      const dgConn = await deepgram.listen.v1.connect(connectArgs as any);
-
-      dgConn.on("open", () => {
-        console.log(`Listening to ${userId}`);
-      });
-
-      dgConn.on("message", (data) => {
-        if (data.type === "Results" && data.channel && data.channel.alternatives && data.channel.alternatives[0]?.transcript) {
-          const transcript = data.channel.alternatives[0].transcript?.trim?.();
-          if (transcript) {
-            // i'm not sure if this sends duplicates but i'm also not sure if it matters
-            sendAll(`[VOICE]${transcript}`);
-          }
-        }
-      });
-
-      dgConn.connect();
-      await dgConn.waitForOpen();
-
-      decoder.on("data", (pcm) => {
-        dgConn.socket.send(pcm);
-      });
-
-      opusStream.on("end", () => {
+      opusStream.on("end", async () => {
+        connections.delete(userId);
         decoder.destroy();
-        dgConn.socket.close();
+        if (chunks.length === 0) return;
+        const pcmBuffer = Buffer.concat(chunks);
+
+        // deepgram wants wav
+        const { spawn } = await import('child_process');
+        const ffmpeg = spawn('ffmpeg', [
+          '-f', 's16le',
+          '-ar', '48000',
+          '-ac', '2',
+          '-i', 'pipe:0',
+          '-f', 'wav',
+          'pipe:1',
+        ]);
+
+        // pipe in
+        ffmpeg.stdin.write(pcmBuffer);
+        ffmpeg.stdin.end();
+
+        // pipe out
+        const wavChunks: Buffer[] = [];
+        ffmpeg.stdout.on('data', (chunk) => {
+          wavChunks.push(chunk);
+        });
+
+        ffmpeg.on('close', async (code) => {
+          if (code !== 0) {
+            console.error(`ffmpeg exited with code ${code}`);
+            return;
+          }
+          const wavBuffer = Buffer.concat(wavChunks);
+          try {
+            const response = await deepgram.listen.v1.media.transcribeFile(
+              wavBuffer,
+              {
+                model: "base",
+                language: "en",
+              },
+            );
+            if (!('results' in response)) {
+              console.error("Deepgram failed");
+            } else {
+              const transcript = response.results?.channels?.[0]?.alternatives?.[0]?.transcript?.trim?.();
+              if (transcript) {
+                sendAll(`[VOICE]${transcript}`);
+              } else {
+                console.log("No transcript returned by Deepgram.");
+              }
+            }
+          } catch (err) {
+            console.error("Deepgram transcription error:", err);
+          }
+        });
       });
     } catch (err) {
-      // Ignore subscribe errors
+      connections.delete(userId);
     }
   });
 

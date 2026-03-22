@@ -1,20 +1,17 @@
-extends Node2D
+extends CharacterBody2D
 
 var debug_msg = ""
-var velocity = Vector2(0, 0)
+var base_speed = 1000
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var ws = get_node("/root/WSClient")
-	ws.chat_message.connect(_on_chat_message)
-	pass # Replace with function body.
+	WSClient.chat_message.connect(_on_chat_message)
 
 func _unhandled_key_input(event):
 	if event is InputEventKey:
 		if event.pressed:
 			if event.keycode == KEY_ENTER:
-				var ws = get_node("/root/WSClient")
-				ws.emit_message(debug_msg)
+				WSClient.emit_message(debug_msg)
 				debug_msg = ""
 			elif event.keycode == KEY_BACKSPACE:
 				if len(debug_msg) == 1:
@@ -30,28 +27,32 @@ func _unhandled_key_input(event):
 
 func _on_chat_message(content: String, is_voice: bool):
 	# speed boost for all caps lol
-	var bonus = 0
+	var speed = base_speed
 	if content == content.to_upper():
-		bonus = 2
+		speed += 1
 	
 	content = content.to_lower()
 	if content == "up":
-		velocity.y = -8 - bonus
+		velocity.y = -speed
 	elif content == "down":
-		velocity.y = 8 + bonus
+		velocity.y = speed
 	elif content == "left":
-		velocity.x = -8 - bonus
+		velocity.x = -speed
 	elif content == "right":
-		velocity.x = 8 + bonus
+		velocity.x = speed
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	position.x += velocity.x
-	position.y += velocity.y
-	#velocity.x -= (velocity.x * 0.95 * delta)
-	#velocity.y -= (velocity.y * 0.95 * delta)
-	#velocity -= velocity * 0.9999 * delta
-	var drag = 7
+func _physics_process(delta):
+	# TODO: can i add these as colision shapes at runtime? doesnt matter too much
+	var is_in_radius = (position.x * position.x) + (position.y * position.y) < (GameState.progression_radius * GameState.progression_radius)
+	if not is_in_radius:
+		if (velocity.x < 0 and position.x < 0) or (velocity.x > 0 and position.x > 0):
+			velocity.x = 0
+		if (velocity.y < 0 and position.y < 0) or (velocity.y > 0 and position.y > 0):
+			velocity.y = 0
+	
+	move_and_slide()
+	
+	var drag = base_speed
 	
 	if velocity.x < 0:
 		velocity.x = min(0, velocity.x + (delta * drag))
@@ -62,4 +63,3 @@ func _process(delta):
 		velocity.y = min(0, velocity.y + (delta * drag))
 	elif velocity.y > 0:
 		velocity.y = max(0, velocity.y - (delta * drag))
-	pass

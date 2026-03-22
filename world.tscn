@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://b8mlot14bs6mt" path="res://player.gd" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://ddsmubd5h4lxv" path="res://icon.svg" id="1_tlwt5"]
 [ext_resource type="Script" uid="uid://c8rxibphgh46o" path="res://disconnected.gd" id="2_fj7yv"]
+[ext_resource type="Texture2D" uid="uid://b47uxjpn1gojg" path="res://tessie.png" id="3_dwbse"]
+[ext_resource type="Shader" uid="uid://rjmvyrmekfk4" path="res://progression.gdshader" id="4_036b0"]
+[ext_resource type="Script" uid="uid://behs0cvtdxg6p" path="res://progression_wall_sprite.gd" id="5_dwbse"]
 
 [sub_resource type="Gradient" id="Gradient_f3sb7"]
 colors = PackedColorArray(0.06290217, 6.958503e-05, 0.1883601, 1, 0.1682674, 0.08009157, 0.24023923, 1)
@@ -14,13 +17,21 @@ domain_warp_enabled = true
 noise = SubResource("FastNoiseLite_fj7yv")
 color_ramp = SubResource("Gradient_f3sb7")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tlwt5"]
+radius = 32.0
+
 [sub_resource type="SystemFont" id="SystemFont_tlwt5"]
 font_names = PackedStringArray("Product Sans")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pkg7o"]
+shader = ExtResource("4_036b0")
+shader_parameter/radius = 0.0
+shader_parameter/position = Vector2(0, 0)
 
 [sub_resource type="SystemFont" id="SystemFont_f3sb7"]
 font_names = PackedStringArray("Product Sans")
 
-[node name="World" type="Node2D" unique_id=297035322]
+[node name="World" type="Node" unique_id=331810614]
 
 [node name="Level" type="Node2D" parent="." unique_id=1636698308]
 
@@ -28,16 +39,22 @@ font_names = PackedStringArray("Product Sans")
 scale = Vector2(50.753906, 50.753906)
 texture = SubResource("NoiseTexture2D_tlwt5")
 
-[node name="Icon" type="Sprite2D" parent="Level" unique_id=833528461]
-position = Vector2(296, 211)
+[node name="SampleIcon" type="Sprite2D" parent="Level" unique_id=833528461]
+visible = false
+position = Vector2(5, -685)
 texture = ExtResource("1_tlwt5")
 
-[node name="Player" type="Sprite2D" parent="Level" unique_id=1398808930]
-texture = ExtResource("1_tlwt5")
+[node name="Player" type="CharacterBody2D" parent="Level" unique_id=743382705]
 script = ExtResource("1_f3sb7")
 
+[node name="Sprite2D" type="Sprite2D" parent="Level/Player" unique_id=1420534924]
+scale = Vector2(0.15529412, 0.15529412)
+texture = ExtResource("3_dwbse")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player" unique_id=472172515]
+shape = SubResource("CircleShape2D_tlwt5")
+
 [node name="Camera2D" type="Camera2D" parent="Level/Player" unique_id=1006447527]
-zoom = Vector2(0.5, 0.5)
 
 [node name="DebugCommand" type="Label" parent="Level/Player" unique_id=591670123]
 anchors_preset = 8
@@ -45,18 +62,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -229.0
-offset_top = -179.235
-offset_right = 101.0
-offset_bottom = -148.23497
+offset_left = -163.8
+offset_top = -99.06
+offset_right = 166.2
+offset_bottom = -59.059998
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = SubResource("SystemFont_tlwt5")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1682686743]
+
+[node name="ProgressionWallSprite" type="ColorRect" parent="UI" unique_id=1617401660]
+material = SubResource("ShaderMaterial_pkg7o")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_dwbse")
 
 [node name="Disconnected" type="PanelContainer" parent="UI" unique_id=701705592]
 offset_right = 240.0

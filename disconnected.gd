@@ -11,8 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var wsclient = get_node("/root/WSClient")
-	var state: WebSocketPeer.State = wsclient.socket.get_ready_state()
+	var state = WSClient.socket.get_ready_state()
 	if state == WebSocketPeer.STATE_OPEN:
 		fadein = max(0, fadein - delta)
 	else:
