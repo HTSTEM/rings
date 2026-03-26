@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://dtkd5t7ylfrdq"]
+
+[sub_resource type="SystemFont" id="SystemFont_wvktn"]
+font_names = PackedStringArray("Product Sans")
+
+[resource]
+default_font = SubResource("SystemFont_wvktn")
