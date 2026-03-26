@@ -1,11 +1,38 @@
 [gd_scene format=3 uid="uid://btisp5pgag4ms"]
 
 [ext_resource type="Script" uid="uid://b8mlot14bs6mt" path="res://player.gd" id="1_f3sb7"]
-[ext_resource type="Texture2D" uid="uid://ddsmubd5h4lxv" path="res://icon.svg" id="1_tlwt5"]
+[ext_resource type="Script" uid="uid://u130a0btvwsy" path="res://editor_only.gd" id="1_il2jm"]
+[ext_resource type="Script" uid="uid://dmng7vxqbql37" path="res://star_planet.gd" id="2_4h6ng"]
 [ext_resource type="Script" uid="uid://c8rxibphgh46o" path="res://disconnected.gd" id="2_fj7yv"]
-[ext_resource type="Texture2D" uid="uid://b47uxjpn1gojg" path="res://tessie.png" id="3_dwbse"]
+[ext_resource type="Texture2D" uid="uid://7w8m3ou73lj4" path="res://tutorialplanet.png" id="2_gbfbk"]
+[ext_resource type="Script" uid="uid://oug3dunx6pi5" path="res://io_planet.gd" id="3_mc2jv"]
+[ext_resource type="Texture2D" uid="uid://bujer8dtghux8" path="res://starsun.png" id="3_o3ebs"]
 [ext_resource type="Shader" uid="uid://rjmvyrmekfk4" path="res://progression.gdshader" id="4_036b0"]
+[ext_resource type="Texture2D" uid="uid://dy84viy2ayxcs" path="res://hellplanet.png" id="4_bo7i5"]
+[ext_resource type="Texture2D" uid="uid://lsetsm137jnx" path="res://tessie/000.png" id="4_wukud"]
+[ext_resource type="Theme" uid="uid://dtkd5t7ylfrdq" path="res://theme.tres" id="5_4h6ng"]
 [ext_resource type="Script" uid="uid://behs0cvtdxg6p" path="res://progression_wall_sprite.gd" id="5_dwbse"]
+[ext_resource type="Texture2D" uid="uid://y7mtdd6oscux" path="res://tessie/001.png" id="5_il2jm"]
+[ext_resource type="Texture2D" uid="uid://bpr8yjegx7yoi" path="res://ShopItems/rings_starboard_textpost_glow.png" id="5_k83mh"]
+[ext_resource type="Texture2D" uid="uid://dba12ls78ce6y" path="res://ShopItems/rings_starboard_image_glow.png" id="6_gggvi"]
+[ext_resource type="Texture2D" uid="uid://c853calu72sk" path="res://tessie/002.png" id="6_wjb0r"]
+[ext_resource type="Texture2D" uid="uid://enja5lll81yx" path="res://tessie/003.png" id="7_mc2jv"]
+[ext_resource type="Texture2D" uid="uid://cu455oxkm6fcf" path="res://ShopItems/rings_starboard_video_glow.png" id="7_w44yn"]
+[ext_resource type="Texture2D" uid="uid://ckku2ssdoh25i" path="res://ShopItems/rings_starboard_meta_glow.png" id="8_6ah6f"]
+[ext_resource type="Texture2D" uid="uid://cjxjslmb1sn6j" path="res://tessie/004.png" id="8_bo7i5"]
+[ext_resource type="Texture2D" uid="uid://c47tr18yku7mr" path="res://tessie/005.png" id="9_4h6ng"]
+[ext_resource type="Texture2D" uid="uid://caewfbhsgo0j8" path="res://ShopItems/rings_starboard_chessboard_glow.png" id="9_g1i3r"]
+[ext_resource type="Texture2D" uid="uid://du7gtc0jspf6p" path="res://tessie/006.png" id="10_o3ebs"]
+[ext_resource type="Texture2D" uid="uid://bf4jpvtyekfij" path="res://tessie/007.png" id="11_k83mh"]
+[ext_resource type="Texture2D" uid="uid://by2nf0jjkpghv" path="res://tessie/008.png" id="12_qktwf"]
+[ext_resource type="Texture2D" uid="uid://wrei3wqqdvyy" path="res://tessie/009.png" id="13_bh8nc"]
+[ext_resource type="Texture2D" uid="uid://bo0yd0eh65ylr" path="res://tessie/010.png" id="14_jjr1n"]
+[ext_resource type="Texture2D" uid="uid://dv2pnqs5cdpwg" path="res://tessie/011.png" id="15_gggvi"]
+[ext_resource type="Texture2D" uid="uid://bplycxa5csx5p" path="res://tessie/012.png" id="16_w44yn"]
+[ext_resource type="Texture2D" uid="uid://cxjumlbovqtnn" path="res://tessie/013.png" id="17_6ah6f"]
+[ext_resource type="Texture2D" uid="uid://2vs8sas2nyah" path="res://tessie/014.png" id="18_g1i3r"]
+[ext_resource type="Texture2D" uid="uid://ui2wfavba6ej" path="res://tessie/015.png" id="19_my276"]
+[ext_resource type="PackedScene" uid="uid://cotbrunvp2y2y" path="res://gleepglorp.tscn" id="28_o3ebs"]
 
 [sub_resource type="Gradient" id="Gradient_f3sb7"]
 colors = PackedColorArray(0.06290217, 6.958503e-05, 0.1883601, 1, 0.1682674, 0.08009157, 0.24023923, 1)
@@ -16,6 +43,88 @@ domain_warp_enabled = true
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tlwt5"]
 noise = SubResource("FastNoiseLite_fj7yv")
 color_ramp = SubResource("Gradient_f3sb7")
+
+[sub_resource type="Gradient" id="Gradient_wukud"]
+offsets = PackedFloat32Array(0.6927711, 0.6987952)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o3ebs"]
+gradient = SubResource("Gradient_wukud")
+width = 5000
+height = 5000
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_il2jm"]
+gradient = SubResource("Gradient_wukud")
+width = 3000
+height = 3000
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o3ebs"]
+radius = 273.35873
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ioo17"]
+radius = 30.016663
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k83mh"]
+radius = 194.17091
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yx0jh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wukud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_il2jm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wjb0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mc2jv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bo7i5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4h6ng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_o3ebs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k83mh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qktwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bh8nc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jjr1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gggvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_w44yn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_6ah6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_g1i3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_my276")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tlwt5"]
 radius = 32.0
@@ -28,10 +137,7 @@ shader = ExtResource("4_036b0")
 shader_parameter/radius = 0.0
 shader_parameter/position = Vector2(0, 0)
 
-[sub_resource type="SystemFont" id="SystemFont_f3sb7"]
-font_names = PackedStringArray("Product Sans")
-
-[node name="World" type="Node" unique_id=331810614]
+[node name="World" type="Node" unique_id=636115796]
 
 [node name="Level" type="Node2D" parent="." unique_id=1636698308]
 
@@ -39,17 +145,108 @@ font_names = PackedStringArray("Product Sans")
 scale = Vector2(50.753906, 50.753906)
 texture = SubResource("NoiseTexture2D_tlwt5")
 
-[node name="SampleIcon" type="Sprite2D" parent="Level" unique_id=833528461]
-visible = false
-position = Vector2(5, -685)
-texture = ExtResource("1_tlwt5")
+[node name="Zone2" type="Sprite2D" parent="Level" unique_id=731288661]
+modulate = Color(1, 1, 1, 0.4627451)
+texture = SubResource("GradientTexture2D_o3ebs")
+script = ExtResource("1_il2jm")
+
+[node name="Zone1" type="Sprite2D" parent="Level" unique_id=2045897789]
+modulate = Color(1, 1, 1, 0.4627451)
+visibility_layer = 2
+texture = SubResource("GradientTexture2D_il2jm")
+script = ExtResource("1_il2jm")
+
+[node name="StarPlanet" type="StaticBody2D" parent="Level" unique_id=554969113]
+position = Vector2(1675, -1130)
+script = ExtResource("2_4h6ng")
+
+[node name="Star" type="Sprite2D" parent="Level/StarPlanet" unique_id=344842966]
+texture_filter = 1
+texture = ExtResource("3_o3ebs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StarPlanet" unique_id=908782190]
+shape = SubResource("CircleShape2D_o3ebs")
+
+[node name="GleepGlorpText" parent="Level/StarPlanet" unique_id=627505939 instance=ExtResource("28_o3ebs")]
+position = Vector2(-360, -314)
+texture = ExtResource("5_k83mh")
+
+[node name="GleepGlorpImage" parent="Level/StarPlanet" unique_id=709080614 instance=ExtResource("28_o3ebs")]
+position = Vector2(221, -394)
+item = "image"
+texture = ExtResource("6_gggvi")
+offset = 0.4
+
+[node name="GleepGlorpVideo" parent="Level/StarPlanet" unique_id=1292021252 instance=ExtResource("28_o3ebs")]
+position = Vector2(470, -32)
+item = "video"
+texture = ExtResource("7_w44yn")
+offset = 0.8
+
+[node name="GleepGlorpMeta" parent="Level/StarPlanet" unique_id=1946065263 instance=ExtResource("28_o3ebs")]
+position = Vector2(218, 407)
+item = "meta"
+texture = ExtResource("8_6ah6f")
+offset = 1.2
+
+[node name="GleepGlorpChess" parent="Level/StarPlanet" unique_id=341663748 instance=ExtResource("28_o3ebs")]
+position = Vector2(-463, 275)
+item = "chess"
+texture = ExtResource("9_g1i3r")
+offset = 0.8
+
+[node name="Label" type="Label" parent="Level/StarPlanet" unique_id=147964120]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_4h6ng")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 96
+text = "12345"
+
+[node name="TutorialPlanet" type="StaticBody2D" parent="Level" unique_id=289718669]
+position = Vector2(-1000, -1000)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/TutorialPlanet" unique_id=1342103640]
+texture = ExtResource("2_gbfbk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/TutorialPlanet" unique_id=454693607]
+shape = SubResource("CircleShape2D_ioo17")
+
+[node name="IOPlanet" type="StaticBody2D" parent="Level" unique_id=302355728]
+position = Vector2(-1415.165, 1663.49)
+script = ExtResource("3_mc2jv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/IOPlanet" unique_id=1160563359]
+texture = ExtResource("4_bo7i5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/IOPlanet" unique_id=1961321109]
+shape = SubResource("CircleShape2D_k83mh")
+
+[node name="Label" type="Label" parent="Level/IOPlanet" unique_id=1036877193]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_4h6ng")
+theme_override_font_sizes/font_size = 50
+text = "f(x)=?"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Player" type="CharacterBody2D" parent="Level" unique_id=743382705]
 script = ExtResource("1_f3sb7")
 
-[node name="Sprite2D" type="Sprite2D" parent="Level/Player" unique_id=1420534924]
-scale = Vector2(0.15529412, 0.15529412)
-texture = ExtResource("3_dwbse")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Level/Player" unique_id=2018646344]
+scale = Vector2(0.6666667, 0.6666667)
+sprite_frames = SubResource("SpriteFrames_yx0jh")
+autoplay = "default"
+frame_progress = 0.4949244
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player" unique_id=472172515]
 shape = SubResource("CircleShape2D_tlwt5")
@@ -84,35 +281,42 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_dwbse")
 
-[node name="Disconnected" type="PanelContainer" parent="UI" unique_id=701705592]
+[node name="UIThemed" type="Control" parent="UI" unique_id=734596615]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("5_4h6ng")
+
+[node name="Disconnected" type="PanelContainer" parent="UI/UIThemed" unique_id=701705592]
+layout_mode = 0
 offset_right = 240.0
 offset_bottom = 70.0
 script = ExtResource("2_fj7yv")
 
-[node name="ColorRect" type="ColorRect" parent="UI/Disconnected" unique_id=473438371]
+[node name="ColorRect" type="ColorRect" parent="UI/UIThemed/Disconnected" unique_id=473438371]
 layout_mode = 2
 color = Color(0.9019608, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/Disconnected" unique_id=392924429]
+[node name="MarginContainer" type="MarginContainer" parent="UI/UIThemed/Disconnected" unique_id=392924429]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ColorRect" type="ColorRect" parent="UI/Disconnected/MarginContainer" unique_id=152013993]
+[node name="ColorRect" type="ColorRect" parent="UI/UIThemed/Disconnected/MarginContainer" unique_id=152013993]
 layout_mode = 2
 color = Color(0.6, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/Disconnected/MarginContainer" unique_id=1536796372]
+[node name="MarginContainer" type="MarginContainer" parent="UI/UIThemed/Disconnected/MarginContainer" unique_id=1536796372]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 10
 
-[node name="Label" type="Label" parent="UI/Disconnected/MarginContainer/MarginContainer" unique_id=208751867]
+[node name="Label" type="Label" parent="UI/UIThemed/Disconnected/MarginContainer/MarginContainer" unique_id=208751867]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_f3sb7")
 theme_override_font_sizes/font_size = 32
 text = "disconnected"

@@ -99,6 +99,9 @@ import { WebSocketServer } from "ws";
 
       decoder.on("error", (err) => {
         console.warn("Decoder error:", err.message);
+        connections.delete(userId)
+        decoder.destroy()
+        opusStream.destroy()
       });
       
       opusStream.pipe(decoder);

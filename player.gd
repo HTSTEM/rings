@@ -52,6 +52,12 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
+	# hack because godot doesnt tell the TutorialPlanet about this >.>
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider().name == "TutorialPlanet":
+			GameState.solve("tutorial")
+	
 	var drag = base_speed
 	
 	if velocity.x < 0:
@@ -63,3 +69,6 @@ func _physics_process(delta):
 		velocity.y = min(0, velocity.y + (delta * drag))
 	elif velocity.y > 0:
 		velocity.y = max(0, velocity.y - (delta * drag))
+	
+	var sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
+	sprite.speed_scale = 1 + (max(abs(velocity.x), abs(velocity.y)) / base_speed * 5)

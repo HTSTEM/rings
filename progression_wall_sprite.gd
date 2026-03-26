@@ -10,6 +10,7 @@ func _ready():
 func _process(delta):
 	var mat: ShaderMaterial = self.material
 	var player: CharacterBody2D = get_node("/root/World/Level/Player")
-	var sprite: Sprite2D = player.get_node("Sprite2D")
-	mat.set_shader_parameter("radius", GameState.progression_radius + (sprite.get_rect().size.x * sprite.scale.x * 0.5))
+	var collision: CollisionShape2D = player.get_node("CollisionShape2D")
+	var shape: CircleShape2D = collision.shape
+	mat.set_shader_parameter("radius", GameState.progression_radius + shape.radius)
 	mat.set_shader_parameter("position", player.position)
