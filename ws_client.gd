@@ -7,19 +7,24 @@ signal chat_message(content, is_voice)
 
 var socket = WebSocketPeer.new()
 var voice_prefix = "[VOICE]"
+var connection_attempts = 0
+
+
+func connect_socket():
+	var err = socket.connect_to_url(websocket_url)
+	if err == OK:
+		print("Connecting to %s..." % websocket_url)
+	else:
+		push_error("Unable to connect.")
+		var wait_for = min(pow(2, connection_attempts), 12)
+		connection_attempts += 1
+		await get_tree().create_timer(wait_for).timeout
+		connect_socket()
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var err = socket.connect_to_url(websocket_url)
-	if err == OK:
-		print("Connecting to %s..." % websocket_url)
-		# Wait for the socket to connect.
-		await get_tree().create_timer(2).timeout
-	else:
-		push_error("Unable to connect.")
-		# todo: exponential falloff/retry?
-		set_process(false)
+	connect_socket()
 
 
 func emit_message(packet_text: String):
@@ -63,4 +68,4 @@ func _process(delta):
 		# The code will be `-1` if the disconnection was not properly notified by the remote peer.
 		var code = socket.get_close_code()
 		print("WebSocket closed with code: %d. Clean: %s" % [code, code != -1])
-		set_process(false) # Stop processing. # TODO: retry?
+		connect_socket()

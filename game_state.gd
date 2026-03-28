@@ -1,9 +1,10 @@
 extends Node
 
 var _save_file_name = "user://tessie._save"
-var _serializable: Array[String] = ["_planets_solved", "clicker_clicks", "clicker_purchases", "clicker_lifetime"]
+var _serializable: Array[String] = ["_planets_solved", "_steps_solved", "clicker_clicks", "clicker_purchases", "clicker_lifetime"]
 
 var _planets_solved: Array[String] = []
+var _steps_solved: Array[String] = []
 
 var _base_progression_radius = 1250
 var _incremental_progression_radius = 500
@@ -86,8 +87,16 @@ func solve(planet: String):
 	_set_new_radius()
 	_save()
 
+func solve_step(step: String):
+	if is_step_solved(step):
+		return
+	_steps_solved.append(step)
+
 func is_solved(planet: String) -> bool:
 	return planet in _planets_solved
+
+func is_step_solved(step: String) -> bool:
+	return step in _steps_solved
 
 func click(amount: float):
 	clicker_clicks += amount

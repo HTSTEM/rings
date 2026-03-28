@@ -3,7 +3,7 @@ extends StaticBody2D
 var fn_prefix = "f(x)="
 var alt_fn_prefix = "y="
 var target_expressions = [
-	["2x^2-10x+5"],
+	["2x^2-10x+5","5-10x+2x^2"],
 	["y+=x", "f(x)+=x", "+=x", "f(n-1)+x_n", "x_n+f(n-1)"]
 ]
 var whitespace = RegEx.create_from_string("\\s+")
