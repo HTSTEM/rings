@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://85nirlq0pcla"]
+
+[ext_resource type="Script" uid="uid://djuudyhgxrm8n" path="res://fader.gd" id="1_8b40m"]
+
+[node name="Fader" type="Node2D" unique_id=1708380682]
+script = ExtResource("1_8b40m")

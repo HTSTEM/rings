@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://btisp5pgag4ms"]
 
+[ext_resource type="Texture2D" uid="uid://dihmlethsr7fn" path="res://background-main.png" id="1_6ah6f"]
 [ext_resource type="Script" uid="uid://b8mlot14bs6mt" path="res://player.gd" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://u130a0btvwsy" path="res://editor_only.gd" id="1_il2jm"]
+[ext_resource type="AudioStream" uid="uid://ctp26s7s2tvon" path="res://HTSTEM april fool 2026 wip1.mp3" id="1_my276"]
 [ext_resource type="Script" uid="uid://dmng7vxqbql37" path="res://star_planet.gd" id="2_4h6ng"]
+[ext_resource type="AudioStream" uid="uid://bwu5ujf62t7d0" path="res://zapThreeToneUp.ogg" id="2_55kwu"]
 [ext_resource type="Script" uid="uid://c8rxibphgh46o" path="res://disconnected.gd" id="2_fj7yv"]
+[ext_resource type="Texture2D" uid="uid://ds7wpgkkqoftc" path="res://background-stars.png" id="2_g1i3r"]
 [ext_resource type="Texture2D" uid="uid://7w8m3ou73lj4" path="res://tutorialplanet.png" id="2_gbfbk"]
+[ext_resource type="Script" uid="uid://74syybmfwhs4" path="res://background_stars_twinkle.gd" id="2_my276"]
 [ext_resource type="Script" uid="uid://oug3dunx6pi5" path="res://io_planet.gd" id="3_mc2jv"]
 [ext_resource type="Texture2D" uid="uid://bujer8dtghux8" path="res://starsun.png" id="3_o3ebs"]
 [ext_resource type="Shader" uid="uid://rjmvyrmekfk4" path="res://progression.gdshader" id="4_036b0"]
@@ -22,7 +27,10 @@
 [ext_resource type="Texture2D" uid="uid://cjxjslmb1sn6j" path="res://tessie/004.png" id="8_bo7i5"]
 [ext_resource type="Texture2D" uid="uid://c47tr18yku7mr" path="res://tessie/005.png" id="9_4h6ng"]
 [ext_resource type="Texture2D" uid="uid://caewfbhsgo0j8" path="res://ShopItems/rings_starboard_chessboard_glow.png" id="9_g1i3r"]
+[ext_resource type="PackedScene" uid="uid://85nirlq0pcla" path="res://fader.tscn" id="9_olr1q"]
 [ext_resource type="Texture2D" uid="uid://du7gtc0jspf6p" path="res://tessie/006.png" id="10_o3ebs"]
+[ext_resource type="Texture2D" uid="uid://dbc352wbeh51f" path="res://starsununfinished.png" id="10_q42o5"]
+[ext_resource type="Texture2D" uid="uid://dane7q01of8oi" path="res://starsunsuccess.png" id="11_b7btk"]
 [ext_resource type="Texture2D" uid="uid://bf4jpvtyekfij" path="res://tessie/007.png" id="11_k83mh"]
 [ext_resource type="Texture2D" uid="uid://by2nf0jjkpghv" path="res://tessie/008.png" id="12_qktwf"]
 [ext_resource type="Texture2D" uid="uid://wrei3wqqdvyy" path="res://tessie/009.png" id="13_bh8nc"]
@@ -31,26 +39,49 @@
 [ext_resource type="Texture2D" uid="uid://bplycxa5csx5p" path="res://tessie/012.png" id="16_w44yn"]
 [ext_resource type="Texture2D" uid="uid://cxjumlbovqtnn" path="res://tessie/013.png" id="17_6ah6f"]
 [ext_resource type="Texture2D" uid="uid://2vs8sas2nyah" path="res://tessie/014.png" id="18_g1i3r"]
+[ext_resource type="Script" uid="uid://dpymgaevnkbh5" path="res://glow_animator.gd" id="18_w4lh7"]
+[ext_resource type="Script" uid="uid://rv8n5bsqftcq" path="res://tutorial_planet.gd" id="19_kkgr2"]
 [ext_resource type="Texture2D" uid="uid://ui2wfavba6ej" path="res://tessie/015.png" id="19_my276"]
+[ext_resource type="Texture2D" uid="uid://dabw220qayq7q" path="res://tutorialplanetunfinished.png" id="22_iett8"]
+[ext_resource type="Texture2D" uid="uid://urasj3msie2l" path="res://tutorialplanetsuccess.png" id="23_r5m4j"]
+[ext_resource type="Texture2D" uid="uid://bet6iiuws1x3c" path="res://hellplanetunfinished.png" id="26_r5m4j"]
+[ext_resource type="Texture2D" uid="uid://crkqocdb523f5" path="res://hellplanetsuccess.png" id="27_e77ka"]
 [ext_resource type="PackedScene" uid="uid://cotbrunvp2y2y" path="res://gleepglorp.tscn" id="28_o3ebs"]
+[ext_resource type="Texture2D" uid="uid://dg83nxboobrrv" path="res://RingItem/000.png" id="38_fnoqa"]
+[ext_resource type="Script" uid="uid://dfqq7plm646lw" path="res://ring_count.gd" id="38_nx736"]
+[ext_resource type="Texture2D" uid="uid://d4bwa54ae8chv" path="res://RingItem/001.png" id="39_nx736"]
+[ext_resource type="Texture2D" uid="uid://c4m68dqo4v2pq" path="res://RingItem/002.png" id="40_55kwu"]
+[ext_resource type="Texture2D" uid="uid://byrnaivt1x2kq" path="res://RingItem/003.png" id="41_f3o6s"]
+[ext_resource type="Texture2D" uid="uid://ty374v24acdl" path="res://RingItem/004.png" id="42_w4lh7"]
+[ext_resource type="Texture2D" uid="uid://dld5qxhamrkfm" path="res://RingItem/005.png" id="43_k3lar"]
+[ext_resource type="Texture2D" uid="uid://b17xf36jhd0nw" path="res://RingItem/006.png" id="44_olr1q"]
+[ext_resource type="Texture2D" uid="uid://bg3yuoomepyt2" path="res://RingItem/007.png" id="45_q42o5"]
+[ext_resource type="Texture2D" uid="uid://dejlq33qwf4i5" path="res://RingItem/008.png" id="46_b7btk"]
+[ext_resource type="Texture2D" uid="uid://dh8syo6iynpbc" path="res://RingItem/009.png" id="47_kkgr2"]
 
-[sub_resource type="Gradient" id="Gradient_f3sb7"]
-colors = PackedColorArray(0.06290217, 6.958503e-05, 0.1883601, 1, 0.1682674, 0.08009157, 0.24023923, 1)
+[sub_resource type="Gradient" id="Gradient_6ah6f"]
+offsets = PackedFloat32Array(0.1746988, 0.8614458)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_fj7yv"]
-domain_warp_enabled = true
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_g1i3r"]
+frequency = 0.02
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tlwt5"]
-noise = SubResource("FastNoiseLite_fj7yv")
-color_ramp = SubResource("Gradient_f3sb7")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_my276"]
+width = 500
+height = 500
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_g1i3r")
+color_ramp = SubResource("Gradient_6ah6f")
+seamless = true
+in_3d_space = true
 
 [sub_resource type="Gradient" id="Gradient_wukud"]
 offsets = PackedFloat32Array(0.6927711, 0.6987952)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_o3ebs"]
 gradient = SubResource("Gradient_wukud")
-width = 5000
-height = 5000
+width = 4000
+height = 4000
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -137,13 +168,83 @@ shader = ExtResource("4_036b0")
 shader_parameter/radius = 0.0
 shader_parameter/position = Vector2(0, 0)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_iett8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_fnoqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_nx736")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_55kwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_f3o6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_w4lh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_k3lar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_olr1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_q42o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_b7btk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_kkgr2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
 [node name="World" type="Node" unique_id=636115796]
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="." unique_id=488908732]
+stream = ExtResource("1_my276")
+playback_type = 1
+parameters/looping = true
+
+[node name="SuccessPlayer" type="AudioStreamPlayer" parent="." unique_id=760991297]
+stream = ExtResource("2_55kwu")
+volume_db = 10.0
+max_polyphony = 5
 
 [node name="Level" type="Node2D" parent="." unique_id=1636698308]
 
-[node name="Background" type="Sprite2D" parent="Level" unique_id=1609640838]
-scale = Vector2(50.753906, 50.753906)
-texture = SubResource("NoiseTexture2D_tlwt5")
+[node name="BackgroundSpaceParallax" type="Parallax2D" parent="Level" unique_id=15228340]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="BackgroundSpace" type="Sprite2D" parent="Level/BackgroundSpaceParallax" unique_id=1609640838]
+scale = Vector2(3, 3)
+texture = ExtResource("1_6ah6f")
+
+[node name="BackgroundStarsParallax" type="Parallax2D" parent="Level" unique_id=571851452]
+scroll_scale = Vector2(0.2, 0.2)
+
+[node name="BackgroundStarsTwinkle" type="Sprite2D" parent="Level/BackgroundStarsParallax" unique_id=247479467]
+clip_children = 1
+texture_repeat = 3
+scale = Vector2(7, 7)
+texture = SubResource("NoiseTexture2D_my276")
+region_enabled = true
+region_rect = Rect2(-3000, -3000, 6000, 6000)
+script = ExtResource("2_my276")
+
+[node name="BackgroundStars" type="Sprite2D" parent="Level/BackgroundStarsParallax/BackgroundStarsTwinkle" unique_id=1897659964]
+texture_repeat = 3
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_g1i3r")
+region_enabled = true
+region_rect = Rect2(-3000, -3000, 6000, 6000)
 
 [node name="Zone2" type="Sprite2D" parent="Level" unique_id=731288661]
 modulate = Color(1, 1, 1, 0.4627451)
@@ -160,9 +261,17 @@ script = ExtResource("1_il2jm")
 position = Vector2(1675, -1130)
 script = ExtResource("2_4h6ng")
 
-[node name="Star" type="Sprite2D" parent="Level/StarPlanet" unique_id=344842966]
-texture_filter = 1
+[node name="StarAlways" type="Sprite2D" parent="Level/StarPlanet" unique_id=966595187]
 texture = ExtResource("3_o3ebs")
+
+[node name="Fader" parent="Level/StarPlanet" unique_id=1708380682 instance=ExtResource("9_olr1q")]
+
+[node name="StarBefore" type="Sprite2D" parent="Level/StarPlanet/Fader" unique_id=344842966]
+texture_filter = 1
+texture = ExtResource("10_q42o5")
+
+[node name="StarAfter" type="Sprite2D" parent="Level/StarPlanet/Fader" unique_id=173245669]
+texture = ExtResource("11_b7btk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StarPlanet" unique_id=908782190]
 shape = SubResource("CircleShape2D_o3ebs")
@@ -209,20 +318,38 @@ theme_override_font_sizes/font_size = 96
 text = "12345"
 
 [node name="TutorialPlanet" type="StaticBody2D" parent="Level" unique_id=289718669]
-position = Vector2(-1000, -1000)
+position = Vector2(-600, -600)
+script = ExtResource("19_kkgr2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Level/TutorialPlanet" unique_id=1342103640]
 texture = ExtResource("2_gbfbk")
+script = ExtResource("18_w4lh7")
+
+[node name="Fader" parent="Level/TutorialPlanet" unique_id=1604150440 instance=ExtResource("9_olr1q")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/TutorialPlanet/Fader" unique_id=510314017]
+texture = ExtResource("22_iett8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Level/TutorialPlanet/Fader" unique_id=1996222403]
+texture = ExtResource("23_r5m4j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/TutorialPlanet" unique_id=454693607]
 shape = SubResource("CircleShape2D_ioo17")
 
 [node name="IOPlanet" type="StaticBody2D" parent="Level" unique_id=302355728]
-position = Vector2(-1415.165, 1663.49)
+position = Vector2(-1355, 1589)
 script = ExtResource("3_mc2jv")
 
 [node name="Sprite2D" type="Sprite2D" parent="Level/IOPlanet" unique_id=1160563359]
 texture = ExtResource("4_bo7i5")
+
+[node name="Fader" parent="Level/IOPlanet" unique_id=22790517 instance=ExtResource("9_olr1q")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/IOPlanet/Fader" unique_id=1499523639]
+texture = ExtResource("26_r5m4j")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Level/IOPlanet/Fader" unique_id=306426021]
+texture = ExtResource("27_e77ka")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/IOPlanet" unique_id=1961321109]
 shape = SubResource("CircleShape2D_k83mh")
@@ -320,3 +447,29 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "disconnected"
+
+[node name="RingCount" type="Control" parent="UI/UIThemed" unique_id=1655555967]
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 1024.0
+offset_right = 56.0
+offset_bottom = 1064.0
+script = ExtResource("38_nx736")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UI/UIThemed/RingCount" unique_id=399752069]
+texture_filter = 1
+position = Vector2(32, 8)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_iett8")
+autoplay = "default"
+frame_progress = 0.060263164
+
+[node name="Label" type="Label" parent="UI/UIThemed/RingCount" unique_id=2104252184]
+texture_filter = 1
+layout_mode = 0
+offset_left = 81.0
+offset_top = -48.0
+offset_right = 129.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 80
+text = "0"

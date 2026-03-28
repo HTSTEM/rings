@@ -5,8 +5,8 @@ var _serializable: Array[String] = ["_planets_solved", "clicker_clicks", "clicke
 
 var _planets_solved: Array[String] = []
 
-var _base_progression_radius = 1500
-var _incremental_progression_radius = 1000
+var _base_progression_radius = 1250
+var _incremental_progression_radius = 500
 var _target_progression_radius = _base_progression_radius
 var _radius_animating_from = -1
 var _radius_animation_elapsed = -1
@@ -21,8 +21,8 @@ var clicker_rates = {
 	"text": .1,
 	"image": 1,
 	"video": 10,
-	"meta": 100,
-	"chess": 500
+	"meta": 50,
+	"chess": 100
 }
 var clicker_costs = {
 	"text": 10.0,
@@ -79,6 +79,9 @@ func _set_new_radius():
 func solve(planet: String):
 	if planet in _planets_solved:
 		return
+	# TODO: this maybe could be positional, we'd have to get a player on each planet for not much payoff
+	var player: AudioStreamPlayer = get_node("/root/World/SuccessPlayer")
+	player.play()
 	_planets_solved.append(planet)
 	_set_new_radius()
 	_save()
@@ -103,9 +106,10 @@ func clicker_purchase(upgrade: String) -> bool:
 func _ready():
 	for i in clicker_names:
 		clicker_by_name[clicker_names[i].to_lower()] = i
-	
 	update_cookie_data()
-	if FileAccess.file_exists(_save_file_name):
+	
+	
+	if FileAccess.file_exists(_save_file_name) and false:
 		var save_file = FileAccess.open(_save_file_name, FileAccess.READ)
 		var json_string = save_file.get_line().strip_edges()
 		print("exists", json_string)

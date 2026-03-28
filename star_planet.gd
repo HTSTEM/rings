@@ -7,6 +7,8 @@ var since_save = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	WSClient.chat_message.connect(handle_input)
+	if GameState.is_solved("clicker"):
+		$Fader.fade(true)
 
 func handle_input(value: String, is_voice: bool):
 	GameState.click(GameState.clicker_text_cps)
@@ -21,11 +23,13 @@ func _process(delta):
 	GameState.click(GameState.clicker_cps * delta)
 	if GameState.clicker_clicks >= target:
 		GameState.solve("clicker")
+		$Fader.fade(false)
 		
 	get_node("Label").text = "%.1f" % GameState.clicker_clicks
 	
 	var scale = lerp(0.8, 1.2, clampf(GameState.clicker_lifetime / target, 0, 1))
-	$Star.scale = Vector2(scale, scale)
+	$StarAlways.scale = Vector2(scale, scale)
+	$Fader.scale = Vector2(scale, scale)
 	$CollisionShape2D.scale = Vector2(scale, scale)
 	
 	since_save += delta
