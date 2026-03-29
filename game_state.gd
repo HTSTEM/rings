@@ -91,6 +91,7 @@ func solve_step(step: String):
 	if is_step_solved(step):
 		return
 	_steps_solved.append(step)
+	_save()
 
 func is_solved(planet: String) -> bool:
 	return planet in _planets_solved

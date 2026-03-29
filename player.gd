@@ -2,9 +2,23 @@ extends CharacterBody2D
 
 var debug_msg = ""
 var base_speed = 1000
+var _base_directions: Dictionary[String, Vector2] = {
+	"left": Vector2(-1.0, 0.0),
+	"right": Vector2(1.0, 0.0),
+	"up": Vector2(0.0, -1.0),
+	"down": Vector2(0.0, 1.0)
+}
+var directions: Dictionary[String, Vector2] = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	for x in _base_directions:
+		directions[x] = _base_directions[x]
+		for i in range(len(x) - 1):
+			i += 1
+			var substr = x.substr(0, i)
+			var pct: float = float(i) / float(len(x))
+			directions[substr] = _base_directions[x] * pct
 	WSClient.chat_message.connect(_on_chat_message)
 
 func _unhandled_key_input(event):
@@ -28,18 +42,23 @@ func _unhandled_key_input(event):
 func _on_chat_message(content: String, is_voice: bool):
 	# speed boost for all caps lol
 	var speed = base_speed
-	if content == content.to_upper():
-		speed += 1
-	
+	for x in range(len(content)):
+		if content[x] == content[x].to_upper():
+			speed *= 1.1
+
 	content = content.to_lower()
-	if content == "up":
-		velocity.y = -speed
-	elif content == "down":
-		velocity.y = speed
-	elif content == "left":
-		velocity.x = -speed
-	elif content == "right":
-		velocity.x = speed
+	if content not in directions:
+		return	
+
+	var current_velocity = Vector2(velocity)
+	var set_velocity = Vector2(directions[content]) * speed
+	velocity += set_velocity
+	
+	var max_x = maxf(abs(current_velocity.x), abs(set_velocity.x))
+	velocity.x = clampf(velocity.x, -max_x, max_x)
+	
+	var max_y = maxf(abs(current_velocity.y), abs(set_velocity.y))
+	velocity.y = clampf(velocity.y, -max_y, max_y)
 
 func _physics_process(delta):
 	# TODO: can i add these as colision shapes at runtime? doesnt matter too much
