@@ -5,3 +5,4 @@ font_names = PackedStringArray("C15thyType")
 
 [resource]
 default_font = SubResource("SystemFont_wvktn")
+Label/font_sizes/font_size = 32
