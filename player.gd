@@ -9,9 +9,18 @@ var _base_directions: Dictionary[String, Vector2] = {
 	"down": Vector2(0.0, 1.0)
 }
 var directions: Dictionary[String, Vector2] = {}
+var other_animations: Array[String] = []
+# avoid circulars (not actually sure if this is needed)
+var randomizing_anim: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# load alt anims
+	for x in $AnimatedSprite2D.sprite_frames.get_animation_names():
+		if x == "default":
+			continue
+		other_animations.append(x)
+	# load dirs
 	for x in _base_directions:
 		directions[x] = _base_directions[x]
 		for i in range(len(x) - 1):
@@ -19,6 +28,7 @@ func _ready():
 			var substr = x.substr(0, i)
 			var pct: float = float(i) / float(len(x))
 			directions[substr] = _base_directions[x] * pct
+	# im listening
 	WSClient.chat_message.connect(_on_chat_message)
 
 func _unhandled_key_input(event):
@@ -91,3 +101,24 @@ func _physics_process(delta):
 	
 	var sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
 	sprite.speed_scale = 1 + (max(abs(velocity.x), abs(velocity.y)) / base_speed * 5)
+
+func _on_animated_sprite_2d_frame_changed():
+	if $AnimatedSprite2D.frame == 15:
+		# just some random safe point to reset this
+		randomizing_anim = false
+		return
+	if randomizing_anim:
+		return
+	if $AnimatedSprite2D.frame != 8:
+		return
+	if $AnimatedSprite2D.animation != "default":
+		randomizing_anim = true
+		$AnimatedSprite2D.animation = "default"
+		$AnimatedSprite2D.frame = 8
+		return
+	if (randi() % 10) != 0:
+		return
+	var new_animation = other_animations[randi() % len(other_animations)]
+	randomizing_anim = true
+	$AnimatedSprite2D.animation = new_animation
+	$AnimatedSprite2D.frame = 8
