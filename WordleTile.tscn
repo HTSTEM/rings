@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://i8e3r7b7o2tv"]
+
+[ext_resource type="Theme" uid="uid://dtkd5t7ylfrdq" path="res://theme.tres" id="1_8a4ib"]
+[ext_resource type="Script" uid="uid://dbenad054ww74" path="res://wordle_tile.gd" id="1_t766n"]
+
+[node name="WordleTile" type="Control" unique_id=1541294915]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_t766n")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=472503985]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14901961, 0.14901961, 0.14901961, 0.93333334)
+
+[node name="Label" type="Label" parent="." unique_id=1858208678]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8a4ib")
+theme_override_font_sizes/font_size = 48
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1

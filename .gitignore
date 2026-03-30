@@ -1,0 +1,7 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+dist/
+node_modules/
+.env
+!.env.example

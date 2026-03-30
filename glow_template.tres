@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://exs5baygpu3p"]
+
+[ext_resource type="Shader" uid="uid://br7aut41sb6kh" path="res://dither.gdshader" id="1_c5het"]
+[ext_resource type="Texture2D" uid="uid://cvi4hmg5acofi" path="res://green_palette.png" id="2_c5het"]
+[ext_resource type="Texture2D" uid="uid://c5txldhlfj0k7" path="res://bayer4tile8.png" id="3_hyqsp"]
+
+[resource]
+shader = ExtResource("1_c5het")
+shader_parameter/u_dither_tex = ExtResource("3_hyqsp")
+shader_parameter/u_color_tex = ExtResource("2_c5het")
+shader_parameter/u_bit_depth = 3
+shader_parameter/u_contrast = 2.26
+shader_parameter/u_offset = 0.195
+shader_parameter/u_dither_size = 3
