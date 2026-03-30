@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://7duft3iewtde"]
+
+[ext_resource type="Texture2D" uid="uid://bwsusi2v0lvs4" path="res://PreGame/Engineer000.png" id="1_goqjd"]
+[ext_resource type="Texture2D" uid="uid://dm0jsalokpoa5" path="res://PreGame/Engineer001.png" id="2_k7pq3"]
+[ext_resource type="Script" uid="uid://cbwd32lwxcx2r" path="res://intro_guy.gd" id="3_k7pq3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x3drs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_goqjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_k7pq3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="IntroGuy" type="AnimatedSprite2D" unique_id=14171527]
+texture_filter = 1
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_x3drs")
+frame_progress = 0.22659077
+script = ExtResource("3_k7pq3")

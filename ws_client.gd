@@ -7,6 +7,7 @@ signal chat_message(content, is_voice)
 
 var socket = WebSocketPeer.new()
 var voice_prefix = "[VOICE]"
+var user_prefix = RegEx.create_from_string("^\\{([^}]+)\\}")
 var connection_attempts = 0
 
 
@@ -28,15 +29,19 @@ func _ready():
 
 
 func emit_message(packet_text: String):
-	var effective_text = packet_text
 	var is_voice = false
+	var user_id = "unknown"
+	var user_id_match = user_prefix.search(packet_text)
+	if user_id_match:
+		user_id = user_id_match.get_string(1)
+		packet_text = packet_text.substr(len(user_id_match.get_string()))
 	if packet_text.begins_with(voice_prefix):
-		effective_text = packet_text.substr(voice_prefix.length())
+		packet_text = packet_text.substr(voice_prefix.length())
 		is_voice = true
-	effective_text = effective_text.strip_edges()
-	if effective_text.is_empty():
+	packet_text = packet_text.strip_edges()
+	if packet_text.is_empty():
 		return
-	chat_message.emit(effective_text, is_voice)
+	chat_message.emit(packet_text, is_voice, user_id)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
