@@ -42,7 +42,7 @@ import { WebSocketServer } from "ws";
     if (message.channelId !== process.env.CHANNEL) return;
     if (!message.content) return;
 
-    sendAll(message.content)
+    sendAll(`{${message.author.id}}${message.content}`)
   });
 
   client.login(process.env.TOKEN);
@@ -152,7 +152,7 @@ import { WebSocketServer } from "ws";
             } else {
               const transcript = response.results?.channels?.[0]?.alternatives?.[0]?.transcript?.trim?.();
               if (transcript) {
-                sendAll(`[VOICE]${transcript}`);
+                sendAll(`{${userId}}[VOICE]${transcript}`);
               } else {
                 console.log("No transcript returned by Deepgram.");
               }

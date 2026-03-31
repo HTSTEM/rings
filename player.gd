@@ -3,9 +3,33 @@ extends CharacterBody2D
 var debug_msg = ""
 var base_speed = 1000
 var t_last_collison: int = 0
+var _base_directions: Dictionary[String, Vector2] = {
+	"left": Vector2(-1.0, 0.0),
+	"right": Vector2(1.0, 0.0),
+	"up": Vector2(0.0, -1.0),
+	"down": Vector2(0.0, 1.0)
+}
+var directions: Dictionary[String, Vector2] = {}
+var other_animations: Array[String] = []
+# avoid circulars (not actually sure if this is needed)
+var randomizing_anim: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# load alt anims
+	for x in $AnimatedSprite2D.sprite_frames.get_animation_names():
+		if x == "default":
+			continue
+		other_animations.append(x)
+	# load dirs
+	for x in _base_directions:
+		directions[x] = _base_directions[x]
+		for i in range(len(x) - 1):
+			i += 1
+			var substr = x.substr(0, i)
+			var pct: float = float(i) / float(len(x))
+			directions[substr] = _base_directions[x] * pct
+	# im listening
 	WSClient.chat_message.connect(_on_chat_message)
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
@@ -32,28 +56,33 @@ func _unhandled_key_input(event):
 			var cmd = get_node("DebugCommand")
 			cmd.text = debug_msg
 
-func _on_chat_message(content: String, is_voice: bool):
+func _on_chat_message(content: String, is_voice: bool, user_id: String):
 	# speed boost for all caps lol
 	var speed = base_speed
-	if content == content.to_upper():
-		speed += 1
-	
+	for x in range(len(content)):
+		if content[x] == content[x].to_upper():
+			speed *= 1.1
+
 	content = content.to_lower()
-	if content == "up":
-		velocity.y = -speed
-	elif content == "down":
-		velocity.y = speed
-	elif content == "left":
-		velocity.x = -speed
-	elif content == "right":
-		velocity.x = speed
-		
-	elif content == "clear":
+	if content == "clear":
 		var vp_container = get_node("%SubViewportContainer")
 		var tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN).set_parallel(false)
 		tween.tween_property(vp_container.material, "shader_parameter/u_offset", -2.5, 2.7)
 		tween.tween_callback(func(): vp_container.material.shader = preload("res://no_fx.gdshader"))
 		tween.tween_method(func(val): vp_container.material.set_shader_parameter("progress", val), 0.0, 1.0, 2).set_delay(-.3)
+
+	if content not in directions:
+		return
+
+	var current_velocity = Vector2(velocity)
+	var set_velocity = Vector2(directions[content]) * speed
+	velocity += set_velocity
+	
+	var max_x = maxf(abs(current_velocity.x), abs(set_velocity.x))
+	velocity.x = clampf(velocity.x, -max_x, max_x)
+	
+	var max_y = maxf(abs(current_velocity.y), abs(set_velocity.y))
+	velocity.y = clampf(velocity.y, -max_y, max_y)
 
 func _physics_process(delta):
 	# TODO: can i add these as colision shapes at runtime? doesnt matter too much
@@ -114,3 +143,24 @@ func _physics_process(delta):
 	
 	var sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
 	sprite.speed_scale = 1 + (max(abs(velocity.x), abs(velocity.y)) / base_speed * 5)
+
+func _on_animated_sprite_2d_frame_changed():
+	if $AnimatedSprite2D.frame == 15:
+		# just some random safe point to reset this
+		randomizing_anim = false
+		return
+	if randomizing_anim:
+		return
+	if $AnimatedSprite2D.frame != 8:
+		return
+	if $AnimatedSprite2D.animation != "default":
+		randomizing_anim = true
+		$AnimatedSprite2D.animation = "default"
+		$AnimatedSprite2D.frame = 8
+		return
+	if (randi() % 10) != 0:
+		return
+	var new_animation = other_animations[randi() % len(other_animations)]
+	randomizing_anim = true
+	$AnimatedSprite2D.animation = new_animation
+	$AnimatedSprite2D.frame = 8

@@ -93,6 +93,22 @@
 [ext_resource type="Script" uid="uid://cv3j8o6mjqg7g" path="res://riddle_label.gd" id="48_tj74d"]
 [ext_resource type="Texture2D" uid="uid://ckh3wpqn7p47j" path="res://thud_moon_shade.png" id="49_su0yx"]
 [ext_resource type="Texture2D" uid="uid://rghpejwkseuq" path="res://Planets/BluePlanet.png" id="62_37ykd"]
+[ext_resource type="Texture2D" uid="uid://kgecc1rnyy10" path="res://TessieTachyon/000.png" id="66_t55hq"]
+[ext_resource type="Texture2D" uid="uid://b8kw38dbltrak" path="res://TessieTachyon/001.png" id="67_jtjyu"]
+[ext_resource type="Texture2D" uid="uid://b58vd4wemnlis" path="res://TessieTachyon/002.png" id="68_vv6ac"]
+[ext_resource type="Texture2D" uid="uid://b2allje434ojm" path="res://TessieTachyon/003.png" id="69_v27xk"]
+[ext_resource type="Texture2D" uid="uid://b2okhumcnrv03" path="res://TessieTachyon/004.png" id="70_vf1x1"]
+[ext_resource type="Texture2D" uid="uid://bexsmvruak6tg" path="res://TessieTachyon/005.png" id="71_vsnf8"]
+[ext_resource type="Texture2D" uid="uid://curx2baqude51" path="res://TessieTachyon/006.png" id="72_afx2c"]
+[ext_resource type="Texture2D" uid="uid://blrx2cfe1278a" path="res://TessieTachyon/007.png" id="73_xkj61"]
+[ext_resource type="Texture2D" uid="uid://dw0a8p7gt17vn" path="res://TessieTachyon/008.png" id="74_ednsc"]
+[ext_resource type="Texture2D" uid="uid://doy3crrsfo5j3" path="res://TessieTachyon/009.png" id="75_su0yx"]
+[ext_resource type="Texture2D" uid="uid://c1ilm42xvtl7r" path="res://TessieTachyon/010.png" id="76_3o3pd"]
+[ext_resource type="Texture2D" uid="uid://cqr80ox3ac5gt" path="res://TessieTachyon/011.png" id="77_1hr04"]
+[ext_resource type="Texture2D" uid="uid://cgmcuuvytfwjd" path="res://TessieTachyon/012.png" id="78_remcq"]
+[ext_resource type="Texture2D" uid="uid://f3ym2h1pincv" path="res://TessieTachyon/013.png" id="79_kcilg"]
+[ext_resource type="Texture2D" uid="uid://c3kfq07phr0k3" path="res://TessieTachyon/014.png" id="80_1amq5"]
+[ext_resource type="Texture2D" uid="uid://cdc1320hn0jvu" path="res://TessieTachyon/015.png" id="81_oosws"]
 [ext_resource type="Script" uid="uid://dscgs1r4ktevn" path="res://camera_2d.gd" id="88_xkj61"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_su0yx"]
@@ -127,7 +143,7 @@ in_3d_space = true
 _data = [Vector2(0.01351352, 0.022471905), 0.0, 5.820225, 0, 0, Vector2(0.5135135, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -6.4669175, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_sedwk"]
+[sub_resource type="CurveTexture" id="CurveTexture_8f1f8"]
 curve = SubResource("Curve_c0wax")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r5m4j"]
@@ -139,7 +155,7 @@ spread = 180.0
 initial_velocity_min = 2.0
 initial_velocity_max = 8.0
 gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_sedwk")
+scale_curve = SubResource("CurveTexture_8f1f8")
 
 [sub_resource type="Gradient" id="Gradient_wukud"]
 offsets = PackedFloat32Array(0.6927711, 0.6987952)
@@ -287,6 +303,59 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66_t55hq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_jtjyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_vv6ac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_v27xk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_vf1x1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_vsnf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_afx2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_xkj61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_ednsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_su0yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_3o3pd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_1hr04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_remcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_kcilg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_1amq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_oosws")
+}],
+"loop": true,
+"name": &"tachyon",
 "speed": 10.0
 }]
 
@@ -1008,8 +1077,8 @@ script = ExtResource("1_f3sb7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Level/Player" unique_id=2018646344]
 scale = Vector2(0.6666667, 0.6666667)
 sprite_frames = SubResource("SpriteFrames_yx0jh")
+animation = &"tachyon"
 autoplay = "default"
-frame_progress = 0.4949244
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Level/Player" unique_id=472172515]
 shape = SubResource("CircleShape2D_tlwt5")
@@ -1117,6 +1186,13 @@ offset_bottom = 56.0
 theme_override_font_sizes/font_size = 80
 text = "0"
 
+[node name="IntroFadeIn" type="ColorRect" parent="UI" unique_id=631552756]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.078431375, 0.22745098, 0.1254902, 1)
+
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Level/GamesPlanet/UnoRegion" to="SubViewportContainer/SubViewport/Level/GamesPlanet/UnoRegion" method="_on_body_entered"]
 [connection signal="body_exited" from="SubViewportContainer/SubViewport/Level/GamesPlanet/UnoRegion" to="SubViewportContainer/SubViewport/Level/GamesPlanet/UnoRegion" method="_on_body_exited"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Level/GamesPlanet/XwordRegion" to="SubViewportContainer/SubViewport/Level/GamesPlanet/XwordRegion" method="_on_body_entered"]
@@ -1124,5 +1200,6 @@ text = "0"
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Level/GamesPlanet/ChessRegion" to="SubViewportContainer/SubViewport/Level/GamesPlanet/ChessRegion" method="_on_body_entered"]
 [connection signal="body_exited" from="SubViewportContainer/SubViewport/Level/GamesPlanet/ChessRegion" to="SubViewportContainer/SubViewport/Level/GamesPlanet/ChessRegion" method="_on_body_exited"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Level/WordlePlanet/Area2D" to="SubViewportContainer/SubViewport/Level/WordlePlanet/Area2D" method="_on_body_entered"]
+[connection signal="frame_changed" from="SubViewportContainer/SubViewport/Level/Player/AnimatedSprite2D" to="SubViewportContainer/SubViewport/Level/Player" method="_on_animated_sprite_2d_frame_changed"]
 
 [editable path="SubViewportContainer/SubViewport/Level/WordlePlanet/BluePlanetMask/WordleLane"]

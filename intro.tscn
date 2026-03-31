@@ -1,0 +1,616 @@
+[gd_scene format=3 uid="uid://dnceb5cn1shy7"]
+
+[ext_resource type="Script" uid="uid://dut7xu5vp3rm" path="res://intro.gd" id="1_0a7ni"]
+[ext_resource type="Texture2D" uid="uid://b06uj2vkxo04x" path="res://PreGame/CameraFeed.png" id="1_7a8ye"]
+[ext_resource type="Texture2D" uid="uid://cd6qi361wtqci" path="res://PreGame/DeskScreenBase.png" id="2_0a7ni"]
+[ext_resource type="Texture2D" uid="uid://cyrd1rebsw5yr" path="res://PreGame/RocketShip.png" id="3_y6ycx"]
+[ext_resource type="Texture2D" uid="uid://tj2d1fsin5qo" path="res://PreGame/DeskScreenMonitor.png" id="3_y72e6"]
+[ext_resource type="Texture2D" uid="uid://c4tx0apmcrq0k" path="res://PreGame/SmokePuff.png" id="4_dpxxx"]
+[ext_resource type="PackedScene" uid="uid://btisp5pgag4ms" path="res://world.tscn" id="6_dk2oa"]
+[ext_resource type="FontFile" uid="uid://dgpshunxn148b" path="res://c15thytype.otf" id="6_dpxxx"]
+[ext_resource type="Theme" uid="uid://dtkd5t7ylfrdq" path="res://theme.tres" id="7_dk2oa"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7ufi4"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(19.95, 8.67, 1)
+direction = Vector3(0, 0.71, 0)
+spread = 20.709
+initial_velocity_min = 53.77
+initial_velocity_max = 107.53
+gravity = Vector3(0, 0, 0)
+damping_min = 56.99
+damping_max = 62.904003
+scale_max = 3.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dk2oa"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="Theme" id="Theme_dk2oa"]
+default_font = ExtResource("6_dpxxx")
+Label/colors/font_color = Color(0.6784314, 0.827451, 0.7254902, 1)
+Label/font_sizes/font_size = 32
+
+[sub_resource type="Animation" id="Animation_dpxxx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextBG:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/Label4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer/Label3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("VBoxContainer/Label5:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("VBoxContainer/Label6:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("VBoxContainer/Label7:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("VBoxContainer/Label8:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("VBoxContainer/Label9:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("VBoxContainer/Label10:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("VBoxContainer/Label11:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("VBoxContainer/Label12:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("VBoxContainer/Label13:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("VBoxContainer/Label:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("WorldPreview:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("TextBG:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("VBoxContainer:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dk2oa"]
+resource_name = "intro"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextBG:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666675),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1666336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/Label4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer/Label3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("VBoxContainer/Label5:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("VBoxContainer/Label6:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("VBoxContainer/Label7:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("VBoxContainer/Label8:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 19),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("VBoxContainer/Label9:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 22),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("VBoxContainer/Label10:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("VBoxContainer/Label11:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 26),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("VBoxContainer/Label12:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 32),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("VBoxContainer/Label13:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 38),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("VBoxContainer/Label:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("WorldPreview:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 39.55833),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("TextBG:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(44, 48),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("VBoxContainer:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(44, 48),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ufi4"]
+_data = {
+&"RESET": SubResource("Animation_dpxxx"),
+&"intro": SubResource("Animation_dk2oa")
+}
+
+[node name="Intro" type="Node2D" unique_id=645613863]
+texture_filter = 1
+script = ExtResource("1_0a7ni")
+
+[node name="CameraFeed" type="Sprite2D" parent="." unique_id=201320758]
+position = Vector2(960, 540)
+scale = Vector2(8, 8)
+texture = ExtResource("1_7a8ye")
+
+[node name="RocketShip" type="Sprite2D" parent="." unique_id=375895208]
+position = Vector2(428, 512)
+scale = Vector2(8, 8)
+texture = ExtResource("3_y6ycx")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="RocketShip" unique_id=851789166]
+texture_filter = 1
+position = Vector2(0, 7.12)
+scale = Vector2(0.125, 0.125)
+emitting = false
+amount = 40
+texture = ExtResource("4_dpxxx")
+visibility_rect = Rect2(-42.329926, -12.974243, 83.52649, 94.63507)
+process_material = SubResource("ParticleProcessMaterial_7ufi4")
+
+[node name="Label" type="Label" parent="." unique_id=323911887]
+texture_filter = 1
+offset_left = 1027.0
+offset_top = 333.0
+offset_right = 1149.0
+offset_bottom = 376.0
+theme = ExtResource("7_dk2oa")
+theme_override_colors/font_color = Color(0.6784314, 0.827451, 0.7254902, 1)
+theme_override_colors/font_outline_color = Color(0.078431375, 0.22745098, 0.1254902, 1)
+theme_override_constants/outline_size = 16
+text = "T-30:00"
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=2109663112]
+size = Vector2i(1216, 896)
+
+[node name="World" parent="SubViewport" unique_id=636115796 instance=ExtResource("6_dk2oa")]
+
+[node name="WorldPreview" type="Sprite2D" parent="." unique_id=1955151911]
+visible = false
+position = Vector2(704, 544)
+texture = SubResource("ViewportTexture_dk2oa")
+
+[node name="TextBG" type="ColorRect" parent="." unique_id=1995139993]
+offset_left = 51.0
+offset_top = 53.0
+offset_right = 1354.0
+offset_bottom = 1037.0
+color = Color(0.078431375, 0.22745098, 0.1254902, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1973482189]
+offset_left = 198.0
+offset_top = 195.0
+offset_right = 1223.0
+offset_bottom = 910.0
+theme = SubResource("Theme_dk2oa")
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1581602745]
+visible = false
+layout_mode = 2
+text = "T+00:05 SYSTEM Altitude 20000m"
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=713416248]
+visible = false
+layout_mode = 2
+text = "T+00:07 TESS-13 Everything is looking good up here!"
+
+[node name="Label4" type="Label" parent="VBoxContainer" unique_id=1543598937]
+visible = false
+layout_mode = 2
+text = "T+00:10 SYSTEM Altitude 50000m"
+
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=1983677613]
+visible = false
+layout_mode = 2
+text = "T+00:13 TESS-13 Oxygen OK, ventilation OK..."
+
+[node name="Label5" type="Label" parent="VBoxContainer" unique_id=1292009402]
+visible = false
+layout_mode = 2
+text = "T+00:16 SYSTEM Altitude 80000m"
+
+[node name="Label6" type="Label" parent="VBoxContainer" unique_id=1256372420]
+visible = false
+layout_mode = 2
+text = "T+00:19 TESS-13 Got a couple warnings from collision"
+
+[node name="Label7" type="Label" parent="VBoxContainer" unique_id=1830156659]
+visible = false
+layout_mode = 2
+text = "T+00:21 SYSTEM Altitude 110000m"
+
+[node name="Label8" type="Label" parent="VBoxContainer" unique_id=1211291373]
+visible = false
+layout_mode = 2
+text = "T+00:22 SYSTEM Hydraulics low"
+
+[node name="Label9" type="Label" parent="VBoxContainer" unique_id=481878764]
+visible = false
+layout_mode = 2
+text = "T+00:25 TESS-I3 Hey are we steering around this?"
+
+[node name="Label10" type="Label" parent="VBoxContainer" unique_id=2001696175]
+visible = false
+layout_mode = 2
+text = "T+00:28 SYSTEM Hydraulics out"
+
+[node name="Label11" type="Label" parent="VBoxContainer" unique_id=2054198304]
+visible = false
+layout_mode = 2
+text = "T+00:29 TESS-I3 MAYDAY MAYDAY M"
+
+[node name="Label12" type="Label" parent="VBoxContainer" unique_id=385969649]
+visible = false
+layout_mode = 2
+text = "T+00:35 Failed to parse"
+
+[node name="Label13" type="Label" parent="VBoxContainer" unique_id=1723454739]
+visible = false
+layout_mode = 2
+text = "T+00:41 Reconnecting..."
+
+[node name="DeskScreen" type="Sprite2D" parent="." unique_id=1509230730]
+modulate = Color(0.6, 0.6, 0.6, 1)
+position = Vector2(960, 540)
+scale = Vector2(8, 8)
+texture = ExtResource("2_0a7ni")
+
+[node name="MonitorOverlay" type="Sprite2D" parent="." unique_id=977197098]
+position = Vector2(960, 540)
+scale = Vector2(8, 8)
+texture = ExtResource("3_y72e6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2086224195]
+libraries/ = SubResource("AnimationLibrary_7ufi4")

@@ -10,7 +10,7 @@ func _ready():
 	if GameState.is_solved("clicker"):
 		$Fader.fade(true)
 
-func handle_input(value: String, is_voice: bool):
+func handle_input(value: String, is_voice: bool, user_id: String):
 	GameState.click(GameState.clicker_text_cps)
 	var regex_match = purchase_regex.search(value.to_lower())
 	if regex_match:
