@@ -49,7 +49,7 @@ func _unhandled_key_input(event):
 			var cmd = get_node("DebugCommand")
 			cmd.text = debug_msg
 
-func _on_chat_message(content: String, is_voice: bool):
+func _on_chat_message(content: String, is_voice: bool, user_id: String):
 	# speed boost for all caps lol
 	var speed = base_speed
 	for x in range(len(content)):

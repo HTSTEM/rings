@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cyrd1rebsw5yr" path="res://PreGame/RocketShip.png" id="3_y6ycx"]
 [ext_resource type="Texture2D" uid="uid://tj2d1fsin5qo" path="res://PreGame/DeskScreenMonitor.png" id="3_y72e6"]
 [ext_resource type="Texture2D" uid="uid://c4tx0apmcrq0k" path="res://PreGame/SmokePuff.png" id="4_dpxxx"]
+[ext_resource type="PackedScene" uid="uid://btisp5pgag4ms" path="res://world.tscn" id="6_dk2oa"]
 [ext_resource type="FontFile" uid="uid://dgpshunxn148b" path="res://c15thytype.otf" id="6_dpxxx"]
 [ext_resource type="Theme" uid="uid://dtkd5t7ylfrdq" path="res://theme.tres" id="7_dk2oa"]
 
@@ -21,6 +22,9 @@ gravity = Vector3(0, 0, 0)
 damping_min = 56.99
 damping_max = 62.904003
 scale_max = 3.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dk2oa"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="Theme" id="Theme_dk2oa"]
 default_font = ExtResource("6_dpxxx")
@@ -209,6 +213,42 @@ tracks/14/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("WorldPreview:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("TextBG:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("VBoxContainer:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_dk2oa"]
 resource_name = "intro"
@@ -393,6 +433,42 @@ tracks/14/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("WorldPreview:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 39.55833),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("TextBG:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(44, 48),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("VBoxContainer:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(44, 48),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ufi4"]
 _data = {
@@ -435,6 +511,16 @@ theme_override_colors/font_color = Color(0.6784314, 0.827451, 0.7254902, 1)
 theme_override_colors/font_outline_color = Color(0.078431375, 0.22745098, 0.1254902, 1)
 theme_override_constants/outline_size = 16
 text = "T-30:00"
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=2109663112]
+size = Vector2i(1216, 896)
+
+[node name="World" parent="SubViewport" unique_id=636115796 instance=ExtResource("6_dk2oa")]
+
+[node name="WorldPreview" type="Sprite2D" parent="." unique_id=1955151911]
+visible = false
+position = Vector2(704, 544)
+texture = SubResource("ViewportTexture_dk2oa")
 
 [node name="TextBG" type="ColorRect" parent="." unique_id=1995139993]
 offset_left = 51.0

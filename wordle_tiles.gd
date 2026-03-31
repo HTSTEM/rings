@@ -44,7 +44,7 @@ func _ready():
 			break
 		current_word = goal_words[current_index]
 
-func _on_message(content: String, is_voice: bool):
+func _on_message(content: String, is_voice: bool, user_id: String):
 	if current_index >= len(goal_words):
 		return
 	if since_guess < max_since_guess:

@@ -1,7 +1,7 @@
 extends Node
 
 var _save_file_name = "user://tessie._save"
-var _serializable: Array[String] = ["_planets_solved", "_steps_solved", "clicker_clicks", "clicker_purchases", "clicker_lifetime"]
+var _serializable: Array[String] = ["_planets_solved", "_steps_solved", "clicker_clicks", "clicker_purchases", "clicker_lifetime", "seen_intro"]
 
 var _planets_solved: Array[String] = []
 var _steps_solved: Array[String] = []
@@ -48,6 +48,7 @@ var clicker_names = {
 }
 var clicker_by_name = {}
 var clicker_next_cost = {}
+var seen_intro = false
 
 func update_cookie_data():
 	clicker_cps = 0
@@ -81,7 +82,7 @@ func solve(planet: String):
 	if planet in _planets_solved:
 		return
 	# TODO: this maybe could be positional, we'd have to get a player on each planet for not much payoff
-	var player: AudioStreamPlayer = get_node("/root/World/SuccessPlayer")
+	var player: AudioStreamPlayer = get_parent().find_child("SuccessPlayer")
 	player.play()
 	_planets_solved.append(planet)
 	_set_new_radius()
@@ -119,7 +120,7 @@ func _ready():
 	update_cookie_data()
 	
 	
-	if FileAccess.file_exists(_save_file_name) and false:
+	if FileAccess.file_exists(_save_file_name):
 		var save_file = FileAccess.open(_save_file_name, FileAccess.READ)
 		var json_string = save_file.get_line().strip_edges()
 		print("exists", json_string)

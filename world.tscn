@@ -745,6 +745,13 @@ offset_bottom = 56.0
 theme_override_font_sizes/font_size = 80
 text = "0"
 
+[node name="IntroFadeIn" type="ColorRect" parent="UI" unique_id=631552756]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.078431375, 0.22745098, 0.1254902, 1)
+
 [connection signal="body_entered" from="Level/WordlePlanet/Area2D" to="Level/WordlePlanet/Area2D" method="_on_body_entered"]
 [connection signal="frame_changed" from="Level/Player/AnimatedSprite2D" to="Level/Player" method="_on_animated_sprite_2d_frame_changed"]
 

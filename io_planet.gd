@@ -11,7 +11,7 @@ var available_level: int = 0
 var current_level: int = 0
 var previous_result: float = 0.0
 
-func handle_input(value: String, is_voice: bool):
+func handle_input(value: String, is_voice: bool, user_id: String):
 	if GameState.is_solved("math%d" % current_level) or is_voice:
 		return
 
