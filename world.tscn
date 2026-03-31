@@ -119,9 +119,6 @@
 [ext_resource type="Texture2D" uid="uid://c3kfq07phr0k3" path="res://TessieTachyon/014.png" id="80_1amq5"]
 [ext_resource type="Texture2D" uid="uid://cdc1320hn0jvu" path="res://TessieTachyon/015.png" id="81_oosws"]
 [ext_resource type="Script" uid="uid://dscgs1r4ktevn" path="res://camera_2d.gd" id="88_xkj61"]
-[ext_resource type="Texture2D" uid="uid://cwb2iv4v5qbq0" path="res://iceplanet.png" id="105_aq2cj"]
-[ext_resource type="Script" uid="uid://bqd7eye0ns1w4" path="res://ice_walls.gd" id="107_4ll5h"]
-[ext_resource type="Script" uid="uid://74clxb3wx2mj" path="res://ice_ring.gd" id="108_t63o8"]
 [ext_resource type="Texture2D" uid="uid://c67apjqsdwayf" path="res://TessieMilli/000.png" id="89_e6jkr"]
 [ext_resource type="Texture2D" uid="uid://vhj2ymi6anjn" path="res://TessieMilli/001.png" id="90_2vwdk"]
 [ext_resource type="Texture2D" uid="uid://bxiv4ynfunjbe" path="res://TessieMilli/002.png" id="91_8wjcy"]
@@ -138,6 +135,9 @@
 [ext_resource type="Texture2D" uid="uid://dny04jug7fxii" path="res://TessieMilli/013.png" id="102_1f132"]
 [ext_resource type="Texture2D" uid="uid://bppqgxi2cgr33" path="res://TessieMilli/014.png" id="103_why7d"]
 [ext_resource type="Texture2D" uid="uid://cygv4mg6d45nc" path="res://TessieMilli/015.png" id="104_p12th"]
+[ext_resource type="Texture2D" uid="uid://cwb2iv4v5qbq0" path="res://iceplanet.png" id="105_aq2cj"]
+[ext_resource type="Script" uid="uid://cor6ieulyaf6g" path="res://ice_walls.gd" id="107_4ll5h"]
+[ext_resource type="Script" uid="uid://cppb031lnq6ae" path="res://ice_ring.gd" id="108_t63o8"]
 
 [sub_resource type="Gradient" id="Gradient_6ah6f"]
 offsets = PackedFloat32Array(0.1746988, 0.8614458)
@@ -1221,7 +1221,7 @@ horizontal_alignment = 1
 script = ExtResource("48_tj74d")
 
 [node name="ARGPlanet" type="Node2D" parent="Level" unique_id=1695954058]
-position = Vector2(-2277, 391)
+position = Vector2(591, -2462)
 
 [node name="Earth" type="StaticBody2D" parent="Level/ARGPlanet" unique_id=747914234]
 z_index = 1
@@ -1270,6 +1270,7 @@ position = Vector2(-1320.0001, -96)
 scale = Vector2(5.4773846, 5.4773846)
 
 [node name="IcePlanet" type="Sprite2D" parent="Level/IcePlanet" unique_id=2146616657]
+texture_filter = 1
 scale = Vector2(1.3068061, 1.3068061)
 texture = ExtResource("105_aq2cj")
 
@@ -1281,6 +1282,7 @@ shape = SubResource("CircleShape2D_4ll5h")
 [node name="Ice" type="Node2D" parent="Level/IcePlanet" unique_id=306419510]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Level/IcePlanet/Ice" unique_id=850427154]
+texture_filter = 1
 scale = Vector2(0.99999994, 0.99999994)
 tile_map_data = PackedByteArray("AAAIAAcAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAD2/wYAAAAAAAAAAAD3/wcAAAAAAAAAAAD3/wAAAAAAAAAAAAD0/wEAAAAAAAAAAAD1/wQAAAAAAAAAAAD0/wMAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAkAAAAAAAAAAAAIAAgAAAAAAAAAAAAHAAkAAAAAAAAAAAD6/wgAAAAAAAAAAAD7/wkAAAAAAAAAAAD8//j/AAAAAAAAAAD7//f/AAAAAAAAAAD3//j/AAAAAAAAAAD4//f/AAAAAAAAAAD4//3/AAAAAAAAAAD1//z/AAAAAAAAAAD2//7/AAAAAAAAAAD1//3/AAAAAAAAAAD1//r/AAAAAAAAAAD1/wAAAAAAAAAAAAAEAP//AAAAAAAAAAAFAAAAAAAAAAAAAAADAP7/AAAAAAAAAAAHAAUAAAAAAAAAAAABAAcAAAAAAAAAAAAJAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAIAAAAAAAAAAAAAAAcAAAAAAAAAAAD//wcAAAAAAAAAAAD3////AAAAAAAAAAD4/wgAAAAAAAAAAAD5/wcAAAAAAAAAAAD6//7/AAAAAAAAAAD5//3/AAAAAAAAAAD9//n/AAAAAAAAAAD8/wMAAAAAAAAAAAD5/wIAAAAAAAAAAAAAAAEAAAAAAAAAAAD+//r/AAAAAAAAAAD///v/AAAAAAAAAAD9/wgAAAAAAAAAAAD+/wkAAAAAAAAAAAD//wgAAAAAAAAAAAD4/wEAAAAAAAAAAAD3//n/AAAAAAAAAAD8/wIAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wIAAAAAAAAAAAD2//n/AAAAAAAAAAD///7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP//AAAAAAAAAAD8/wgAAAAAAAAAAAAKAP3/AAAAAAAAAAALAPz/AAAAAAAAAAAKAPv/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_t63o8")
@@ -1301,6 +1303,7 @@ scale = Vector2(0.25, 0.25)
 shape = SubResource("RectangleShape2D_aq2cj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Level/IcePlanet/Walls/WallBit" unique_id=244870137]
+texture_filter = 1
 texture = ExtResource("5_remcq")
 
 [node name="Area2D" type="Area2D" parent="Level/IcePlanet" unique_id=2010064199]
@@ -1466,10 +1469,8 @@ text = "0"
 [node name="IntroFadeIn" type="ColorRect" parent="UI" unique_id=631552756]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(1920, 1080)
-offset_left = 18.0
-offset_top = -133.0
-offset_right = 1938.0
-offset_bottom = 947.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 color = Color(0.078431375, 0.22745098, 0.1254902, 1)
 
 [node name="OutroFadeOut" type="ColorRect" parent="UI" unique_id=1810167793]
