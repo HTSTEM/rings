@@ -5,7 +5,10 @@ func fade_in():
 	var tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN).set_parallel(false)
 	$UI/IntroFadeIn.modulate = Color(1.0, 1.0, 1.0, 1.0)
 	tween.tween_property($UI/IntroFadeIn, "modulate", Color(1.0, 1.0, 1.0, 0.0), 3).set_delay(2)
-	tween.tween_callback(func (): $MainMusic.play())
+	tween.tween_callback(func ():
+		$MainMusic.play()
+		GameState.in_intro = false
+	)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

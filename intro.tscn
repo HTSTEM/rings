@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dut7xu5vp3rm" path="res://intro.gd" id="1_0a7ni"]
 [ext_resource type="Texture2D" uid="uid://b06uj2vkxo04x" path="res://PreGame/CameraFeed.png" id="1_7a8ye"]
 [ext_resource type="Texture2D" uid="uid://cd6qi361wtqci" path="res://PreGame/DeskScreenBase.png" id="2_0a7ni"]
-[ext_resource type="AudioStream" uid="uid://ctp26s7s2tvon" path="res://HTSTEM april fool 2026 wip1.mp3" id="2_d0rr7"]
+[ext_resource type="AudioStream" uid="uid://bbmcaulm3sbl" path="res://menu.wav" id="2_xsd0a"]
 [ext_resource type="AudioStream" uid="uid://dpe51p7rd42ts" path="res://pepSound1.ogg" id="3_wby50"]
 [ext_resource type="Texture2D" uid="uid://cyrd1rebsw5yr" path="res://PreGame/RocketShip.png" id="3_y6ycx"]
 [ext_resource type="Texture2D" uid="uid://tj2d1fsin5qo" path="res://PreGame/DeskScreenMonitor.png" id="3_y72e6"]
@@ -316,7 +316,7 @@ tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-10.0]
+"values": [-2.0]
 }
 
 [sub_resource type="Animation" id="Animation_dk2oa"]
@@ -658,7 +658,7 @@ tracks/24/keys = {
 "times": PackedFloat32Array(0, 32.065624),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-10.0, -30.0]
+"values": [-2.0, -12.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ufi4"]
@@ -672,9 +672,8 @@ texture_filter = 1
 script = ExtResource("1_0a7ni")
 
 [node name="IntroMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=465541203]
-stream = ExtResource("2_d0rr7")
-volume_db = -10.0
-parameters/looping = true
+stream = ExtResource("2_xsd0a")
+volume_db = -2.0
 
 [node name="TextPlayer" type="AudioStreamPlayer" parent="." unique_id=640085668]
 stream = ExtResource("3_wby50")

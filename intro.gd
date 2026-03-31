@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var guy = preload("res://intro_guy.tscn")
 var guys: Array[String] = []
-var remaining: float = 60.0
+var remaining: float = 180.0
 var particles_at: float = 10.0
 var rocket_terminal_speed: float = 10.0
 var rocket_speed: float = 1.0

@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var purchase_regex = RegEx.create_from_string("^buy (\\w+) poster$")
+var purchase_regex = RegEx.create_from_string("^buy ([A-Za-z0-9/]+) poster$")
 var target = 33101.0
 var since_save = 0.0
 
