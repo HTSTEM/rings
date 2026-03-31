@@ -42,9 +42,11 @@ func _on_body_exited(body):
 	inside = false
 
 func _on_message(content: String, is_voice: bool, uid: String):
+	var original_content = content
 	content = content.to_lower()
 	if inside:
 		if words.has(content) && !words[content]:
+			WSClient.emit_message_consumed(original_content)
 			words[content] = 1
 			ui.display_pencil(content)
 			$"../AudioStreamPlayer".stream = preload("res://pencil_marks.mp3")

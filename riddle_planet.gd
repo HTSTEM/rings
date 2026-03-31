@@ -21,9 +21,11 @@ func _ready():
 func _on_message(content: String, is_voice: bool, user_id: String):
 	if not is_voice:
 		return
+	var original_content = content
 	content = content.to_lower().strip_edges()
 	if content != "cucumber":
 		return
+	WSClient.emit_message_consumed(original_content)
 	GameState.solve("riddle")
 
 func _process(delta):

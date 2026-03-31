@@ -16,6 +16,7 @@ func handle_input(value: String, is_voice: bool, user_id: String):
 	if regex_match:
 		var upgrade_name = regex_match.get_string(1)
 		if upgrade_name in GameState.clicker_by_name:
+			WSClient.emit_message_consumed(value)
 			GameState.clicker_purchase(GameState.clicker_by_name[upgrade_name])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

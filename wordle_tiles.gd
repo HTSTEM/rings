@@ -45,6 +45,7 @@ func _ready():
 		current_word = goal_words[current_index]
 
 func _on_message(content: String, is_voice: bool, user_id: String):
+	var original_content = content
 	if current_index >= len(goal_words):
 		return
 	if since_guess < max_since_guess:
@@ -62,6 +63,7 @@ func _on_message(content: String, is_voice: bool, user_id: String):
 	
 	since_guess = 0
 	guessed_word = content
+	WSClient.emit_message_consumed(original_content)
 	
 	var remaining_word: String = current_word
 	# greens
@@ -82,6 +84,7 @@ func _on_message(content: String, is_voice: bool, user_id: String):
 		since_solve = 0.0
 		lanes[current_index].fade(false)
 		GameState.solve_step("wordle%d" % current_index)
+		GameState.success_and_save()
 		return
 	# yellows
 	for x in range(len(guessed_word)):

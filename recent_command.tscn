@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://fscynvxr5mc2"]
+
+[ext_resource type="Theme" uid="uid://dtkd5t7ylfrdq" path="res://theme.tres" id="1_ss74f"]
+[ext_resource type="Script" uid="uid://ccvlkt5sdbssl" path="res://recent_command.gd" id="2_tfa5e"]
+
+[node name="RecentCommand" type="Node2D" unique_id=429345253]
+script = ExtResource("2_tfa5e")
+
+[node name="Label" type="Label" parent="." unique_id=306140777]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ss74f")
+text = "hello"
