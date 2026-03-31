@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Rings"
-run/main_scene="uid://dnceb5cn1shy7"
+run/main_scene="uid://btisp5pgag4ms"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=240
 boot_splash/bg_color=Color(0.078431375, 0.22745098, 0.1254902, 1)
