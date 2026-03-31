@@ -86,11 +86,17 @@ func solve(planet: String):
 	_planets_solved.append(planet)
 	_set_new_radius()
 	_save()
+	
+func success_and_save():
+	var player: AudioStreamPlayer = get_node("/root/World/SuccessPlayer")
+	player.play()
+	_save()
 
 func solve_step(step: String):
 	if is_step_solved(step):
 		return
 	_steps_solved.append(step)
+	_save()
 
 func is_solved(planet: String) -> bool:
 	return planet in _planets_solved

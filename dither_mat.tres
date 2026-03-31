@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cqhk61655galu"]
+
+[ext_resource type="Shader" uid="uid://br7aut41sb6kh" path="res://dither.gdshader" id="1_kgk1k"]
+[ext_resource type="Texture2D" uid="uid://dp75sl2mckwuj" path="res://bayer2tile16.png" id="2_gx2nt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_su0yx"]
+load_path = "res://.godot/imported/green_palette.png-1a702b9a321c46885e67e327a3ace34c.ctex"
+
+[resource]
+shader = ExtResource("1_kgk1k")
+shader_parameter/u_dither_tex = ExtResource("2_gx2nt")
+shader_parameter/u_color_tex = SubResource("CompressedTexture2D_su0yx")
+shader_parameter/u_bit_depth = 5
+shader_parameter/u_contrast = 2.235
+shader_parameter/u_offset = 0.24
+shader_parameter/u_dither_size = 3
