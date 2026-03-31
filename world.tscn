@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://btisp5pgag4ms"]
 
 [ext_resource type="Texture2D" uid="uid://dihmlethsr7fn" path="res://background-main.png" id="1_6ah6f"]
+[ext_resource type="Script" uid="uid://bc4asm8ht60a5" path="res://world.gd" id="1_aq2cj"]
 [ext_resource type="Script" uid="uid://b8mlot14bs6mt" path="res://player.gd" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://u130a0btvwsy" path="res://editor_only.gd" id="1_il2jm"]
 [ext_resource type="AudioStream" uid="uid://ctp26s7s2tvon" path="res://HTSTEM april fool 2026 wip1.mp3" id="1_my276"]
@@ -110,6 +111,22 @@
 [ext_resource type="Texture2D" uid="uid://c3kfq07phr0k3" path="res://TessieTachyon/014.png" id="80_1amq5"]
 [ext_resource type="Texture2D" uid="uid://cdc1320hn0jvu" path="res://TessieTachyon/015.png" id="81_oosws"]
 [ext_resource type="Script" uid="uid://dscgs1r4ktevn" path="res://camera_2d.gd" id="88_xkj61"]
+[ext_resource type="Texture2D" uid="uid://c67apjqsdwayf" path="res://TessieMilli/000.png" id="89_e6jkr"]
+[ext_resource type="Texture2D" uid="uid://vhj2ymi6anjn" path="res://TessieMilli/001.png" id="90_2vwdk"]
+[ext_resource type="Texture2D" uid="uid://bxiv4ynfunjbe" path="res://TessieMilli/002.png" id="91_8wjcy"]
+[ext_resource type="Texture2D" uid="uid://caiutckf2bvjn" path="res://TessieMilli/003.png" id="92_xh3xj"]
+[ext_resource type="Texture2D" uid="uid://dv8222rcnyp7y" path="res://TessieMilli/004.png" id="93_ofgfh"]
+[ext_resource type="Texture2D" uid="uid://cwjcefnw248rj" path="res://TessieMilli/005.png" id="94_6d1iy"]
+[ext_resource type="Texture2D" uid="uid://bbk2qiskr8wp8" path="res://TessieMilli/006.png" id="95_awgtj"]
+[ext_resource type="Texture2D" uid="uid://c8gguw8esfru8" path="res://TessieMilli/007.png" id="96_mou3f"]
+[ext_resource type="Texture2D" uid="uid://c3mk2hihkojx6" path="res://TessieMilli/008.png" id="97_8343f"]
+[ext_resource type="Texture2D" uid="uid://d1tjdmkrao4ye" path="res://TessieMilli/009.png" id="98_2lhbq"]
+[ext_resource type="Texture2D" uid="uid://cbaeusl01fv47" path="res://TessieMilli/010.png" id="99_5wt1p"]
+[ext_resource type="Texture2D" uid="uid://clfohdpmbig1e" path="res://TessieMilli/011.png" id="100_jtjv0"]
+[ext_resource type="Texture2D" uid="uid://k7aoqe6ybmab" path="res://TessieMilli/012.png" id="101_wiowo"]
+[ext_resource type="Texture2D" uid="uid://dny04jug7fxii" path="res://TessieMilli/013.png" id="102_1f132"]
+[ext_resource type="Texture2D" uid="uid://bppqgxi2cgr33" path="res://TessieMilli/014.png" id="103_why7d"]
+[ext_resource type="Texture2D" uid="uid://cygv4mg6d45nc" path="res://TessieMilli/015.png" id="104_p12th"]
 
 [sub_resource type="Gradient" id="Gradient_6ah6f"]
 offsets = PackedFloat32Array(0.1746988, 0.8614458)
@@ -295,6 +312,59 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("89_e6jkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_2vwdk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_8wjcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_xh3xj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_ofgfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_6d1iy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_awgtj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_mou3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_8343f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_2lhbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_5wt1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_jtjv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_wiowo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_1f132")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_why7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_p12th")
+}],
+"loop": true,
+"name": &"milli",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("66_t55hq")
 }, {
 "duration": 1.0,
@@ -371,16 +441,18 @@ shader_parameter/radius = 0.0
 shader_parameter/position = Vector2(0, 0)
 
 [node name="World" type="Node" unique_id=636115796]
+script = ExtResource("1_aq2cj")
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="." unique_id=488908732]
 stream = ExtResource("1_my276")
+volume_db = -6.0
 playback_type = 1
 parameters/looping = true
 
 [node name="SuccessPlayer" type="AudioStreamPlayer" parent="." unique_id=760991297]
+unique_name_in_owner = true
 stream = ExtResource("2_55kwu")
 volume_db = 10.0
-max_polyphony = 5
 
 [node name="Level" type="Node2D" parent="." unique_id=1636698308]
 position = Vector2(960, 540)
@@ -1092,6 +1164,9 @@ theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="RecentCommands" type="Node2D" parent="Level/Player" unique_id=1809528284]
+position = Vector2(0, -30.915)
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1819104696]
 unique_name_in_owner = true
 visible = false
@@ -1119,9 +1194,8 @@ script = ExtResource("5_dwbse")
 [node name="UIThemed" type="Control" parent="UI" unique_id=734596615]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 4.0
 offset_right = 40.0
-offset_bottom = 44.0
+offset_bottom = 40.0
 theme = ExtResource("5_4h6ng")
 
 [node name="Disconnected" type="PanelContainer" parent="UI/UIThemed" unique_id=701705592]
@@ -1193,6 +1267,12 @@ custom_minimum_size = Vector2(1920, 1080)
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.078431375, 0.22745098, 0.1254902, 1)
+
+[node name="OutroFadeOut" type="ColorRect" parent="UI" unique_id=1810167793]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [connection signal="body_entered" from="Level/GamesPlanet/UnoRegion" to="Level/GamesPlanet/UnoRegion" method="_on_body_entered"]
 [connection signal="body_exited" from="Level/GamesPlanet/UnoRegion" to="Level/GamesPlanet/UnoRegion" method="_on_body_exited"]

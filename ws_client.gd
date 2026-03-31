@@ -1,7 +1,8 @@
 extends Node
 
 
-signal chat_message(content, is_voice)
+signal chat_message(content, is_voice, user_id)
+signal consumed_message(content)
 
 @export var websocket_url = "ws://localhost:5733"
 
@@ -9,6 +10,14 @@ var socket = WebSocketPeer.new()
 var voice_prefix = "[VOICE]"
 var user_prefix = RegEx.create_from_string("^\\{([^}]+)\\}")
 var connection_attempts = 0
+var recently_consumed: Array[String] = []
+
+
+func emit_message_consumed(text: String):
+	if text in recently_consumed:
+		return
+	recently_consumed.append(text)
+	consumed_message.emit(text)
 
 
 func connect_socket():
@@ -46,6 +55,8 @@ func emit_message(packet_text: String):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	recently_consumed.clear()
+	
 	# Call this in `_process()` or `_physics_process()`.
 	# Data transfer and state updates will only happen when calling this function.
 	socket.poll()

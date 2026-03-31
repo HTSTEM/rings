@@ -14,6 +14,7 @@ config/name="Rings"
 run/main_scene="uid://dnceb5cn1shy7"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=240
+boot_splash/bg_color=Color(0.078431375, 0.22745098, 0.1254902, 1)
 config/icon="res://icon.svg"
 
 [autoload]

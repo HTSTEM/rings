@@ -25,6 +25,7 @@ func _on_body_exited(body):
 
 func _on_message(content: String, is_voice: bool, uid: String) -> void:
 	if inside && content == "Rh4#":
+		WSClient.emit_message_consumed(content)
 		ui.show_chess(true)
 		GameState.solve_step("chess_solved")
 		$"../AudioStreamPlayer".stream = preload("res://chess_move.mp3")

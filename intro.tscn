@@ -3,9 +3,12 @@
 [ext_resource type="Script" uid="uid://dut7xu5vp3rm" path="res://intro.gd" id="1_0a7ni"]
 [ext_resource type="Texture2D" uid="uid://b06uj2vkxo04x" path="res://PreGame/CameraFeed.png" id="1_7a8ye"]
 [ext_resource type="Texture2D" uid="uid://cd6qi361wtqci" path="res://PreGame/DeskScreenBase.png" id="2_0a7ni"]
+[ext_resource type="AudioStream" uid="uid://ctp26s7s2tvon" path="res://HTSTEM april fool 2026 wip1.mp3" id="2_d0rr7"]
+[ext_resource type="AudioStream" uid="uid://dpe51p7rd42ts" path="res://pepSound1.ogg" id="3_wby50"]
 [ext_resource type="Texture2D" uid="uid://cyrd1rebsw5yr" path="res://PreGame/RocketShip.png" id="3_y6ycx"]
 [ext_resource type="Texture2D" uid="uid://tj2d1fsin5qo" path="res://PreGame/DeskScreenMonitor.png" id="3_y72e6"]
 [ext_resource type="Texture2D" uid="uid://c4tx0apmcrq0k" path="res://PreGame/SmokePuff.png" id="4_dpxxx"]
+[ext_resource type="AudioStream" uid="uid://8c3p72fwlhdl" path="res://footstep_snow_003.ogg" id="4_xsd0a"]
 [ext_resource type="PackedScene" uid="uid://btisp5pgag4ms" path="res://world.tscn" id="6_dk2oa"]
 [ext_resource type="FontFile" uid="uid://dgpshunxn148b" path="res://c15thytype.otf" id="6_dpxxx"]
 [ext_resource type="Shader" uid="uid://ci4wit3m61md0" path="res://no_fx.gdshader" id="6_h0kys"]
@@ -279,10 +282,46 @@ tracks/19/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("TakeControlText:modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("TakeControlText2:modulate")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("IntroMusicPlayer:volume_db")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
 
 [sub_resource type="Animation" id="Animation_dk2oa"]
 resource_name = "intro"
-length = 60.0
+length = 200.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -530,10 +569,96 @@ tracks/20/path = NodePath("SubViewportContainer:material:shader_parameter/progre
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
-"times": PackedFloat32Array(51.1, 79.86667),
+"times": PackedFloat32Array(51.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.6630000314925]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("TakeControlText:modulate")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(60, 70),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.6630000314925, 0.6630000314925]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("TakeControlText2:modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(150.2694, 200),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/23/type = "method"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("TextPlayer")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(1.75, 3.75, 6.75, 9.75, 12.75, 15.75, 17.75, 18.75, 21.75, 24.75, 25.75, 31.75, 37.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("IntroMusicPlayer:volume_db")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 32.065624),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-10.0, -30.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ufi4"]
@@ -545,6 +670,22 @@ _data = {
 [node name="Intro" type="Node2D" unique_id=645613863]
 texture_filter = 1
 script = ExtResource("1_0a7ni")
+
+[node name="IntroMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=465541203]
+stream = ExtResource("2_d0rr7")
+volume_db = -10.0
+parameters/looping = true
+
+[node name="TextPlayer" type="AudioStreamPlayer" parent="." unique_id=640085668]
+stream = ExtResource("3_wby50")
+volume_db = 5.0
+max_polyphony = 2
+
+[node name="RocketPlayer" type="AudioStreamPlayer" parent="." unique_id=1355414324]
+stream = ExtResource("4_xsd0a")
+volume_db = -12.0
+pitch_scale = 0.2
+max_polyphony = 10
 
 [node name="CameraFeed" type="Sprite2D" parent="." unique_id=201320758]
 position = Vector2(960, 540)
@@ -600,6 +741,26 @@ render_target_clear_mode = 1
 render_target_update_mode = 4
 
 [node name="World" parent="SubViewportContainer/SubViewport" unique_id=526356615 instance=ExtResource("6_dk2oa")]
+
+[node name="TakeControlText" type="Label" parent="." unique_id=297696750]
+modulate = Color(1, 1, 1, 0)
+offset_left = 558.0
+offset_top = 765.545
+offset_right = 854.0
+offset_bottom = 828.545
+theme = ExtResource("7_dk2oa")
+theme_override_font_sizes/font_size = 48
+text = "take control"
+
+[node name="TakeControlText2" type="Label" parent="." unique_id=28039082]
+modulate = Color(1, 1, 1, 0)
+offset_left = 417.0
+offset_top = 765.545
+offset_right = 873.0
+offset_bottom = 828.545
+theme = ExtResource("7_dk2oa")
+theme_override_font_sizes/font_size = 48
+text = "type \"take control\""
 
 [node name="TextBG" type="ColorRect" parent="." unique_id=1995139993]
 offset_left = 51.0
@@ -658,7 +819,7 @@ text = "T+00:22 SYSTEM Hydraulics low"
 [node name="Label9" type="Label" parent="VBoxContainer" unique_id=481878764]
 visible = false
 layout_mode = 2
-text = "T+00:25 TESS-I3 Hey are we steering around this?"
+text = "T+00:25 TESS-13 Hey are we steering around this?"
 
 [node name="Label10" type="Label" parent="VBoxContainer" unique_id=2001696175]
 visible = false
@@ -668,7 +829,7 @@ text = "T+00:28 SYSTEM Hydraulics out"
 [node name="Label11" type="Label" parent="VBoxContainer" unique_id=2054198304]
 visible = false
 layout_mode = 2
-text = "T+00:29 TESS-I3 MAYDAY MAYDAY M"
+text = "T+00:29 TESS-13 MAYDAY MAYDAY M"
 
 [node name="Label12" type="Label" parent="VBoxContainer" unique_id=385969649]
 visible = false
@@ -693,3 +854,10 @@ texture = ExtResource("3_y72e6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2086224195]
 libraries/ = SubResource("AnimationLibrary_7ufi4")
+
+[node name="IntroFadeOut" type="ColorRect" parent="." unique_id=1480126312]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.078431375, 0.22745098, 0.1254902, 1)

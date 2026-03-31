@@ -1,8 +1,9 @@
 extends Node
 
 var _save_file_name = "user://tessie._save"
-var _serializable: Array[String] = ["_planets_solved", "_steps_solved", "clicker_clicks", "clicker_purchases", "clicker_lifetime", "seen_intro"]
+var _serializable: Array[String] = ["_planets_solved", "_steps_solved", "clicker_clicks", "clicker_purchases", "clicker_lifetime"]
 
+var all_planets: Array[String] = ["wordle", "clicker", "riddle", "tutorial", "music", "math0", "math1", "games"]
 var _planets_solved: Array[String] = []
 var _steps_solved: Array[String] = []
 
@@ -48,7 +49,7 @@ var clicker_names = {
 }
 var clicker_by_name = {}
 var clicker_next_cost = {}
-var seen_intro = false
+var running_credits: bool = false
 
 func update_cookie_data():
 	clicker_cps = 0
@@ -78,18 +79,39 @@ func _set_new_radius():
 	_radius_animation_elapsed = 0
 	print("stuff ", _planets_solved, " ", len(_planets_solved), " ", _target_progression_radius, " ", _radius_animating_from, " ", _radius_animation_elapsed)
 
+func start_credits():
+	if running_credits:
+		return
+	running_credits = true
+	
+	var music_tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN).set_parallel(false)
+	music_tween.tween_property(get_world().get_node("MainMusic"), "volume_db", -80.0, 5.0).set_delay(0.5)
+	
+	var tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN).set_parallel(false)
+	tween.tween_property(get_world().get_node("UI/OutroFadeOut"), "modulate", Color(1.0, 1.0, 1.0, 1.0), 5.0).set_delay(0.5)
+	tween.tween_callback(func (): get_tree().change_scene_to_file("res://ending.tscn"))
+
 func solve(planet: String):
 	if planet in _planets_solved:
 		return
+	if planet not in all_planets:
+		push_error("Unknown planet %s" % planet)
 	# TODO: this maybe could be positional, we'd have to get a player on each planet for not much payoff
-	var player: AudioStreamPlayer = get_node("/root/Intro/SubViewportContainer/SubViewport/World").find_child("SuccessPlayer")
-	player.play()
 	_planets_solved.append(planet)
 	_set_new_radius()
-	_save()
+	success_and_save()
 	
+	if len(_planets_solved) >= len(all_planets):
+		start_credits()
+
+func get_world():
+	var nested = get_node("/root/Intro/SubViewportContainer/SubViewport/World")
+	if nested:
+		return nested
+	return get_node("/root/World")
+
 func success_and_save():
-	var player: AudioStreamPlayer = get_node("/root/Intro/SubViewportContainer/SubViewport/World/SuccessPlayer")
+	var player: AudioStreamPlayer = get_world().get_node("SuccessPlayer")
 	player.play()
 	_save()
 
@@ -125,7 +147,7 @@ func _ready():
 	update_cookie_data()
 	
 	
-	if FileAccess.file_exists(_save_file_name):
+	if FileAccess.file_exists(_save_file_name) and false:
 		var save_file = FileAccess.open(_save_file_name, FileAccess.READ)
 		var json_string = save_file.get_line().strip_edges()
 		print("exists", json_string)

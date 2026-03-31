@@ -27,7 +27,7 @@ func _on_body_exited(body):
 func _on_message(content: String, is_voice: bool, uid: String):
 	if content.to_lower() == "uno"  && inside && !GameState.is_step_solved("uno_solved") && \
 	GameState.is_step_solved("uno_card_found"):
-		
+		WSClient.emit_message_consumed(content)
 		var cardsprite = $"../UnoCard/Sprite2D"
 		GameState.solve_step("uno_solved")
 		var tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT).set_parallel(true)

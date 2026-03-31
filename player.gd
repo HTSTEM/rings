@@ -13,6 +13,7 @@ var directions: Dictionary[String, Vector2] = {}
 var other_animations: Array[String] = []
 # avoid circulars (not actually sure if this is needed)
 var randomizing_anim: bool = false
+@onready var recent_command = preload("res://recent_command.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,6 +32,7 @@ func _ready():
 			directions[substr] = _base_directions[x] * pct
 	# im listening
 	WSClient.chat_message.connect(_on_chat_message)
+	WSClient.consumed_message.connect(_on_consumed_message)
 
 func _unhandled_key_input(event):
 	if event is InputEventKey:
@@ -41,7 +43,7 @@ func _unhandled_key_input(event):
 			elif event.keycode == KEY_ESCAPE:
 				DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED) 
 			elif event.keycode == KEY_ENTER:
-				WSClient.emit_message(debug_msg)
+				WSClient.emit_message("{debug}" + debug_msg)
 				debug_msg = ""
 			elif event.keycode == KEY_BACKSPACE:
 				if len(debug_msg) == 1:
@@ -56,6 +58,7 @@ func _unhandled_key_input(event):
 			cmd.text = debug_msg
 
 func _on_chat_message(content: String, is_voice: bool, user_id: String):
+	var original_content = content
 	# speed boost for all caps lol
 	var speed = base_speed
 	for x in range(len(content)):
@@ -63,9 +66,14 @@ func _on_chat_message(content: String, is_voice: bool, user_id: String):
 			speed *= 1.1
 
 	content = content.to_lower()
-	
+	if user_id == "debug" and content == "credits":
+		GameState.start_credits()
+		return
+
 	if content not in directions:
 		return
+	
+	WSClient.emit_message_consumed(original_content)
 
 	var current_velocity = Vector2(velocity)
 	var set_velocity = Vector2(directions[content]) * speed
@@ -76,6 +84,14 @@ func _on_chat_message(content: String, is_voice: bool, user_id: String):
 	
 	var max_y = maxf(abs(current_velocity.y), abs(set_velocity.y))
 	velocity.y = clampf(velocity.y, -max_y, max_y)
+
+func _on_consumed_message(content: String):
+	var new_command = recent_command.instantiate()
+	new_command.set_text(content)
+	var current_child = $RecentCommands.get_child(0)
+	$RecentCommands.remove_child(current_child)
+	new_command.add_child(current_child)
+	$RecentCommands.add_child(new_command)
 
 func _physics_process(delta):
 	# TODO: can i add these as colision shapes at runtime? doesnt matter too much

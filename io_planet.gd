@@ -15,9 +15,15 @@ func handle_input(value: String, is_voice: bool, user_id: String):
 	if GameState.is_solved("math%d" % current_level) or is_voice:
 		return
 
+	var original_content = value
+
 	var label: Label = get_node("Label")
 	value = value.to_lower()
 	value = whitespace.sub(value, "", true)
+	while value.begins_with("$"):
+		value = value.substr(1)
+	while value.ends_with("$"):
+		value = value.substr(0, len(value) - 1)
 	if value.begins_with(fn_prefix):
 		value = value.substr(len(fn_prefix))
 	if value.begins_with(alt_fn_prefix):
@@ -25,12 +31,14 @@ func handle_input(value: String, is_voice: bool, user_id: String):
 	value = value.substr(0, 20)
 	
 	if value.is_valid_float():
+		WSClient.emit_message_consumed(original_content)
 		var x = roundf(value.to_float() * 10.0) / 10.0
 		var result = ((2 * pow(x, 2)) - (10 * x) + 5) if current_level == 0 else (previous_result + x)
 		previous_result = result
 		label.text = "f(%.1d)=%.1d" % [x, result]
 	# TODO: tokenize?
 	elif value in target_expressions[current_level]:
+		WSClient.emit_message_consumed(original_content)
 		GameState.solve("math%d" % current_level)
 		$Fader.fade(false)
 		label.text = (fn_prefix if current_level != 1 else "") + target_expressions[current_level][0]
@@ -46,7 +54,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	available_level = 0
-	if len(GameState._planets_solved) > 2:
+	if len(GameState._planets_solved) > 3:
 		available_level += 1
 	var is_solved = GameState.is_solved("math%d" % current_level)
 	if is_solved:
