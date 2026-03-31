@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://s780kkaymnck"
+path="res://.godot/imported/audio meta 1.wav-920e87dbf14fb5ddd1ce15ed14555453.sample"
+
+[deps]
+
+source_file="res://ShopItems/audio meta 1.wav"
+dest_files=["res://.godot/imported/audio meta 1.wav-920e87dbf14fb5ddd1ce15ed14555453.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

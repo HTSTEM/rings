@@ -97,9 +97,10 @@ func _on_chat_message(content: String, is_voice: bool, user_id: String):
 func _on_consumed_message(content: String):
 	var new_command = recent_command.instantiate()
 	new_command.set_text(content)
-	var current_child = $RecentCommands.get_child(0)
-	$RecentCommands.remove_child(current_child)
-	new_command.add_child(current_child)
+	if $RecentCommands.get_child_count() > 0:
+		var current_child = $RecentCommands.get_child(0)
+		$RecentCommands.remove_child(current_child)
+		new_command.add_child(current_child)
 	$RecentCommands.add_child(new_command)
 
 func _process(delta):

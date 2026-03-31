@@ -43,18 +43,26 @@
 [ext_resource type="Texture2D" uid="uid://dv2pnqs5cdpwg" path="res://tessie/011.png" id="15_gggvi"]
 [ext_resource type="Texture2D" uid="uid://bplycxa5csx5p" path="res://tessie/012.png" id="16_w44yn"]
 [ext_resource type="Texture2D" uid="uid://cxjumlbovqtnn" path="res://tessie/013.png" id="17_6ah6f"]
+[ext_resource type="AudioStream" uid="uid://b0dievka6ojml" path="res://ShopItems/audio mpreg 1.wav" id="17_312do"]
 [ext_resource type="Texture2D" uid="uid://2vs8sas2nyah" path="res://tessie/014.png" id="18_g1i3r"]
+[ext_resource type="AudioStream" uid="uid://b1lokjhh64i74" path="res://ShopItems/audio mpreg 2.wav" id="18_hfaud"]
 [ext_resource type="Script" uid="uid://dpymgaevnkbh5" path="res://glow_animator.gd" id="18_w4lh7"]
 [ext_resource type="Script" uid="uid://rv8n5bsqftcq" path="res://tutorial_planet.gd" id="19_kkgr2"]
 [ext_resource type="Texture2D" uid="uid://ui2wfavba6ej" path="res://tessie/015.png" id="19_my276"]
+[ext_resource type="AudioStream" uid="uid://cmcowvydypjx8" path="res://ShopItems/audio xkcd 1.wav" id="20_8gw3t"]
+[ext_resource type="AudioStream" uid="uid://bcelhhwdyduxg" path="res://ShopItems/audio xkcd 2.wav" id="21_iyplw"]
 [ext_resource type="Texture2D" uid="uid://dabw220qayq7q" path="res://tutorialplanetunfinished.png" id="22_iett8"]
+[ext_resource type="AudioStream" uid="uid://ud6mx8ftaxpi" path="res://ShopItems/audio frans 1.wav" id="23_iad0i"]
 [ext_resource type="Texture2D" uid="uid://urasj3msie2l" path="res://tutorialplanetsuccess.png" id="23_r5m4j"]
+[ext_resource type="AudioStream" uid="uid://did28wthhr58h" path="res://ShopItems/audio frans 2.wav" id="24_fl4at"]
 [ext_resource type="Texture2D" uid="uid://b6enkdqm6typv" path="res://uno_card_rabbids.png" id="26_7fs00"]
+[ext_resource type="AudioStream" uid="uid://s780kkaymnck" path="res://ShopItems/audio meta 1.wav" id="26_76eeb"]
 [ext_resource type="Script" uid="uid://gmj5efdxi4sf" path="res://uno_card_new.gd" id="26_415my"]
 [ext_resource type="Script" uid="uid://winhqxablu5x" path="res://uno_path.gd" id="26_eewsi"]
 [ext_resource type="Script" uid="uid://ueounwe041fd" path="res://mus_moons_planet.gd" id="26_p5g01"]
 [ext_resource type="Texture2D" uid="uid://bet6iiuws1x3c" path="res://hellplanetunfinished.png" id="26_r5m4j"]
 [ext_resource type="Script" uid="uid://do8bhrgrby6ck" path="res://games_planet.gd" id="26_vsnf8"]
+[ext_resource type="AudioStream" uid="uid://c58e8wlepedvb" path="res://ShopItems/audio meta 2.wav" id="27_d7cwp"]
 [ext_resource type="Texture2D" uid="uid://crkqocdb523f5" path="res://hellplanetsuccess.png" id="27_e77ka"]
 [ext_resource type="Script" uid="uid://mqfd1evl4vam" path="res://moons_ring.gd" id="27_p5g01"]
 [ext_resource type="Script" uid="uid://bbewo1218pmun" path="res://uno_region.gd" id="27_t55hq"]
@@ -63,8 +71,10 @@
 [ext_resource type="PackedScene" uid="uid://cotbrunvp2y2y" path="res://gleepglorp.tscn" id="28_o3ebs"]
 [ext_resource type="Script" uid="uid://b8uprpuxf6yqh" path="res://xword_region.gd" id="28_vv6ac"]
 [ext_resource type="Texture2D" uid="uid://cvd2lhbw8c3hw" path="res://gamesplanet.png" id="29_su0yx"]
+[ext_resource type="AudioStream" uid="uid://v0jw8xtknsml" path="res://ShopItems/audio chess 1.wav" id="29_svgmy"]
 [ext_resource type="Script" uid="uid://bl2kjn273dkh7" path="res://puzzles_sprites.gd" id="29_v27xk"]
 [ext_resource type="Script" uid="uid://cn306as2rgixj" path="res://chess_region.gd" id="29_vf1x1"]
+[ext_resource type="AudioStream" uid="uid://racltmllaxcx" path="res://ShopItems/audio chess 2.wav" id="30_obhsp"]
 [ext_resource type="Script" uid="uid://dhl322mkt8vls" path="res://mus_moon.gd" id="30_qm10a"]
 [ext_resource type="PackedScene" uid="uid://b1eydxnb2hrxc" path="res://wordle_lane.tscn" id="30_sedwk"]
 [ext_resource type="AudioStream" uid="uid://c7g727i35hl34" path="res://floraphonic-glass-clink-2-184006.mp3" id="31_qm10a"]
@@ -574,11 +584,23 @@ shape = SubResource("CircleShape2D_o3ebs")
 position = Vector2(-360, -314)
 texture = ExtResource("5_k83mh")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpText" unique_id=1999639317]
+stream = ExtResource("17_312do")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpText" unique_id=2115146419]
+stream = ExtResource("18_hfaud")
+
 [node name="GleepGlorpImage" parent="Level/StarPlanet" unique_id=709080614 instance=ExtResource("28_o3ebs")]
 position = Vector2(221, -394)
 item = "image"
 texture = ExtResource("6_gggvi")
 offset = 0.4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpImage" unique_id=4576403]
+stream = ExtResource("20_8gw3t")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpImage" unique_id=299955703]
+stream = ExtResource("21_iyplw")
 
 [node name="GleepGlorpVideo" parent="Level/StarPlanet" unique_id=1292021252 instance=ExtResource("28_o3ebs")]
 position = Vector2(470, -32)
@@ -586,17 +608,35 @@ item = "video"
 texture = ExtResource("7_w44yn")
 offset = 0.8
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpVideo" unique_id=1857290367]
+stream = ExtResource("23_iad0i")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpVideo" unique_id=1591496664]
+stream = ExtResource("24_fl4at")
+
 [node name="GleepGlorpMeta" parent="Level/StarPlanet" unique_id=1946065263 instance=ExtResource("28_o3ebs")]
 position = Vector2(218, 407)
 item = "meta"
 texture = ExtResource("8_6ah6f")
 offset = 1.2
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpMeta" unique_id=1610748109]
+stream = ExtResource("26_76eeb")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpMeta" unique_id=1890217001]
+stream = ExtResource("27_d7cwp")
+
 [node name="GleepGlorpChess" parent="Level/StarPlanet" unique_id=341663748 instance=ExtResource("28_o3ebs")]
 position = Vector2(-463, 275)
 item = "chess"
 texture = ExtResource("9_g1i3r")
 offset = 0.8
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpChess" unique_id=848543369]
+stream = ExtResource("29_svgmy")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpChess" unique_id=290819951]
+stream = ExtResource("30_obhsp")
 
 [node name="Label" type="Label" parent="Level/StarPlanet" unique_id=147964120]
 texture_filter = 1
@@ -1141,6 +1181,12 @@ layout_mode = 2
 position = Vector2(278, 202)
 item = "805"
 texture = ExtResource("68_awgtj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/WordlePlanet/GleepGlorpARG" unique_id=248954378]
+stream = ExtResource("20_8gw3t")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Level/WordlePlanet/GleepGlorpARG" unique_id=706022268]
+stream = ExtResource("21_iyplw")
 
 [node name="GleepGlorpComplete" parent="Level/WordlePlanet" unique_id=1744297358 instance=ExtResource("28_o3ebs")]
 position = Vector2(278, 202)

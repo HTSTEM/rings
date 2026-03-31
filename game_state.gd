@@ -152,7 +152,7 @@ func _ready():
 	update_cookie_data()
 	
 	
-	if FileAccess.file_exists(_save_file_name) and false:
+	if FileAccess.file_exists(_save_file_name):
 		var save_file = FileAccess.open(_save_file_name, FileAccess.READ)
 		var json_string = save_file.get_line().strip_edges()
 		print("exists", json_string)
