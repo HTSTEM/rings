@@ -78,19 +78,23 @@ func _set_new_radius():
 	_radius_animation_elapsed = 0
 	print("stuff ", _planets_solved, " ", len(_planets_solved), " ", _target_progression_radius, " ", _radius_animating_from, " ", _radius_animation_elapsed)
 
+func get_player() -> AudioStreamPlayer:
+	var player: AudioStreamPlayer = get_node("/root/Intro/SubViewportContainer/SubViewport/World/SuccessPlayer")
+	if player == null:
+		player = get_node("/root/World/SuccessPlayer")
+	return player
+
 func solve(planet: String):
 	if planet in _planets_solved:
 		return
 	# TODO: this maybe could be positional, we'd have to get a player on each planet for not much payoff
-	var player: AudioStreamPlayer = get_node("/root/Intro/SubViewportContainer/SubViewport/World").find_child("SuccessPlayer")
-	player.play()
+	get_player().play()
 	_planets_solved.append(planet)
 	_set_new_radius()
 	_save()
 	
 func success_and_save():
-	var player: AudioStreamPlayer = get_node("/root/Intro/SubViewportContainer/SubViewport/World/SuccessPlayer")
-	player.play()
+	get_player().play()
 	_save()
 
 func solve_step(step: String):

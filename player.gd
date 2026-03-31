@@ -13,6 +13,7 @@ var directions: Dictionary[String, Vector2] = {}
 var other_animations: Array[String] = []
 # avoid circulars (not actually sure if this is needed)
 var randomizing_anim: bool = false
+var tessie_on_ice: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -69,13 +70,15 @@ func _on_chat_message(content: String, is_voice: bool, user_id: String):
 
 	var current_velocity = Vector2(velocity)
 	var set_velocity = Vector2(directions[content]) * speed
-	velocity += set_velocity
+	if tessie_on_ice: current_velocity = orthogonalize(current_velocity)
+	if !tessie_on_ice || (tessie_on_ice && velocity.length() <= 0.1): velocity += set_velocity
 	
 	var max_x = maxf(abs(current_velocity.x), abs(set_velocity.x))
 	velocity.x = clampf(velocity.x, -max_x, max_x)
 	
 	var max_y = maxf(abs(current_velocity.y), abs(set_velocity.y))
 	velocity.y = clampf(velocity.y, -max_y, max_y)
+	
 
 func _physics_process(delta):
 	# TODO: can i add these as colision shapes at runtime? doesnt matter too much
@@ -122,18 +125,19 @@ func _physics_process(delta):
 			
 		t_last_collison = t_current
 	
-	var drag = base_speed
-	
-	if velocity.x < 0:
-		velocity.x = min(0, velocity.x + (delta * drag))
-	elif velocity.x > 0:
-		velocity.x = max(0, velocity.x - (delta * drag))
+	if !tessie_on_ice:
+		var drag = base_speed
 		
-	if velocity.y < 0:
-		velocity.y = min(0, velocity.y + (delta * drag))
-	elif velocity.y > 0:
-		velocity.y = max(0, velocity.y - (delta * drag))
-	
+		if velocity.x < 0:
+			velocity.x = min(0, velocity.x + (delta * drag))
+		elif velocity.x > 0:
+			velocity.x = max(0, velocity.x - (delta * drag))
+			
+		if velocity.y < 0:
+			velocity.y = min(0, velocity.y + (delta * drag))
+		elif velocity.y > 0:
+			velocity.y = max(0, velocity.y - (delta * drag))
+		
 	var sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
 	sprite.speed_scale = 1 + (max(abs(velocity.x), abs(velocity.y)) / base_speed * 5)
 
@@ -157,3 +161,21 @@ func _on_animated_sprite_2d_frame_changed():
 	randomizing_anim = true
 	$AnimatedSprite2D.animation = new_animation
 	$AnimatedSprite2D.frame = 8
+
+
+func _on_ice_planet_body_entered(body: Node2D) -> void:
+	if body.name != "Player":
+		return
+	tessie_on_ice = true
+
+
+func _on_ice_planet_body_exited(body: Node2D) -> void:
+	if body.name != "Player":
+		return
+	tessie_on_ice = false
+
+func orthogonalize(v: Vector2):
+	if abs(v.x) > abs(v.y):
+		return Vector2(v.x, 0)
+	else:
+		return Vector2(0, v.y)

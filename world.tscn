@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://btisp5pgag4ms"]
+[gd_scene format=4 uid="uid://btisp5pgag4ms"]
 
 [ext_resource type="Texture2D" uid="uid://dihmlethsr7fn" path="res://background-main.png" id="1_6ah6f"]
 [ext_resource type="Script" uid="uid://b8mlot14bs6mt" path="res://player.gd" id="1_f3sb7"]
@@ -110,6 +110,9 @@
 [ext_resource type="Texture2D" uid="uid://c3kfq07phr0k3" path="res://TessieTachyon/014.png" id="80_1amq5"]
 [ext_resource type="Texture2D" uid="uid://cdc1320hn0jvu" path="res://TessieTachyon/015.png" id="81_oosws"]
 [ext_resource type="Script" uid="uid://dscgs1r4ktevn" path="res://camera_2d.gd" id="88_xkj61"]
+[ext_resource type="Texture2D" uid="uid://cwb2iv4v5qbq0" path="res://iceplanet.png" id="105_aq2cj"]
+[ext_resource type="Script" uid="uid://bqd7eye0ns1w4" path="res://ice_walls.gd" id="107_4ll5h"]
+[ext_resource type="Script" uid="uid://74clxb3wx2mj" path="res://ice_ring.gd" id="108_t63o8"]
 
 [sub_resource type="Gradient" id="Gradient_6ah6f"]
 offsets = PackedFloat32Array(0.1746988, 0.8614458)
@@ -172,9 +175,9 @@ radius = 32.984844
 
 [sub_resource type="Curve2D" id="Curve2D_e0aah"]
 _data = {
-"points": PackedVector2Array(-432.5056, 119.24049, 432.5056, -119.24049, 2561, 358, -174.60904, 261.91354, 174.60904, -261.91354, 3441, 469, 9.189949, 321.64822, -9.189949, -321.64822, 3444, -761, 670.70197, -96.71329, -670.70197, 96.71329, 2911, -1505, 539.49854, 184.15576, -539.49854, -184.15576, 1880, -2478, 187.26343, 282.07098, -187.26343, -282.07098, 434, -2318, 220.46815, -28.531174, -220.46815, 28.531174, -471, -1960, 176.37453, -51.874863, -176.37453, 51.874863, -989, -2102, -54.468605, -158.21832, 54.468605, 158.21832, -1700, -1121, 46.687374, -212.68694, -46.687374, 212.68694, -1349, -874, 68.59486, 203.64098, -68.59486, -203.64098, -2172, -131, 38.584606, -182.2051, -38.584606, 182.2051, -2410, -419, 64.30768, -237.9384, -64.30768, 237.9384, -2414, 437, -212.21533, -205.78458, 212.21533, 205.78458, -2283, 914, -180.0615, -19.292303, 180.0615, 19.292303, -493, 1669, -182.2051, -10.717946, 182.2051, 10.717946, -180, 1554, -233.65123, -173.63074, 233.65123, 173.63074, 218, 2061, -177.91791, 111.466644, 177.91791, -111.466644, 1661, 2046, -210.97684, -143.3354, 210.97684, 143.3354, 2038, 1306, -35.53719, 158.67767, 35.53719, -158.67767, 2046, 521, -62.727272, 43.63636, 62.727272, -43.63636, 2431, 462, 0, 0, 0, 0, 2561, 358)
+"points": PackedVector2Array(-432.5056, 119.24049, 432.5056, -119.24049, 2561, 358, -174.60904, 261.91354, 174.60904, -261.91354, 3441, 469, 9.189949, 321.64822, -9.189949, -321.64822, 3444, -761, 670.70197, -96.71329, -670.70197, 96.71329, 2911, -1505, 539.49854, 184.15576, -539.49854, -184.15576, 1880, -2478, 187.26343, 282.07098, -187.26343, -282.07098, 434, -2318, 220.46815, -28.531174, -220.46815, 28.531174, -471, -1960, 176.37453, -51.874863, -176.37453, 51.874863, -1446, -2614, -54.468605, -158.21832, 54.468605, 158.21832, -3070, -2464, 46.687374, -212.68694, -46.687374, 212.68694, -3037, -946, -136.47075, -212.28784, 136.47075, 212.28784, -2780, 166, -57.766945, 249.1312, 57.766945, -249.1312, -1951, 318, -19.876911, -230.03725, 19.876911, 230.03725, -2385, 106, 64.30768, -237.9384, -64.30768, 237.9384, -2562, 555, -212.21533, -205.78458, 212.21533, 205.78458, -2283, 914, -180.0615, -19.292303, 180.0615, 19.292303, -493, 1669, -182.2051, -10.717946, 182.2051, 10.717946, -180, 1554, -233.65123, -173.63074, 233.65123, 173.63074, 218, 2061, -177.91791, 111.466644, 177.91791, -111.466644, 1661, 2046, -210.97684, -143.3354, 210.97684, 143.3354, 2038, 1306, -35.53719, 158.67767, 35.53719, -158.67767, 2046, 521, -62.727272, 43.63636, 62.727272, -43.63636, 2431, 462, 0, 0, 0, 0, 2561, 358)
 }
-point_count = 22
+point_count = 23
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e0aah"]
 
@@ -237,6 +240,27 @@ radius = 163.13307
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p5g01"]
 radius = 108.65515
 height = 448.65942
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ll5h"]
+radius = 148.66296
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4ll5h"]
+absorbent = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ll5h"]
+texture = ExtResource("5_remcq")
+texture_region_size = Vector2i(12, 12)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
+
+[sub_resource type="TileSet" id="TileSet_t63o8"]
+tile_size = Vector2i(12, 12)
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_4ll5h")
+sources/0 = SubResource("TileSetAtlasSource_4ll5h")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aq2cj"]
+size = Vector2(32.1439, 32.143906)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yx0jh"]
 animations = [{
@@ -378,6 +402,7 @@ playback_type = 1
 parameters/looping = true
 
 [node name="SuccessPlayer" type="AudioStreamPlayer" parent="." unique_id=760991297]
+unique_name_in_owner = true
 stream = ExtResource("2_55kwu")
 volume_db = 10.0
 max_polyphony = 5
@@ -749,6 +774,7 @@ volume_db = 1.0
 position = Vector2(-264, 164)
 curve = SubResource("Curve2D_e0aah")
 script = ExtResource("26_eewsi")
+path_speed = 193
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Level/UnoPath" unique_id=1038832007]
 position = Vector2(2561, 358)
@@ -1059,11 +1085,64 @@ text = "Aloud you must speak it."
 horizontal_alignment = 1
 script = ExtResource("48_tj74d")
 
+[node name="IcePlanet" type="Area2D" parent="Level" unique_id=817110578]
+position = Vector2(-1320.0001, -96)
+scale = Vector2(5.4773846, 5.4773846)
+
+[node name="IcePlanet" type="Sprite2D" parent="Level/IcePlanet" unique_id=2146616657]
+scale = Vector2(1.3068061, 1.3068061)
+texture = ExtResource("105_aq2cj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/IcePlanet" unique_id=1338123250]
+visible = false
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CircleShape2D_4ll5h")
+
+[node name="Ice" type="Node2D" parent="Level/IcePlanet" unique_id=306419510]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Level/IcePlanet/Ice" unique_id=850427154]
+scale = Vector2(0.99999994, 0.99999994)
+tile_map_data = PackedByteArray("AAAIAAcAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAD2/wYAAAAAAAAAAAD3/wcAAAAAAAAAAAD3/wAAAAAAAAAAAAD0/wEAAAAAAAAAAAD1/wQAAAAAAAAAAAD0/wMAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAkAAAAAAAAAAAAIAAgAAAAAAAAAAAAHAAkAAAAAAAAAAAD6/wgAAAAAAAAAAAD7/wkAAAAAAAAAAAD8//j/AAAAAAAAAAD7//f/AAAAAAAAAAD3//j/AAAAAAAAAAD4//f/AAAAAAAAAAD4//3/AAAAAAAAAAD1//z/AAAAAAAAAAD2//7/AAAAAAAAAAD1//3/AAAAAAAAAAD1//r/AAAAAAAAAAD1/wAAAAAAAAAAAAAEAP//AAAAAAAAAAAFAAAAAAAAAAAAAAADAP7/AAAAAAAAAAAHAAUAAAAAAAAAAAABAAcAAAAAAAAAAAAJAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAIAAAAAAAAAAAAAAAcAAAAAAAAAAAD//wcAAAAAAAAAAAD3////AAAAAAAAAAD4/wgAAAAAAAAAAAD5/wcAAAAAAAAAAAD6//7/AAAAAAAAAAD5//3/AAAAAAAAAAD9//n/AAAAAAAAAAD8/wMAAAAAAAAAAAD5/wIAAAAAAAAAAAAAAAEAAAAAAAAAAAD+//r/AAAAAAAAAAD///v/AAAAAAAAAAD9/wgAAAAAAAAAAAD+/wkAAAAAAAAAAAD//wgAAAAAAAAAAAD4/wEAAAAAAAAAAAD3//n/AAAAAAAAAAD8/wIAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wIAAAAAAAAAAAD2//n/AAAAAAAAAAD///7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP//AAAAAAAAAAD8/wgAAAAAAAAAAAAKAP3/AAAAAAAAAAALAPz/AAAAAAAAAAAKAPv/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_t63o8")
+
+[node name="Walls" type="Node2D" parent="Level/IcePlanet" unique_id=1942749450 node_paths=PackedStringArray("wall_obj")]
+script = ExtResource("107_4ll5h")
+radius = 145.0
+walls_count = 75
+wall_obj = NodePath("WallBit")
+cutout_start = 0.5323254218582705
+tessie_entrance_size = 18.09
+
+[node name="WallBit" type="StaticBody2D" parent="Level/IcePlanet/Walls" unique_id=53857403]
+visible = false
+scale = Vector2(0.25, 0.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/IcePlanet/Walls/WallBit" unique_id=1994564967]
+shape = SubResource("RectangleShape2D_aq2cj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/IcePlanet/Walls/WallBit" unique_id=244870137]
+texture = ExtResource("5_remcq")
+
+[node name="Area2D" type="Area2D" parent="Level/IcePlanet" unique_id=2010064199]
+scale = Vector2(0.183, 0.183)
+script = ExtResource("108_t63o8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Level/IcePlanet/Area2D" unique_id=1206724761]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_iett8")
+autoplay = "default"
+frame_progress = 0.060263164
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/IcePlanet/Area2D" unique_id=1720401157]
+shape = SubResource("CircleShape2D_75cpn")
+
 [node name="Player" type="CharacterBody2D" parent="Level" unique_id=743382705]
 unique_name_in_owner = true
 script = ExtResource("1_f3sb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Level/Player" unique_id=2018646344]
+z_index = 1
 scale = Vector2(0.6666667, 0.6666667)
 sprite_frames = SubResource("SpriteFrames_yx0jh")
 animation = &"tachyon"
@@ -1076,6 +1155,7 @@ shape = SubResource("CircleShape2D_tlwt5")
 script = ExtResource("88_xkj61")
 
 [node name="DebugCommand" type="Label" parent="Level/Player" unique_id=591670123]
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1190,8 +1270,10 @@ text = "0"
 [node name="IntroFadeIn" type="ColorRect" parent="UI" unique_id=631552756]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(1920, 1080)
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = 18.0
+offset_top = -133.0
+offset_right = 1938.0
+offset_bottom = 947.0
 color = Color(0.078431375, 0.22745098, 0.1254902, 1)
 
 [connection signal="body_entered" from="Level/GamesPlanet/UnoRegion" to="Level/GamesPlanet/UnoRegion" method="_on_body_entered"]
@@ -1201,6 +1283,9 @@ color = Color(0.078431375, 0.22745098, 0.1254902, 1)
 [connection signal="body_entered" from="Level/GamesPlanet/ChessRegion" to="Level/GamesPlanet/ChessRegion" method="_on_body_entered"]
 [connection signal="body_exited" from="Level/GamesPlanet/ChessRegion" to="Level/GamesPlanet/ChessRegion" method="_on_body_exited"]
 [connection signal="body_entered" from="Level/WordlePlanet/Area2D" to="Level/WordlePlanet/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Level/IcePlanet" to="Level/Player" method="_on_ice_planet_body_entered"]
+[connection signal="body_exited" from="Level/IcePlanet" to="Level/Player" method="_on_ice_planet_body_exited"]
+[connection signal="body_entered" from="Level/IcePlanet/Area2D" to="Level/IcePlanet/Area2D" method="_on_body_entered"]
 [connection signal="frame_changed" from="Level/Player/AnimatedSprite2D" to="Level/Player" method="_on_animated_sprite_2d_frame_changed"]
 
 [editable path="Level/WordlePlanet/BluePlanetMask/WordleLane"]
