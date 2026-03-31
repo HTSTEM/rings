@@ -23,7 +23,7 @@ func _on_body_exited(body):
 	ui.hide_chess()
 	inside = false
 
-func _on_message(content: String, is_voice: bool) -> void:
+func _on_message(content: String, is_voice: bool, uid: String) -> void:
 	if inside && content == "Rh4#":
 		ui.show_chess(true)
 		GameState.solve_step("chess_solved")

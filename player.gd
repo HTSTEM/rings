@@ -31,7 +31,6 @@ func _ready():
 			directions[substr] = _base_directions[x] * pct
 	# im listening
 	WSClient.chat_message.connect(_on_chat_message)
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func _unhandled_key_input(event):
 	if event is InputEventKey:
@@ -64,13 +63,7 @@ func _on_chat_message(content: String, is_voice: bool, user_id: String):
 			speed *= 1.1
 
 	content = content.to_lower()
-	if content == "clear":
-		var vp_container = get_node("%SubViewportContainer")
-		var tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN).set_parallel(false)
-		tween.tween_property(vp_container.material, "shader_parameter/u_offset", -2.5, 2.7)
-		tween.tween_callback(func(): vp_container.material.shader = preload("res://no_fx.gdshader"))
-		tween.tween_method(func(val): vp_container.material.set_shader_parameter("progress", val), 0.0, 1.0, 2).set_delay(-.3)
-
+	
 	if content not in directions:
 		return
 

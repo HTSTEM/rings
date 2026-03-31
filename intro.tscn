@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://c4tx0apmcrq0k" path="res://PreGame/SmokePuff.png" id="4_dpxxx"]
 [ext_resource type="PackedScene" uid="uid://btisp5pgag4ms" path="res://world.tscn" id="6_dk2oa"]
 [ext_resource type="FontFile" uid="uid://dgpshunxn148b" path="res://c15thytype.otf" id="6_dpxxx"]
+[ext_resource type="Shader" uid="uid://ci4wit3m61md0" path="res://no_fx.gdshader" id="6_h0kys"]
+[ext_resource type="Material" uid="uid://cqhk61655galu" path="res://dither_mat.tres" id="7_7ufi4"]
 [ext_resource type="Theme" uid="uid://dtkd5t7ylfrdq" path="res://theme.tres" id="7_dk2oa"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7ufi4"]
@@ -24,7 +26,11 @@ damping_max = 62.904003
 scale_max = 3.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dk2oa"]
-viewport_path = NodePath("SubViewport")
+viewport_path = NodePath("SubViewportContainer/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d0rr7"]
+shader = ExtResource("6_h0kys")
+shader_parameter/progress = 0.0
 
 [sub_resource type="Theme" id="Theme_dk2oa"]
 default_font = ExtResource("6_dpxxx")
@@ -216,19 +222,19 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("WorldPreview:visible")
+tracks/15/path = NodePath("TextBG:modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("TextBG:modulate")
+tracks/16/path = NodePath("VBoxContainer:modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -240,14 +246,38 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("VBoxContainer:modulate")
+tracks/17/path = NodePath("SubViewportContainer:material:shader_parameter/progress")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e-05),
+"update": 0,
+"values": [0.0]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("SubViewportContainer:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("SubViewportContainer:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_dk2oa"]
@@ -436,19 +466,19 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("WorldPreview:visible")
+tracks/15/path = NodePath("TextBG:modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0, 39.55833),
+"times": PackedFloat32Array(44, 48),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("TextBG:modulate")
+tracks/16/path = NodePath("VBoxContainer:modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -460,14 +490,50 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("VBoxContainer:modulate")
+tracks/17/path = NodePath("WorldPreview:visible")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(44, 48),
+"times": PackedFloat32Array(39.493427),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("SubViewportContainer:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(39.466667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("SubViewportContainer:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(39.5231),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("SubViewportContainer:material:shader_parameter/progress")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(51.1, 79.86667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [0.6630000314925, 0.6630000314925]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ufi4"]
@@ -512,15 +578,28 @@ theme_override_colors/font_outline_color = Color(0.078431375, 0.22745098, 0.1254
 theme_override_constants/outline_size = 16
 text = "T-30:00"
 
-[node name="SubViewport" type="SubViewport" parent="." unique_id=2109663112]
-size = Vector2i(1216, 896)
-
-[node name="World" parent="SubViewport" unique_id=636115796 instance=ExtResource("6_dk2oa")]
-
-[node name="WorldPreview" type="Sprite2D" parent="." unique_id=1955151911]
-visible = false
+[node name="WorldPreview" type="Sprite2D" parent="." unique_id=939893206]
+unique_name_in_owner = true
+material = ExtResource("7_7ufi4")
 position = Vector2(704, 544)
 texture = SubResource("ViewportTexture_dk2oa")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1853856309]
+modulate = Color(1, 1, 1, 0)
+clip_children = 1
+material = SubResource("ShaderMaterial_d0rr7")
+offset_left = 96.0
+offset_top = 96.0
+offset_right = 1312.0
+offset_bottom = 992.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1840840999]
+handle_input_locally = false
+size = Vector2i(1216, 896)
+render_target_clear_mode = 1
+render_target_update_mode = 4
+
+[node name="World" parent="SubViewportContainer/SubViewport" unique_id=526356615 instance=ExtResource("6_dk2oa")]
 
 [node name="TextBG" type="ColorRect" parent="." unique_id=1995139993]
 offset_left = 51.0

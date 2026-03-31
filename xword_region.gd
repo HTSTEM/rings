@@ -41,7 +41,7 @@ func _on_body_exited(body):
 	ui.hide_xword()
 	inside = false
 
-func _on_message(content: String, is_voice: bool):
+func _on_message(content: String, is_voice: bool, uid: String):
 	content = content.to_lower()
 	if inside:
 		if words.has(content) && !words[content]:

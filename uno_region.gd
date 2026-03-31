@@ -24,7 +24,7 @@ func _on_body_exited(body):
 	inside = false
 
 
-func _on_message(content: String, is_voice: bool):
+func _on_message(content: String, is_voice: bool, uid: String):
 	if content.to_lower() == "uno"  && inside && !GameState.is_step_solved("uno_solved") && \
 	GameState.is_step_solved("uno_card_found"):
 		
