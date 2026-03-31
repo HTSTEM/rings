@@ -148,6 +148,22 @@
 [ext_resource type="Texture2D" uid="uid://cwb2iv4v5qbq0" path="res://iceplanet.png" id="105_aq2cj"]
 [ext_resource type="Script" uid="uid://cor6ieulyaf6g" path="res://ice_walls.gd" id="107_4ll5h"]
 [ext_resource type="Script" uid="uid://cppb031lnq6ae" path="res://ice_ring.gd" id="108_t63o8"]
+[ext_resource type="Texture2D" uid="uid://bj7522dasq1ov" path="res://TessieDunkyl/000.png" id="111_8vx13"]
+[ext_resource type="Texture2D" uid="uid://c3qac8qfrbtqg" path="res://TessieDunkyl/001.png" id="112_2dpke"]
+[ext_resource type="Texture2D" uid="uid://clvxbcmiiqon6" path="res://TessieDunkyl/002.png" id="113_k3a48"]
+[ext_resource type="Texture2D" uid="uid://0cu1e80ej2ua" path="res://TessieDunkyl/003.png" id="114_ewxxd"]
+[ext_resource type="Texture2D" uid="uid://b032dot5olgb5" path="res://TessieDunkyl/004.png" id="115_o5w76"]
+[ext_resource type="Texture2D" uid="uid://m22t4ygts8vd" path="res://TessieDunkyl/005.png" id="116_1ro08"]
+[ext_resource type="Texture2D" uid="uid://bghuvk6ani1t" path="res://TessieDunkyl/006.png" id="117_5igco"]
+[ext_resource type="Texture2D" uid="uid://b3y56q5bqjhbt" path="res://TessieDunkyl/007.png" id="118_p5d6e"]
+[ext_resource type="Texture2D" uid="uid://boq8vr281fu23" path="res://TessieDunkyl/008.png" id="119_e4j14"]
+[ext_resource type="Texture2D" uid="uid://fwm3v82rnqdc" path="res://TessieDunkyl/009.png" id="120_g8u6m"]
+[ext_resource type="Texture2D" uid="uid://c1q6h1fdjlku7" path="res://TessieDunkyl/010.png" id="121_x070g"]
+[ext_resource type="Texture2D" uid="uid://bcavoo8i6s4c0" path="res://TessieDunkyl/011.png" id="122_280wn"]
+[ext_resource type="Texture2D" uid="uid://capi0q2xyxpep" path="res://TessieDunkyl/012.png" id="123_pc4mp"]
+[ext_resource type="Texture2D" uid="uid://dqf0yocwprasp" path="res://TessieDunkyl/013.png" id="124_k1m7y"]
+[ext_resource type="Texture2D" uid="uid://d2xh4sgip1b01" path="res://TessieDunkyl/014.png" id="125_ewy8o"]
+[ext_resource type="Texture2D" uid="uid://ceafhg5kjq51p" path="res://TessieDunkyl/015.png" id="126_nq2gl"]
 
 [sub_resource type="Gradient" id="Gradient_6ah6f"]
 offsets = PackedFloat32Array(0.1746988, 0.8614458)
@@ -365,6 +381,59 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("111_8vx13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_2dpke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_k3a48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_ewxxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_o5w76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_1ro08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_5igco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_p5d6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_e4j14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_g8u6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_x070g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_280wn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_pc4mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_k1m7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_ewy8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_nq2gl")
+}],
+"loop": true,
+"name": &"dunkyl",
 "speed": 10.0
 }, {
 "frames": [{
@@ -1374,7 +1443,6 @@ script = ExtResource("1_f3sb7")
 z_index = 1
 scale = Vector2(0.6666667, 0.6666667)
 sprite_frames = SubResource("SpriteFrames_yx0jh")
-animation = &"tachyon"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player" unique_id=472172515]
