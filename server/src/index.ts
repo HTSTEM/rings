@@ -34,7 +34,6 @@ import tmi from 'tmi.js';
     // ws.send("hello");
   });
 
-  // --- Twitch chat listener ---
   if (process.env.TWITCH_CHANNEL) {
     const twitchClient = new tmi.Client({
       channels: [process.env.TWITCH_CHANNEL],
@@ -47,7 +46,6 @@ import tmi from 'tmi.js';
 
     twitchClient.on('message', (channel, userstate, message, self) => {
       if (self) return;
-      // Forward Twitch chat messages to WebSocket
       sendAll(`{${userstate['user-id'] || userstate.username}}${message}`);
     });
 
@@ -55,7 +53,6 @@ import tmi from 'tmi.js';
       console.error('Twitch client connection error:', err);
     });
   }
-  // --- End Twitch chat listener ---
 
   client.on(Events.ClientReady, (readyClient) => {
     console.log(`Logged in as ${readyClient.user.tag}!`);

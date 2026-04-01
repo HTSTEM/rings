@@ -135,19 +135,35 @@
 [ext_resource type="Texture2D" uid="uid://caiutckf2bvjn" path="res://TessieMilli/003.png" id="92_xh3xj"]
 [ext_resource type="Texture2D" uid="uid://dv8222rcnyp7y" path="res://TessieMilli/004.png" id="93_ofgfh"]
 [ext_resource type="Texture2D" uid="uid://cwjcefnw248rj" path="res://TessieMilli/005.png" id="94_6d1iy"]
+[ext_resource type="Texture2D" uid="uid://bwb5hfv4ech3v" path="res://TessieAvery/000.png" id="95_8lu0a"]
 [ext_resource type="Texture2D" uid="uid://bbk2qiskr8wp8" path="res://TessieMilli/006.png" id="95_awgtj"]
 [ext_resource type="Texture2D" uid="uid://c8gguw8esfru8" path="res://TessieMilli/007.png" id="96_mou3f"]
+[ext_resource type="Texture2D" uid="uid://chppavfx77tus" path="res://TessieAvery/001.png" id="96_stldt"]
 [ext_resource type="Texture2D" uid="uid://c3mk2hihkojx6" path="res://TessieMilli/008.png" id="97_8343f"]
+[ext_resource type="Texture2D" uid="uid://e0mk3pvtuhmi" path="res://TessieAvery/002.png" id="97_l7ljw"]
 [ext_resource type="Texture2D" uid="uid://d1tjdmkrao4ye" path="res://TessieMilli/009.png" id="98_2lhbq"]
+[ext_resource type="Texture2D" uid="uid://clcxvteao3poe" path="res://TessieAvery/003.png" id="98_ypf4k"]
 [ext_resource type="Texture2D" uid="uid://cbaeusl01fv47" path="res://TessieMilli/010.png" id="99_5wt1p"]
+[ext_resource type="Texture2D" uid="uid://1sicyn1dsjs6" path="res://TessieAvery/004.png" id="99_snffj"]
+[ext_resource type="Texture2D" uid="uid://dia8vkq8lxsfj" path="res://TessieAvery/005.png" id="100_i3h0w"]
 [ext_resource type="Texture2D" uid="uid://clfohdpmbig1e" path="res://TessieMilli/011.png" id="100_jtjv0"]
+[ext_resource type="Texture2D" uid="uid://51wm7aib11c6" path="res://TessieAvery/006.png" id="101_0iono"]
 [ext_resource type="Texture2D" uid="uid://k7aoqe6ybmab" path="res://TessieMilli/012.png" id="101_wiowo"]
 [ext_resource type="Texture2D" uid="uid://dny04jug7fxii" path="res://TessieMilli/013.png" id="102_1f132"]
+[ext_resource type="Texture2D" uid="uid://ddqku2q2btqbc" path="res://TessieAvery/007.png" id="102_f21vt"]
+[ext_resource type="Texture2D" uid="uid://c6q1ljmshm0ak" path="res://TessieAvery/008.png" id="103_p4psn"]
 [ext_resource type="Texture2D" uid="uid://bppqgxi2cgr33" path="res://TessieMilli/014.png" id="103_why7d"]
+[ext_resource type="Texture2D" uid="uid://djm0yhkcuq05r" path="res://TessieAvery/009.png" id="104_ei5xn"]
 [ext_resource type="Texture2D" uid="uid://cygv4mg6d45nc" path="res://TessieMilli/015.png" id="104_p12th"]
 [ext_resource type="Texture2D" uid="uid://cwb2iv4v5qbq0" path="res://iceplanet.png" id="105_aq2cj"]
+[ext_resource type="Texture2D" uid="uid://df2a13m4bcfvb" path="res://TessieAvery/010.png" id="105_ems4d"]
+[ext_resource type="Texture2D" uid="uid://crcxokmlbbxmy" path="res://TessieAvery/011.png" id="106_j8wha"]
 [ext_resource type="Script" uid="uid://cor6ieulyaf6g" path="res://ice_walls.gd" id="107_4ll5h"]
+[ext_resource type="Texture2D" uid="uid://dei5put0a21v4" path="res://TessieAvery/012.png" id="107_pyim2"]
+[ext_resource type="Texture2D" uid="uid://bo30c8sgj1rl4" path="res://TessieAvery/013.png" id="108_euhs6"]
 [ext_resource type="Script" uid="uid://cppb031lnq6ae" path="res://ice_ring.gd" id="108_t63o8"]
+[ext_resource type="Texture2D" uid="uid://cwt5x4fwv7lmy" path="res://TessieAvery/014.png" id="109_1lvjw"]
+[ext_resource type="Texture2D" uid="uid://cj01bmurrphgc" path="res://TessieAvery/015.png" id="110_sc57l"]
 [ext_resource type="Texture2D" uid="uid://bj7522dasq1ov" path="res://TessieDunkyl/000.png" id="111_8vx13"]
 [ext_resource type="Texture2D" uid="uid://c3qac8qfrbtqg" path="res://TessieDunkyl/001.png" id="112_2dpke"]
 [ext_resource type="Texture2D" uid="uid://clvxbcmiiqon6" path="res://TessieDunkyl/002.png" id="113_k3a48"]
@@ -330,6 +346,59 @@ size = Vector2(32.1439, 32.143906)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yx0jh"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("95_8lu0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_stldt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_l7ljw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_ypf4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_snffj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_i3h0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_0iono")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_f21vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_p4psn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_ei5xn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_ems4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_j8wha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_pyim2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_euhs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_1lvjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_sc57l")
+}],
+"loop": true,
+"name": &"avery",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_wukud")
@@ -1443,6 +1512,7 @@ script = ExtResource("1_f3sb7")
 z_index = 1
 scale = Vector2(0.6666667, 0.6666667)
 sprite_frames = SubResource("SpriteFrames_yx0jh")
+animation = &"tachyon"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player" unique_id=472172515]
@@ -1518,6 +1588,7 @@ offset_bottom = 40.0
 theme = ExtResource("5_4h6ng")
 
 [node name="Disconnected" type="PanelContainer" parent="UI/UIThemed" unique_id=701705592]
+visible = false
 layout_mode = 0
 offset_right = 240.0
 offset_bottom = 70.0
