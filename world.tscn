@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://btisp5pgag4ms"]
 
 [ext_resource type="Texture2D" uid="uid://dihmlethsr7fn" path="res://background-main.png" id="1_6ah6f"]
-[ext_resource type="Script" uid="uid://bc4asm8ht60a5" path="res://world.gd" id="1_aq2cj"]
+[ext_resource type="Script" path="res://world.gd" id="1_aq2cj"]
 [ext_resource type="Script" uid="uid://b8mlot14bs6mt" path="res://player.gd" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://u130a0btvwsy" path="res://editor_only.gd" id="1_il2jm"]
 [ext_resource type="AudioStream" uid="uid://ctp26s7s2tvon" path="res://HTSTEM april fool 2026 wip1.mp3" id="1_my276"]
@@ -85,8 +85,10 @@
 [ext_resource type="Script" uid="uid://17vits1kssp2" path="res://wordle_tiles.gd" id="43_ct3wn"]
 [ext_resource type="Texture2D" uid="uid://dld5qxhamrkfm" path="res://RingItem/005.png" id="43_k3lar"]
 [ext_resource type="Texture2D" uid="uid://b17xf36jhd0nw" path="res://RingItem/006.png" id="44_olr1q"]
+[ext_resource type="Texture2D" uid="uid://bpeydtysia26c" path="res://RedPlanetSuccess.png" id="45_6d1iy"]
 [ext_resource type="Script" uid="uid://bx127moqu7hsi" path="res://riddle_planet.gd" id="45_8f1f8"]
 [ext_resource type="Texture2D" uid="uid://bg3yuoomepyt2" path="res://RingItem/007.png" id="45_q42o5"]
+[ext_resource type="Texture2D" uid="uid://b6udogqo3s2i0" path="res://RedPlanetUnfinished.png" id="46_awgtj"]
 [ext_resource type="Texture2D" uid="uid://dejlq33qwf4i5" path="res://RingItem/008.png" id="46_b7btk"]
 [ext_resource type="Texture2D" uid="uid://ba7uo6okpltcn" path="res://Planets/PurplePlanet.png" id="46_lxwtw"]
 [ext_resource type="Texture2D" uid="uid://nb21r2l816el" path="res://Planets/PurplePlanetTop.png" id="47_ir1d4"]
@@ -105,15 +107,13 @@
 [ext_resource type="Texture2D" uid="uid://dw0a8p7gt17vn" path="res://TessieTachyon/008.png" id="74_ednsc"]
 [ext_resource type="Texture2D" uid="uid://doy3crrsfo5j3" path="res://TessieTachyon/009.png" id="75_su0yx"]
 [ext_resource type="Texture2D" uid="uid://c1ilm42xvtl7r" path="res://TessieTachyon/010.png" id="76_3o3pd"]
+[ext_resource type="Texture2D" uid="uid://df6usgs0dej86" path="res://iceblock2.png" id="76_awgtj"]
 [ext_resource type="Texture2D" uid="uid://cqr80ox3ac5gt" path="res://TessieTachyon/011.png" id="77_1hr04"]
 [ext_resource type="Texture2D" uid="uid://cgmcuuvytfwjd" path="res://TessieTachyon/012.png" id="78_remcq"]
 [ext_resource type="Texture2D" uid="uid://f3ym2h1pincv" path="res://TessieTachyon/013.png" id="79_kcilg"]
 [ext_resource type="Texture2D" uid="uid://c3kfq07phr0k3" path="res://TessieTachyon/014.png" id="80_1amq5"]
 [ext_resource type="Texture2D" uid="uid://cdc1320hn0jvu" path="res://TessieTachyon/015.png" id="81_oosws"]
 [ext_resource type="Script" uid="uid://dscgs1r4ktevn" path="res://camera_2d.gd" id="88_xkj61"]
-[ext_resource type="Texture2D" uid="uid://cwb2iv4v5qbq0" path="res://iceplanet.png" id="105_aq2cj"]
-[ext_resource type="Script" uid="uid://bqd7eye0ns1w4" path="res://ice_walls.gd" id="107_4ll5h"]
-[ext_resource type="Script" uid="uid://74clxb3wx2mj" path="res://ice_ring.gd" id="108_t63o8"]
 [ext_resource type="Texture2D" uid="uid://c67apjqsdwayf" path="res://TessieMilli/000.png" id="89_e6jkr"]
 [ext_resource type="Texture2D" uid="uid://vhj2ymi6anjn" path="res://TessieMilli/001.png" id="90_2vwdk"]
 [ext_resource type="Texture2D" uid="uid://bxiv4ynfunjbe" path="res://TessieMilli/002.png" id="91_8wjcy"]
@@ -130,6 +130,9 @@
 [ext_resource type="Texture2D" uid="uid://dny04jug7fxii" path="res://TessieMilli/013.png" id="102_1f132"]
 [ext_resource type="Texture2D" uid="uid://bppqgxi2cgr33" path="res://TessieMilli/014.png" id="103_why7d"]
 [ext_resource type="Texture2D" uid="uid://cygv4mg6d45nc" path="res://TessieMilli/015.png" id="104_p12th"]
+[ext_resource type="Texture2D" uid="uid://cwb2iv4v5qbq0" path="res://iceplanet.png" id="105_aq2cj"]
+[ext_resource type="Script" uid="uid://bqd7eye0ns1w4" path="res://ice_walls.gd" id="107_4ll5h"]
+[ext_resource type="Script" uid="uid://74clxb3wx2mj" path="res://ice_ring.gd" id="108_t63o8"]
 
 [sub_resource type="Gradient" id="Gradient_6ah6f"]
 offsets = PackedFloat32Array(0.1746988, 0.8614458)
@@ -270,14 +273,25 @@ texture_region_size = Vector2i(12, 12)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mou3f"]
+texture = ExtResource("76_awgtj")
+texture_region_size = Vector2i(12, 12)
+0:0/next_alternative_id = 3
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
+
 [sub_resource type="TileSet" id="TileSet_t63o8"]
 tile_size = Vector2i(12, 12)
 physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_4ll5h")
 sources/0 = SubResource("TileSetAtlasSource_4ll5h")
+sources/2 = SubResource("TileSetAtlasSource_mou3f")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aq2cj"]
 size = Vector2(32.1439, 32.143906)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_awgtj"]
+load_path = "res://.godot/imported/iceblock.png-e970dc460ec0c0d9ab6cbc1c6c09e661.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yx0jh"]
 animations = [{
@@ -898,10 +912,10 @@ texture = ExtResource("28_415my")
 scale = Vector2(0.71, 0.71)
 
 [node name="Sprite2D" type="Sprite2D" parent="Level/MusMoonsPlanet/Fader" unique_id=1158417835]
-texture = ExtResource("28_415my")
+texture = ExtResource("46_awgtj")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Level/MusMoonsPlanet/Fader" unique_id=948945515]
-texture = ExtResource("28_415my")
+texture = ExtResource("45_6d1iy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/MusMoonsPlanet" unique_id=1068312763]
 scale = Vector2(0.71, 0.71)
@@ -972,7 +986,6 @@ scale = Vector2(0.19999999, 0.19999999)
 texture = ExtResource("49_su0yx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/MusMoonsPlanet/Moons Ring/Moon_T" unique_id=136755464]
-position = Vector2(1, -5)
 scale = Vector2(6.699645, 6.699645)
 shape = SubResource("CircleShape2D_yfwfa")
 
@@ -1173,7 +1186,7 @@ shape = SubResource("CircleShape2D_4ll5h")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Level/IcePlanet/Ice" unique_id=850427154]
 scale = Vector2(0.99999994, 0.99999994)
-tile_map_data = PackedByteArray("AAAIAAcAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAD2/wYAAAAAAAAAAAD3/wcAAAAAAAAAAAD3/wAAAAAAAAAAAAD0/wEAAAAAAAAAAAD1/wQAAAAAAAAAAAD0/wMAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAkAAAAAAAAAAAAIAAgAAAAAAAAAAAAHAAkAAAAAAAAAAAD6/wgAAAAAAAAAAAD7/wkAAAAAAAAAAAD8//j/AAAAAAAAAAD7//f/AAAAAAAAAAD3//j/AAAAAAAAAAD4//f/AAAAAAAAAAD4//3/AAAAAAAAAAD1//z/AAAAAAAAAAD2//7/AAAAAAAAAAD1//3/AAAAAAAAAAD1//r/AAAAAAAAAAD1/wAAAAAAAAAAAAAEAP//AAAAAAAAAAAFAAAAAAAAAAAAAAADAP7/AAAAAAAAAAAHAAUAAAAAAAAAAAABAAcAAAAAAAAAAAAJAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAIAAAAAAAAAAAAAAAcAAAAAAAAAAAD//wcAAAAAAAAAAAD3////AAAAAAAAAAD4/wgAAAAAAAAAAAD5/wcAAAAAAAAAAAD6//7/AAAAAAAAAAD5//3/AAAAAAAAAAD9//n/AAAAAAAAAAD8/wMAAAAAAAAAAAD5/wIAAAAAAAAAAAAAAAEAAAAAAAAAAAD+//r/AAAAAAAAAAD///v/AAAAAAAAAAD9/wgAAAAAAAAAAAD+/wkAAAAAAAAAAAD//wgAAAAAAAAAAAD4/wEAAAAAAAAAAAD3//n/AAAAAAAAAAD8/wIAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wIAAAAAAAAAAAD2//n/AAAAAAAAAAD///7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP//AAAAAAAAAAD8/wgAAAAAAAAAAAAKAP3/AAAAAAAAAAALAPz/AAAAAAAAAAAKAPv/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAIAAcAAgAAAAAAAAAJAAUAAgAAAAAAAAAKAAUAAgAAAAAAAAAIAAUAAgAAAAAAAAD2/wYAAgAAAAAAAAD3/wcAAgAAAAAAAAD3/wAAAgAAAAAAAAD0/wEAAgAAAAAAAAD1/wQAAgAAAAAAAAD0/wMAAgAAAAAAAAAFAAMAAgAAAAAAAAAEAAkAAgAAAAAAAAAIAAgAAgAAAAAAAAAHAAkAAgAAAAAAAAD6/wgAAgAAAAAAAAD7/wkAAgAAAAAAAAD8//j/AgAAAAAAAAD7//f/AgAAAAAAAAD3//j/AgAAAAAAAAD4//f/AgAAAAAAAAD4//3/AgAAAAAAAAD1//z/AgAAAAAAAAD2//7/AgAAAAAAAAD1//3/AgAAAAAAAAD1//r/AgAAAAAAAAD1/wAAAgAAAAAAAAAEAP//AgAAAAAAAAAFAAAAAgAAAAAAAAADAP7/AgAAAAAAAAAHAAUAAgAAAAAAAAABAAcAAgAAAAAAAAAJAAEAAgAAAAAAAAAIAAAAAgAAAAAAAAAIAAIAAgAAAAAAAAAAAAcAAgAAAAAAAAD//wcAAgAAAAAAAAD3////AgAAAAAAAAD4/wgAAgAAAAAAAAD5/wcAAgAAAAAAAAD6//7/AgAAAAAAAAD5//3/AgAAAAAAAAD9//n/AgAAAAAAAAD8/wMAAgAAAAAAAAD5/wIAAgAAAAAAAAAAAAEAAgAAAAAAAAD+//r/AgAAAAAAAAD///v/AgAAAAAAAAD9/wgAAgAAAAAAAAD+/wkAAgAAAAAAAAD//wgAAgAAAAAAAAD4/wEAAgAAAAAAAAD3//n/AgAAAAAAAAD8/wIAAgAAAAAAAAD9/wMAAgAAAAAAAAD+/wIAAgAAAAAAAAD2//n/AgAAAAAAAAD///7/AgAAAAAAAAABAP7/AgAAAAAAAAACAP//AgAAAAAAAAD8/wgAAgAAAAAAAAAKAP3/AgAAAAAAAAALAPz/AgAAAAAAAAAKAPv/AgAAAAAAAAD///X/AgAAAAAAAAABAPT/AgAAAAAAAAAAAPn/AgAAAAAAAAADAPf/AgAAAAAAAAADAPj/AgAAAAAAAAACAPj/AgAAAAAAAAAFAPv/AgAAAAAAAAA=")
 tile_set = SubResource("TileSet_t63o8")
 
 [node name="Walls" type="Node2D" parent="Level/IcePlanet" unique_id=1942749450 node_paths=PackedStringArray("wall_obj")]
@@ -1192,7 +1205,9 @@ scale = Vector2(0.25, 0.25)
 shape = SubResource("RectangleShape2D_aq2cj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Level/IcePlanet/Walls/WallBit" unique_id=244870137]
-texture = ExtResource("5_remcq")
+modulate = Color(1, 1, 1, 0.78431374)
+scale = Vector2(1.24, 1.12)
+texture = SubResource("CompressedTexture2D_awgtj")
 
 [node name="Area2D" type="Area2D" parent="Level/IcePlanet" unique_id=2010064199]
 scale = Vector2(0.183, 0.183)

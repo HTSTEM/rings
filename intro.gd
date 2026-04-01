@@ -36,6 +36,7 @@ func _ready():
 	
 	var one_hour: float = 60.0 * 60.0
 	remaining = one_hour - fmod(Time.get_unix_time_from_system(), one_hour)
+	remaining = 10
 	
 	$IntroMusicPlayer.play()
 

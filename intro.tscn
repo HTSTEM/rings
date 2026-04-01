@@ -318,6 +318,18 @@ tracks/22/keys = {
 "update": 0,
 "values": [-10.0]
 }
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("VBoxContainer/Label14:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_dk2oa"]
 resource_name = "intro"
@@ -349,11 +361,11 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("VBoxContainer/Label2:visible")
+tracks/2/path = NodePath("VBoxContainer/Label:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -361,11 +373,11 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("VBoxContainer/Label4:visible")
+tracks/3/path = NodePath("VBoxContainer/Label2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 7),
+"times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -373,11 +385,11 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("VBoxContainer/Label3:visible")
+tracks/4/path = NodePath("VBoxContainer/Label4:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 10),
+"times": PackedFloat32Array(0, 7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -385,11 +397,11 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("VBoxContainer/Label5:visible")
+tracks/5/path = NodePath("VBoxContainer/Label3:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 13),
+"times": PackedFloat32Array(0, 10),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -397,11 +409,11 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("VBoxContainer/Label6:visible")
+tracks/6/path = NodePath("VBoxContainer/Label5:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 16),
+"times": PackedFloat32Array(0, 13),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -409,11 +421,11 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("VBoxContainer/Label7:visible")
+tracks/7/path = NodePath("VBoxContainer/Label6:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 18),
+"times": PackedFloat32Array(0, 16),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -421,11 +433,11 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("VBoxContainer/Label8:visible")
+tracks/8/path = NodePath("VBoxContainer/Label7:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 19),
+"times": PackedFloat32Array(0, 18),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -433,11 +445,11 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("VBoxContainer/Label9:visible")
+tracks/9/path = NodePath("VBoxContainer/Label8:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 22),
+"times": PackedFloat32Array(0, 19),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -445,11 +457,11 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("VBoxContainer/Label10:visible")
+tracks/10/path = NodePath("VBoxContainer/Label9:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 25),
+"times": PackedFloat32Array(0, 22),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -457,11 +469,11 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("VBoxContainer/Label11:visible")
+tracks/11/path = NodePath("VBoxContainer/Label10:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 26),
+"times": PackedFloat32Array(0, 25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -469,11 +481,11 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("VBoxContainer/Label12:visible")
+tracks/12/path = NodePath("VBoxContainer/Label11:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 32),
+"times": PackedFloat32Array(0, 26),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -481,11 +493,11 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("VBoxContainer/Label13:visible")
+tracks/13/path = NodePath("VBoxContainer/Label12:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 38),
+"times": PackedFloat32Array(0, 32),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -493,11 +505,11 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("VBoxContainer/Label:visible")
+tracks/14/path = NodePath("VBoxContainer/Label13:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 38),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -505,19 +517,19 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("TextBG:modulate")
+tracks/15/path = NodePath("VBoxContainer/Label14:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(44, 48),
+"times": PackedFloat32Array(0, 38.1),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"update": 1,
+"values": [false, true]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("VBoxContainer:modulate")
+tracks/16/path = NodePath("TextBG:modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -529,82 +541,94 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("WorldPreview:visible")
+tracks/17/path = NodePath("VBoxContainer:modulate")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
+"times": PackedFloat32Array(44, 48),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("WorldPreview:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
 "times": PackedFloat32Array(39.493427),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("SubViewportContainer:modulate")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("SubViewportContainer:modulate")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
 "times": PackedFloat32Array(39.466667),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("SubViewportContainer:visible")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("SubViewportContainer:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
 "times": PackedFloat32Array(39.5231),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("SubViewportContainer:material:shader_parameter/progress")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("SubViewportContainer:material:shader_parameter/progress")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
 "times": PackedFloat32Array(51.1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.6630000314925]
 }
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("TakeControlText:modulate")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("TakeControlText:modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
 "times": PackedFloat32Array(60, 70),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("TakeControlText2:modulate")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("TakeControlText2:modulate")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
 "times": PackedFloat32Array(150.2694, 200),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/23/type = "method"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("TextPlayer")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = {
+tracks/24/type = "method"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("TextPlayer")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
 "times": PackedFloat32Array(1.75, 3.75, 6.75, 9.75, 12.75, 15.75, 17.75, 18.75, 21.75, 24.75, 25.75, 31.75, 37.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
@@ -648,13 +672,13 @@ tracks/23/keys = {
 "method": &"play"
 }]
 }
-tracks/24/type = "value"
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/path = NodePath("IntroMusicPlayer:volume_db")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/keys = {
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("IntroMusicPlayer:volume_db")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
 "times": PackedFloat32Array(0, 32.065624),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -779,67 +803,72 @@ theme = SubResource("Theme_dk2oa")
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1581602745]
 visible = false
 layout_mode = 2
-text = "T+00:05 SYSTEM Altitude 20000m"
+text = "[T+00:07] SYSTEM:  Altitude 20000m"
 
 [node name="Label2" type="Label" parent="VBoxContainer" unique_id=713416248]
 visible = false
 layout_mode = 2
-text = "T+00:07 TESS-13 Everything is looking good up here!"
+text = "[T+00:09] TESS-13:  Everything is looking good up here!"
 
 [node name="Label4" type="Label" parent="VBoxContainer" unique_id=1543598937]
 visible = false
 layout_mode = 2
-text = "T+00:10 SYSTEM Altitude 50000m"
+text = "[T+00:12] SYSTEM:  Altitude 50000m"
 
 [node name="Label3" type="Label" parent="VBoxContainer" unique_id=1983677613]
 visible = false
 layout_mode = 2
-text = "T+00:13 TESS-13 Oxygen OK, ventilation OK..."
+text = "[T+00:15] TESS-13:  Oxygen OK, ventilation OK..."
 
 [node name="Label5" type="Label" parent="VBoxContainer" unique_id=1292009402]
 visible = false
 layout_mode = 2
-text = "T+00:16 SYSTEM Altitude 80000m"
+text = "[T+00:18] SYSTEM:  Altitude 80000m"
 
 [node name="Label6" type="Label" parent="VBoxContainer" unique_id=1256372420]
 visible = false
 layout_mode = 2
-text = "T+00:19 TESS-13 Got a couple warnings from collision"
+text = "[T+00:21] TESS-13: Got a couple warnings from collision"
 
 [node name="Label7" type="Label" parent="VBoxContainer" unique_id=1830156659]
 visible = false
 layout_mode = 2
-text = "T+00:21 SYSTEM Altitude 110000m"
+text = "[T+00:23] SYSTEM:  Altitude 110000m"
 
 [node name="Label8" type="Label" parent="VBoxContainer" unique_id=1211291373]
 visible = false
 layout_mode = 2
-text = "T+00:22 SYSTEM Hydraulics low"
+text = "[T+00:24] SYSTEM:  Hydraulics low"
 
 [node name="Label9" type="Label" parent="VBoxContainer" unique_id=481878764]
 visible = false
 layout_mode = 2
-text = "T+00:25 TESS-13 Hey are we steering around this?"
+text = "[T+00:27] TESS-13:  Hey are we steering around this?"
 
 [node name="Label10" type="Label" parent="VBoxContainer" unique_id=2001696175]
 visible = false
 layout_mode = 2
-text = "T+00:28 SYSTEM Hydraulics out"
+text = "[T+00:30] SYSTEM:  Hydraulics out"
 
 [node name="Label11" type="Label" parent="VBoxContainer" unique_id=2054198304]
 visible = false
 layout_mode = 2
-text = "T+00:29 TESS-13 MAYDAY MAYDAY M"
+text = "[T+00:31] TESS-13:  MAYDAY MAYDAY M"
 
 [node name="Label12" type="Label" parent="VBoxContainer" unique_id=385969649]
 visible = false
 layout_mode = 2
-text = "T+00:35 Failed to parse"
+text = "[T+00:37] tx_rcv_err:  Failed to parse msg_rcv"
 
 [node name="Label13" type="Label" parent="VBoxContainer" unique_id=1723454739]
 visible = false
 layout_mode = 2
-text = "T+00:41 Reconnecting..."
+text = "[T+00:43] tx_rx_subsys:  Attempting video protocol..."
+
+[node name="Label14" type="Label" parent="VBoxContainer" unique_id=456664509]
+visible = false
+layout_mode = 2
+text = "[T+00:43] tx_rx_subsys:  Reconnecting..."
 
 [node name="DeskScreen" type="Sprite2D" parent="." unique_id=1509230730]
 modulate = Color(0.6, 0.6, 0.6, 1)
