@@ -75,6 +75,11 @@ func _on_chat_message(content: String, is_voice: bool, user_id: String):
 	if user_id == "debug" and content == "credits":
 		GameState.start_credits()
 		return
+	
+	if content == "respawn":
+		WSClient.emit_message_consumed(original_content)
+		position = Vector2(0, 0)
+		return
 
 	if content not in directions:
 		return
