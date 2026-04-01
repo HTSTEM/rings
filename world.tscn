@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://world.gd" id="1_aq2cj"]
 [ext_resource type="Script" uid="uid://b8mlot14bs6mt" path="res://player.gd" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://u130a0btvwsy" path="res://editor_only.gd" id="1_il2jm"]
-[ext_resource type="AudioStream" uid="uid://ctp26s7s2tvon" path="res://HTSTEM april fool 2026 wip1.mp3" id="1_my276"]
 [ext_resource type="Script" uid="uid://dmng7vxqbql37" path="res://star_planet.gd" id="2_4h6ng"]
 [ext_resource type="AudioStream" uid="uid://bwu5ujf62t7d0" path="res://zapThreeToneUp.ogg" id="2_55kwu"]
+[ext_resource type="AudioStream" uid="uid://in4nx41o86xu" path="res://maintheme.wav" id="2_8343f"]
 [ext_resource type="Script" uid="uid://c8rxibphgh46o" path="res://disconnected.gd" id="2_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://ds7wpgkkqoftc" path="res://background-stars.png" id="2_g1i3r"]
 [ext_resource type="Texture2D" uid="uid://7w8m3ou73lj4" path="res://tutorialplanet.png" id="2_gbfbk"]
@@ -43,18 +43,26 @@
 [ext_resource type="Texture2D" uid="uid://dv2pnqs5cdpwg" path="res://tessie/011.png" id="15_gggvi"]
 [ext_resource type="Texture2D" uid="uid://bplycxa5csx5p" path="res://tessie/012.png" id="16_w44yn"]
 [ext_resource type="Texture2D" uid="uid://cxjumlbovqtnn" path="res://tessie/013.png" id="17_6ah6f"]
+[ext_resource type="AudioStream" uid="uid://b0dievka6ojml" path="res://ShopItems/audio mpreg 1.wav" id="17_312do"]
 [ext_resource type="Texture2D" uid="uid://2vs8sas2nyah" path="res://tessie/014.png" id="18_g1i3r"]
+[ext_resource type="AudioStream" uid="uid://b1lokjhh64i74" path="res://ShopItems/audio mpreg 2.wav" id="18_hfaud"]
 [ext_resource type="Script" uid="uid://dpymgaevnkbh5" path="res://glow_animator.gd" id="18_w4lh7"]
 [ext_resource type="Script" uid="uid://rv8n5bsqftcq" path="res://tutorial_planet.gd" id="19_kkgr2"]
 [ext_resource type="Texture2D" uid="uid://ui2wfavba6ej" path="res://tessie/015.png" id="19_my276"]
+[ext_resource type="AudioStream" uid="uid://cmcowvydypjx8" path="res://ShopItems/audio xkcd 1.wav" id="20_8gw3t"]
+[ext_resource type="AudioStream" uid="uid://bcelhhwdyduxg" path="res://ShopItems/audio xkcd 2.wav" id="21_iyplw"]
 [ext_resource type="Texture2D" uid="uid://dabw220qayq7q" path="res://tutorialplanetunfinished.png" id="22_iett8"]
+[ext_resource type="AudioStream" uid="uid://ud6mx8ftaxpi" path="res://ShopItems/audio frans 1.wav" id="23_iad0i"]
 [ext_resource type="Texture2D" uid="uid://urasj3msie2l" path="res://tutorialplanetsuccess.png" id="23_r5m4j"]
+[ext_resource type="AudioStream" uid="uid://did28wthhr58h" path="res://ShopItems/audio frans 2.wav" id="24_fl4at"]
 [ext_resource type="Texture2D" uid="uid://b6enkdqm6typv" path="res://uno_card_rabbids.png" id="26_7fs00"]
+[ext_resource type="AudioStream" uid="uid://s780kkaymnck" path="res://ShopItems/audio meta 1.wav" id="26_76eeb"]
 [ext_resource type="Script" uid="uid://gmj5efdxi4sf" path="res://uno_card_new.gd" id="26_415my"]
 [ext_resource type="Script" uid="uid://winhqxablu5x" path="res://uno_path.gd" id="26_eewsi"]
 [ext_resource type="Script" uid="uid://ueounwe041fd" path="res://mus_moons_planet.gd" id="26_p5g01"]
 [ext_resource type="Texture2D" uid="uid://bet6iiuws1x3c" path="res://hellplanetunfinished.png" id="26_r5m4j"]
 [ext_resource type="Script" uid="uid://do8bhrgrby6ck" path="res://games_planet.gd" id="26_vsnf8"]
+[ext_resource type="AudioStream" uid="uid://c58e8wlepedvb" path="res://ShopItems/audio meta 2.wav" id="27_d7cwp"]
 [ext_resource type="Texture2D" uid="uid://crkqocdb523f5" path="res://hellplanetsuccess.png" id="27_e77ka"]
 [ext_resource type="Script" uid="uid://mqfd1evl4vam" path="res://moons_ring.gd" id="27_p5g01"]
 [ext_resource type="Script" uid="uid://bbewo1218pmun" path="res://uno_region.gd" id="27_t55hq"]
@@ -63,8 +71,10 @@
 [ext_resource type="PackedScene" uid="uid://cotbrunvp2y2y" path="res://gleepglorp.tscn" id="28_o3ebs"]
 [ext_resource type="Script" uid="uid://b8uprpuxf6yqh" path="res://xword_region.gd" id="28_vv6ac"]
 [ext_resource type="Texture2D" uid="uid://cvd2lhbw8c3hw" path="res://gamesplanet.png" id="29_su0yx"]
+[ext_resource type="AudioStream" uid="uid://v0jw8xtknsml" path="res://ShopItems/audio chess 1.wav" id="29_svgmy"]
 [ext_resource type="Script" uid="uid://bl2kjn273dkh7" path="res://puzzles_sprites.gd" id="29_v27xk"]
 [ext_resource type="Script" uid="uid://cn306as2rgixj" path="res://chess_region.gd" id="29_vf1x1"]
+[ext_resource type="AudioStream" uid="uid://racltmllaxcx" path="res://ShopItems/audio chess 2.wav" id="30_obhsp"]
 [ext_resource type="Script" uid="uid://dhl322mkt8vls" path="res://mus_moon.gd" id="30_qm10a"]
 [ext_resource type="PackedScene" uid="uid://b1eydxnb2hrxc" path="res://wordle_lane.tscn" id="30_sedwk"]
 [ext_resource type="AudioStream" uid="uid://c7g727i35hl34" path="res://floraphonic-glass-clink-2-184006.mp3" id="31_qm10a"]
@@ -94,18 +104,26 @@
 [ext_resource type="Texture2D" uid="uid://nb21r2l816el" path="res://Planets/PurplePlanetTop.png" id="47_ir1d4"]
 [ext_resource type="Texture2D" uid="uid://dh8syo6iynpbc" path="res://RingItem/009.png" id="47_kkgr2"]
 [ext_resource type="Script" uid="uid://cv3j8o6mjqg7g" path="res://riddle_label.gd" id="48_tj74d"]
+[ext_resource type="Script" uid="uid://b3va30pbynw2e" path="res://mus_secret_region.gd" id="49_8343f"]
 [ext_resource type="Texture2D" uid="uid://ckh3wpqn7p47j" path="res://thud_moon_shade.png" id="49_su0yx"]
 [ext_resource type="Texture2D" uid="uid://rghpejwkseuq" path="res://Planets/BluePlanet.png" id="62_37ykd"]
 [ext_resource type="Texture2D" uid="uid://kgecc1rnyy10" path="res://TessieTachyon/000.png" id="66_t55hq"]
 [ext_resource type="Texture2D" uid="uid://b8kw38dbltrak" path="res://TessieTachyon/001.png" id="67_jtjyu"]
+[ext_resource type="Texture2D" uid="uid://by0ainpoovisn" path="res://ShopItems/rings_starboard_805_missing_glow.png" id="68_awgtj"]
 [ext_resource type="Texture2D" uid="uid://b58vd4wemnlis" path="res://TessieTachyon/002.png" id="68_vv6ac"]
+[ext_resource type="Texture2D" uid="uid://bc8dna4qf4vck" path="res://ShopItems/rings_starboard_805_glow.png" id="69_mou3f"]
 [ext_resource type="Texture2D" uid="uid://b2allje434ojm" path="res://TessieTachyon/003.png" id="69_v27xk"]
 [ext_resource type="Texture2D" uid="uid://b2okhumcnrv03" path="res://TessieTachyon/004.png" id="70_vf1x1"]
 [ext_resource type="Texture2D" uid="uid://bexsmvruak6tg" path="res://TessieTachyon/005.png" id="71_vsnf8"]
 [ext_resource type="Texture2D" uid="uid://curx2baqude51" path="res://TessieTachyon/006.png" id="72_afx2c"]
+[ext_resource type="Texture2D" uid="uid://cc0u1wguni67v" path="res://Planets/Home.png" id="72_xh3xj"]
+[ext_resource type="Texture2D" uid="uid://h2jjejvtk0qq" path="res://Planets/EarthMoon.png" id="73_ofgfh"]
 [ext_resource type="Texture2D" uid="uid://blrx2cfe1278a" path="res://TessieTachyon/007.png" id="73_xkj61"]
 [ext_resource type="Script" uid="uid://bksxpe380ifpc" path="res://ice_planet.gd" id="74_8343f"]
+[ext_resource type="Script" uid="uid://c04ibhh8hlspv" path="res://moon_sprite.gd" id="74_6d1iy"]
 [ext_resource type="Texture2D" uid="uid://dw0a8p7gt17vn" path="res://TessieTachyon/008.png" id="74_ednsc"]
+[ext_resource type="Script" uid="uid://cbioo82qvykh1" path="res://earth.gd" id="75_2lhbq"]
+[ext_resource type="Texture2D" uid="uid://b17okl7swfg2g" path="res://qr.png" id="75_ofgfh"]
 [ext_resource type="Texture2D" uid="uid://doy3crrsfo5j3" path="res://TessieTachyon/009.png" id="75_su0yx"]
 [ext_resource type="Texture2D" uid="uid://fug03ytvs7pp" path="res://CyanPlanetSuccess.png" id="76_2lhbq"]
 [ext_resource type="Texture2D" uid="uid://c1ilm42xvtl7r" path="res://TessieTachyon/010.png" id="76_3o3pd"]
@@ -123,19 +141,54 @@
 [ext_resource type="Texture2D" uid="uid://caiutckf2bvjn" path="res://TessieMilli/003.png" id="92_xh3xj"]
 [ext_resource type="Texture2D" uid="uid://dv8222rcnyp7y" path="res://TessieMilli/004.png" id="93_ofgfh"]
 [ext_resource type="Texture2D" uid="uid://cwjcefnw248rj" path="res://TessieMilli/005.png" id="94_6d1iy"]
+[ext_resource type="Texture2D" uid="uid://bwb5hfv4ech3v" path="res://TessieAvery/000.png" id="95_8lu0a"]
 [ext_resource type="Texture2D" uid="uid://bbk2qiskr8wp8" path="res://TessieMilli/006.png" id="95_awgtj"]
 [ext_resource type="Texture2D" uid="uid://c8gguw8esfru8" path="res://TessieMilli/007.png" id="96_mou3f"]
+[ext_resource type="Texture2D" uid="uid://chppavfx77tus" path="res://TessieAvery/001.png" id="96_stldt"]
 [ext_resource type="Texture2D" uid="uid://c3mk2hihkojx6" path="res://TessieMilli/008.png" id="97_8343f"]
+[ext_resource type="Texture2D" uid="uid://e0mk3pvtuhmi" path="res://TessieAvery/002.png" id="97_l7ljw"]
 [ext_resource type="Texture2D" uid="uid://d1tjdmkrao4ye" path="res://TessieMilli/009.png" id="98_2lhbq"]
+[ext_resource type="Texture2D" uid="uid://clcxvteao3poe" path="res://TessieAvery/003.png" id="98_ypf4k"]
 [ext_resource type="Texture2D" uid="uid://cbaeusl01fv47" path="res://TessieMilli/010.png" id="99_5wt1p"]
+[ext_resource type="Texture2D" uid="uid://1sicyn1dsjs6" path="res://TessieAvery/004.png" id="99_snffj"]
+[ext_resource type="Texture2D" uid="uid://dia8vkq8lxsfj" path="res://TessieAvery/005.png" id="100_i3h0w"]
 [ext_resource type="Texture2D" uid="uid://clfohdpmbig1e" path="res://TessieMilli/011.png" id="100_jtjv0"]
+[ext_resource type="Texture2D" uid="uid://51wm7aib11c6" path="res://TessieAvery/006.png" id="101_0iono"]
 [ext_resource type="Texture2D" uid="uid://k7aoqe6ybmab" path="res://TessieMilli/012.png" id="101_wiowo"]
 [ext_resource type="Texture2D" uid="uid://dny04jug7fxii" path="res://TessieMilli/013.png" id="102_1f132"]
+[ext_resource type="Texture2D" uid="uid://ddqku2q2btqbc" path="res://TessieAvery/007.png" id="102_f21vt"]
+[ext_resource type="Texture2D" uid="uid://c6q1ljmshm0ak" path="res://TessieAvery/008.png" id="103_p4psn"]
 [ext_resource type="Texture2D" uid="uid://bppqgxi2cgr33" path="res://TessieMilli/014.png" id="103_why7d"]
+[ext_resource type="Texture2D" uid="uid://djm0yhkcuq05r" path="res://TessieAvery/009.png" id="104_ei5xn"]
 [ext_resource type="Texture2D" uid="uid://cygv4mg6d45nc" path="res://TessieMilli/015.png" id="104_p12th"]
 [ext_resource type="Texture2D" uid="uid://cwb2iv4v5qbq0" path="res://iceplanet.png" id="105_aq2cj"]
 [ext_resource type="Script" uid="uid://bqd7eye0ns1w4" path="res://ice_walls.gd" id="107_4ll5h"]
 [ext_resource type="Script" uid="uid://74clxb3wx2mj" path="res://ice_ring.gd" id="108_t63o8"]
+[ext_resource type="Texture2D" uid="uid://df2a13m4bcfvb" path="res://TessieAvery/010.png" id="105_ems4d"]
+[ext_resource type="Texture2D" uid="uid://crcxokmlbbxmy" path="res://TessieAvery/011.png" id="106_j8wha"]
+[ext_resource type="Script" uid="uid://cor6ieulyaf6g" path="res://ice_walls.gd" id="107_4ll5h"]
+[ext_resource type="Texture2D" uid="uid://dei5put0a21v4" path="res://TessieAvery/012.png" id="107_pyim2"]
+[ext_resource type="Texture2D" uid="uid://bo30c8sgj1rl4" path="res://TessieAvery/013.png" id="108_euhs6"]
+[ext_resource type="Script" uid="uid://cppb031lnq6ae" path="res://ice_ring.gd" id="108_t63o8"]
+[ext_resource type="Texture2D" uid="uid://cwt5x4fwv7lmy" path="res://TessieAvery/014.png" id="109_1lvjw"]
+[ext_resource type="Texture2D" uid="uid://cj01bmurrphgc" path="res://TessieAvery/015.png" id="110_sc57l"]
+[ext_resource type="Texture2D" uid="uid://bj7522dasq1ov" path="res://TessieDunkyl/000.png" id="111_8vx13"]
+[ext_resource type="Texture2D" uid="uid://c3qac8qfrbtqg" path="res://TessieDunkyl/001.png" id="112_2dpke"]
+[ext_resource type="Texture2D" uid="uid://clvxbcmiiqon6" path="res://TessieDunkyl/002.png" id="113_k3a48"]
+[ext_resource type="Texture2D" uid="uid://0cu1e80ej2ua" path="res://TessieDunkyl/003.png" id="114_ewxxd"]
+[ext_resource type="Texture2D" uid="uid://b032dot5olgb5" path="res://TessieDunkyl/004.png" id="115_o5w76"]
+[ext_resource type="Texture2D" uid="uid://m22t4ygts8vd" path="res://TessieDunkyl/005.png" id="116_1ro08"]
+[ext_resource type="Texture2D" uid="uid://bghuvk6ani1t" path="res://TessieDunkyl/006.png" id="117_5igco"]
+[ext_resource type="Texture2D" uid="uid://b3y56q5bqjhbt" path="res://TessieDunkyl/007.png" id="118_p5d6e"]
+[ext_resource type="Texture2D" uid="uid://boq8vr281fu23" path="res://TessieDunkyl/008.png" id="119_e4j14"]
+[ext_resource type="Texture2D" uid="uid://fwm3v82rnqdc" path="res://TessieDunkyl/009.png" id="120_g8u6m"]
+[ext_resource type="Texture2D" uid="uid://c1q6h1fdjlku7" path="res://TessieDunkyl/010.png" id="121_x070g"]
+[ext_resource type="Texture2D" uid="uid://bcavoo8i6s4c0" path="res://TessieDunkyl/011.png" id="122_280wn"]
+[ext_resource type="Texture2D" uid="uid://capi0q2xyxpep" path="res://TessieDunkyl/012.png" id="123_pc4mp"]
+[ext_resource type="Texture2D" uid="uid://dqf0yocwprasp" path="res://TessieDunkyl/013.png" id="124_k1m7y"]
+[ext_resource type="Texture2D" uid="uid://d2xh4sgip1b01" path="res://TessieDunkyl/014.png" id="125_ewy8o"]
+[ext_resource type="Texture2D" uid="uid://ceafhg5kjq51p" path="res://TessieDunkyl/015.png" id="126_nq2gl"]
+>>>>>>> 02363249307d2900f632298cb51562016be3c64c
 
 [sub_resource type="Gradient" id="Gradient_6ah6f"]
 offsets = PackedFloat32Array(0.1746988, 0.8614458)
@@ -213,6 +266,9 @@ radius = 120.247375
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfwfa"]
 radius = 9.761932
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5wt1p"]
+radius = 185.0108
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_k83mh"]
 radius = 194.17091
 
@@ -264,6 +320,18 @@ radius = 163.13307
 radius = 108.65515
 height = 448.65942
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_awgtj"]
+radius = 203.06157
+
+[sub_resource type="Curve2D" id="Curve2D_mou3f"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -12, -57, 0.9090909, -75.454544, -0.9090909, 75.454544, -291, 38, 0, 0, 0, 0, 4, 73, 0, 71.81818, 0, -71.81818, 276, -13, 0, 0, 0, 0, -7, -57)
+}
+point_count = 5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8343f"]
+radius = 31.016125
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ll5h"]
 radius = 148.66296
 
@@ -298,6 +366,59 @@ load_path = "res://.godot/imported/iceblock.png-e970dc460ec0c0d9ab6cbc1c6c09e661
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yx0jh"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("95_8lu0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_stldt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_l7ljw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_ypf4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_snffj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_i3h0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_0iono")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_f21vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_p4psn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_ei5xn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_ems4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_j8wha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_pyim2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_euhs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_1lvjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_sc57l")
+}],
+"loop": true,
+"name": &"avery",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_wukud")
@@ -349,6 +470,59 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("111_8vx13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_2dpke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_k3a48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_ewxxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_o5w76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_1ro08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_5igco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_p5d6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_e4j14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_g8u6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_x070g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_280wn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_pc4mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_k1m7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_ewy8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_nq2gl")
+}],
+"loop": true,
+"name": &"dunkyl",
 "speed": 10.0
 }, {
 "frames": [{
@@ -463,6 +637,7 @@ radius = 32.0
 
 [sub_resource type="SystemFont" id="SystemFont_tlwt5"]
 font_names = PackedStringArray("Product Sans")
+subpixel_positioning = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_su0yx"]
 load_path = "res://.godot/imported/green_palette.png-1a702b9a321c46885e67e327a3ace34c.ctex"
@@ -485,10 +660,9 @@ shader_parameter/position = Vector2(0, 0)
 script = ExtResource("1_aq2cj")
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="." unique_id=488908732]
-stream = ExtResource("1_my276")
+stream = ExtResource("2_8343f")
 volume_db = -6.0
 playback_type = 1
-parameters/looping = true
 
 [node name="SuccessPlayer" type="AudioStreamPlayer" parent="." unique_id=760991297]
 unique_name_in_owner = true
@@ -568,11 +742,23 @@ shape = SubResource("CircleShape2D_o3ebs")
 position = Vector2(-360, -314)
 texture = ExtResource("5_k83mh")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpText" unique_id=1999639317]
+stream = ExtResource("17_312do")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpText" unique_id=2115146419]
+stream = ExtResource("18_hfaud")
+
 [node name="GleepGlorpImage" parent="Level/StarPlanet" unique_id=709080614 instance=ExtResource("28_o3ebs")]
 position = Vector2(221, -394)
 item = "image"
 texture = ExtResource("6_gggvi")
 offset = 0.4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpImage" unique_id=4576403]
+stream = ExtResource("20_8gw3t")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpImage" unique_id=299955703]
+stream = ExtResource("21_iyplw")
 
 [node name="GleepGlorpVideo" parent="Level/StarPlanet" unique_id=1292021252 instance=ExtResource("28_o3ebs")]
 position = Vector2(470, -32)
@@ -580,17 +766,35 @@ item = "video"
 texture = ExtResource("7_w44yn")
 offset = 0.8
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpVideo" unique_id=1857290367]
+stream = ExtResource("23_iad0i")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpVideo" unique_id=1591496664]
+stream = ExtResource("24_fl4at")
+
 [node name="GleepGlorpMeta" parent="Level/StarPlanet" unique_id=1946065263 instance=ExtResource("28_o3ebs")]
 position = Vector2(218, 407)
 item = "meta"
 texture = ExtResource("8_6ah6f")
 offset = 1.2
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpMeta" unique_id=1610748109]
+stream = ExtResource("26_76eeb")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpMeta" unique_id=1890217001]
+stream = ExtResource("27_d7cwp")
+
 [node name="GleepGlorpChess" parent="Level/StarPlanet" unique_id=341663748 instance=ExtResource("28_o3ebs")]
 position = Vector2(-463, 275)
 item = "chess"
 texture = ExtResource("9_g1i3r")
 offset = 0.8
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpChess" unique_id=848543369]
+stream = ExtResource("29_svgmy")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Level/StarPlanet/GleepGlorpChess" unique_id=290819951]
+stream = ExtResource("30_obhsp")
 
 [node name="Label" type="Label" parent="Level/StarPlanet" unique_id=147964120]
 texture_filter = 1
@@ -851,8 +1055,21 @@ texture = ExtResource("34_xkj61")
 region_filter_clip_enabled = true
 
 [node name="ChessFinished" type="Sprite2D" parent="Level/GamesPlanet/PuzzlesSprites/chess" unique_id=2086467179]
+visible = false
 texture = ExtResource("35_ednsc")
 region_filter_clip_enabled = true
+
+[node name="Label" type="Label" parent="Level/GamesPlanet/PuzzlesSprites/chess/ChessFinished" unique_id=1667259655]
+visible = false
+offset_left = -785.4042
+offset_top = 379.8888
+offset_right = 736.5958
+offset_bottom = 508.8888
+theme = ExtResource("5_4h6ng")
+theme_override_font_sizes/font_size = 48
+text = "I love shouting at the barbershop orb
+after a long day at work"
+horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/GamesPlanet" unique_id=1264398107]
 stream = ExtResource("36_su0yx")
@@ -992,6 +1209,24 @@ texture = ExtResource("49_su0yx")
 scale = Vector2(6.699645, 6.699645)
 shape = SubResource("CircleShape2D_yfwfa")
 
+[node name="MusSecretRegion" type="Area2D" parent="Level/MusMoonsPlanet" unique_id=1312400323]
+script = ExtResource("49_8343f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/MusMoonsPlanet/MusSecretRegion" unique_id=757311953]
+shape = SubResource("CircleShape2D_5wt1p")
+
+[node name="Label" type="Label" parent="Level/MusMoonsPlanet/MusSecretRegion" unique_id=1751032680]
+offset_left = -142.0
+offset_top = -37.0
+offset_right = 146.0
+offset_bottom = 35.0
+theme = ExtResource("5_4h6ng")
+theme_override_font_sizes/font_size = 16
+text = "rude :(
+i blew up the earth
+it's all your fault"
+horizontal_alignment = 1
+
 [node name="IOPlanet" type="StaticBody2D" parent="Level" unique_id=302355728]
 position = Vector2(-334, 2117)
 script = ExtResource("3_mc2jv")
@@ -1099,6 +1334,22 @@ layout_mode = 2
 [node name="WordleTile5" parent="Level/WordlePlanet/WordleTiles" unique_id=1505928801 instance=ExtResource("43_75cpn")]
 layout_mode = 2
 
+[node name="GleepGlorpARG" parent="Level/WordlePlanet" unique_id=404167545 instance=ExtResource("28_o3ebs")]
+position = Vector2(278, 202)
+item = "805"
+texture = ExtResource("68_awgtj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/WordlePlanet/GleepGlorpARG" unique_id=248954378]
+stream = ExtResource("20_8gw3t")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Level/WordlePlanet/GleepGlorpARG" unique_id=706022268]
+stream = ExtResource("21_iyplw")
+
+[node name="GleepGlorpComplete" parent="Level/WordlePlanet" unique_id=1744297358 instance=ExtResource("28_o3ebs")]
+position = Vector2(278, 202)
+item = "805"
+texture = ExtResource("69_mou3f")
+
 [node name="RiddlePlanet" type="StaticBody2D" parent="Level" unique_id=2091398895]
 position = Vector2(-289, -1493)
 script = ExtResource("45_8f1f8")
@@ -1172,12 +1423,58 @@ text = "Aloud you must speak it."
 horizontal_alignment = 1
 script = ExtResource("48_tj74d")
 
+[node name="ARGPlanet" type="Node2D" parent="Level" unique_id=1695954058]
+position = Vector2(591, -2462)
+
+[node name="Earth" type="StaticBody2D" parent="Level/ARGPlanet" unique_id=747914234]
+z_index = 1
+script = ExtResource("75_2lhbq")
+
+[node name="Home" type="Sprite2D" parent="Level/ARGPlanet/Earth" unique_id=215785426]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("72_xh3xj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/ARGPlanet/Earth" unique_id=1042033223]
+shape = SubResource("CircleShape2D_awgtj")
+
+[node name="Path2D" type="Path2D" parent="Level/ARGPlanet" unique_id=995782803]
+curve = SubResource("Curve2D_mou3f")
+script = ExtResource("26_eewsi")
+path_speed = 100
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Level/ARGPlanet/Path2D" unique_id=1940130423]
+position = Vector2(-12, -57)
+rotation = 3.0714235
+rotates = false
+
+[node name="Moon" type="StaticBody2D" parent="Level/ARGPlanet/Path2D/PathFollow2D" unique_id=1106627857]
+position = Vector2(-0.0701251, 0.9975624)
+rotation = -3.0714235
+
+[node name="EarthMoon" type="Sprite2D" parent="Level/ARGPlanet/Path2D/PathFollow2D/Moon" unique_id=220905653]
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+scale = Vector2(1.33, 1.33)
+texture = ExtResource("73_ofgfh")
+script = ExtResource("74_6d1iy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/ARGPlanet/Path2D/PathFollow2D/Moon/EarthMoon" unique_id=1754142205]
+modulate = Color(0.08, 0.08, 0.08, 1)
+scale = Vector2(0.286, 0.286)
+texture = ExtResource("75_ofgfh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/ARGPlanet/Path2D/PathFollow2D/Moon" unique_id=953816437]
+shape = SubResource("CircleShape2D_8343f")
+
 [node name="IcePlanet" type="Area2D" parent="Level" unique_id=817110578]
 position = Vector2(-2097, -1513.0001)
 scale = Vector2(5.4773846, 5.4773846)
 script = ExtResource("74_8343f")
 
 [node name="IcePlanet" type="Sprite2D" parent="Level/IcePlanet" unique_id=2146616657]
+texture_filter = 1
 scale = Vector2(1.3068061, 1.3068061)
 texture = ExtResource("105_aq2cj")
 
@@ -1198,6 +1495,7 @@ shape = SubResource("CircleShape2D_4ll5h")
 [node name="Ice" type="Node2D" parent="Level/IcePlanet" unique_id=306419510]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Level/IcePlanet/Ice" unique_id=850427154]
+texture_filter = 1
 scale = Vector2(0.99999994, 0.99999994)
 tile_map_data = PackedByteArray("AAAIAAcAAgAAAAAAAAAJAAUAAgAAAAAAAAAKAAUAAgAAAAAAAAAIAAUAAgAAAAAAAAD2/wYAAgAAAAAAAAD3/wcAAgAAAAAAAAD3/wAAAgAAAAAAAAD0/wEAAgAAAAAAAAD1/wQAAgAAAAAAAAD0/wMAAgAAAAAAAAAFAAMAAgAAAAAAAAAEAAkAAgAAAAAAAAAIAAgAAgAAAAAAAAAHAAkAAgAAAAAAAAD6/wgAAgAAAAAAAAD7/wkAAgAAAAAAAAD8//j/AgAAAAAAAAD7//f/AgAAAAAAAAD3//j/AgAAAAAAAAD4//f/AgAAAAAAAAD4//3/AgAAAAAAAAD1//z/AgAAAAAAAAD2//7/AgAAAAAAAAD1//3/AgAAAAAAAAD1//r/AgAAAAAAAAD1/wAAAgAAAAAAAAAEAP//AgAAAAAAAAAFAAAAAgAAAAAAAAADAP7/AgAAAAAAAAAHAAUAAgAAAAAAAAABAAcAAgAAAAAAAAAJAAEAAgAAAAAAAAAIAAAAAgAAAAAAAAAIAAIAAgAAAAAAAAAAAAcAAgAAAAAAAAD//wcAAgAAAAAAAAD3////AgAAAAAAAAD4/wgAAgAAAAAAAAD5/wcAAgAAAAAAAAD6//7/AgAAAAAAAAD5//3/AgAAAAAAAAD9//n/AgAAAAAAAAD8/wMAAgAAAAAAAAD5/wIAAgAAAAAAAAAAAAEAAgAAAAAAAAD+//r/AgAAAAAAAAD///v/AgAAAAAAAAD9/wgAAgAAAAAAAAD+/wkAAgAAAAAAAAD//wgAAgAAAAAAAAD4/wEAAgAAAAAAAAD3//n/AgAAAAAAAAD8/wIAAgAAAAAAAAD9/wMAAgAAAAAAAAD+/wIAAgAAAAAAAAD2//n/AgAAAAAAAAD///7/AgAAAAAAAAABAP7/AgAAAAAAAAACAP//AgAAAAAAAAD8/wgAAgAAAAAAAAAKAP3/AgAAAAAAAAALAPz/AgAAAAAAAAAKAPv/AgAAAAAAAAD///X/AgAAAAAAAAABAPT/AgAAAAAAAAAAAPn/AgAAAAAAAAADAPf/AgAAAAAAAAADAPj/AgAAAAAAAAACAPj/AgAAAAAAAAAFAPv/AgAAAAAAAAA=")
 tile_set = SubResource("TileSet_t63o8")
@@ -1220,6 +1518,7 @@ shape = SubResource("RectangleShape2D_aq2cj")
 [node name="Sprite2D" type="Sprite2D" parent="Level/IcePlanet/Walls/WallBit" unique_id=244870137]
 modulate = Color(1, 1, 1, 0.78431374)
 scale = Vector2(1.24, 1.12)
+texture_filter = 1
 texture = SubResource("CompressedTexture2D_awgtj")
 
 [node name="Area2D" type="Area2D" parent="Level/IcePlanet" unique_id=2010064199]
@@ -1274,6 +1573,20 @@ vertical_alignment = 1
 [node name="RecentCommands" type="Node2D" parent="Level/Player" unique_id=1809528284]
 position = Vector2(0, -30.915)
 
+[node name="Tutorial" type="Label" parent="Level/Player" unique_id=1391374555]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -266.5
+offset_top = 68.305
+offset_right = 266.5
+offset_bottom = 111.30505
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_4h6ng")
+text = "Try typing \"up\" in the voice chat!"
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1819104696]
 unique_name_in_owner = true
 visible = false
@@ -1306,6 +1619,7 @@ offset_bottom = 40.0
 theme = ExtResource("5_4h6ng")
 
 [node name="Disconnected" type="PanelContainer" parent="UI/UIThemed" unique_id=701705592]
+visible = false
 layout_mode = 0
 offset_right = 240.0
 offset_bottom = 70.0
@@ -1371,10 +1685,8 @@ text = "0"
 [node name="IntroFadeIn" type="ColorRect" parent="UI" unique_id=631552756]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(1920, 1080)
-offset_left = 18.0
-offset_top = -133.0
-offset_right = 1938.0
-offset_bottom = 947.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 color = Color(0.078431375, 0.22745098, 0.1254902, 1)
 
 [node name="OutroFadeOut" type="ColorRect" parent="UI" unique_id=1810167793]
@@ -1389,6 +1701,8 @@ offset_bottom = 1080.0
 [connection signal="body_exited" from="Level/GamesPlanet/XwordRegion" to="Level/GamesPlanet/XwordRegion" method="_on_body_exited"]
 [connection signal="body_entered" from="Level/GamesPlanet/ChessRegion" to="Level/GamesPlanet/ChessRegion" method="_on_body_entered"]
 [connection signal="body_exited" from="Level/GamesPlanet/ChessRegion" to="Level/GamesPlanet/ChessRegion" method="_on_body_exited"]
+[connection signal="body_entered" from="Level/MusMoonsPlanet/MusSecretRegion" to="Level/MusMoonsPlanet/MusSecretRegion" method="_on_body_entered"]
+[connection signal="body_exited" from="Level/MusMoonsPlanet/MusSecretRegion" to="Level/MusMoonsPlanet/MusSecretRegion" method="_on_body_exited"]
 [connection signal="body_entered" from="Level/WordlePlanet/Area2D" to="Level/WordlePlanet/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Level/IcePlanet" to="Level/Player" method="_on_ice_planet_body_entered"]
 [connection signal="body_exited" from="Level/IcePlanet" to="Level/Player" method="_on_ice_planet_body_exited"]

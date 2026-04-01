@@ -24,9 +24,16 @@ func _on_body_exited(body):
 	inside = false
 
 func _on_message(content: String, is_voice: bool, uid: String) -> void:
-	if inside && content == "Rh4#":
-		WSClient.emit_message_consumed(content)
-		ui.show_chess(true)
-		GameState.solve_step("chess_solved")
-		$"../AudioStreamPlayer".stream = preload("res://chess_move.mp3")
-		$"../AudioStreamPlayer".play()
+	if inside:
+		if content == "Rh4#":
+			WSClient.emit_message_consumed(content)
+			ui.show_chess(true)
+			GameState.solve_step("chess_solved")
+			$"../AudioStreamPlayer".stream = preload("res://chess_move.mp3")
+			$"../AudioStreamPlayer".play()
+		elif content.strip_edges().to_lower() == "hi for me!" and GameState.is_step_solved("chess_solved"):
+			WSClient.emit_message_consumed(content)
+			ui.show_chess(true, true)
+			GameState.solve_step("chessie_hi")
+			$"../AudioStreamPlayer".stream = preload("res://chess_move.mp3")
+			$"../AudioStreamPlayer".play()

@@ -13,6 +13,11 @@ var directions: Dictionary[String, Vector2] = {}
 var other_animations: Array[String] = []
 # avoid circulars (not actually sure if this is needed)
 var randomizing_anim: bool = false
+var hasnt_moved_for: float = 0.0
+var show_tutorial_at: float = 60 * 2
+var show_tutorial_over: float = 30
+var tutorial_dir: float = 1.0
+var has_moved: bool = false
 var tessie_on_ice: bool = false
 @onready var recent_command = preload("res://recent_command.tscn")
 
@@ -74,6 +79,7 @@ func _on_chat_message(content: String, is_voice: bool, user_id: String):
 	if content not in directions:
 		return
 	
+	has_moved = true
 	WSClient.emit_message_consumed(original_content)
 
 	var current_velocity = Vector2(velocity)
@@ -91,10 +97,16 @@ func _on_chat_message(content: String, is_voice: bool, user_id: String):
 func _on_consumed_message(content: String):
 	var new_command = recent_command.instantiate()
 	new_command.set_text(content)
-	var current_child = $RecentCommands.get_child(0)
-	$RecentCommands.remove_child(current_child)
-	new_command.add_child(current_child)
+	if $RecentCommands.get_child_count() > 0:
+		var current_child = $RecentCommands.get_child(0)
+		$RecentCommands.remove_child(current_child)
+		new_command.add_child(current_child)
 	$RecentCommands.add_child(new_command)
+
+func _process(delta):
+	tutorial_dir = (-0.5 * show_tutorial_over) if len(GameState._planets_solved) > 0 or has_moved or GameState.in_intro else 1.0
+	hasnt_moved_for = clampf(hasnt_moved_for + (delta * tutorial_dir), 0.0, show_tutorial_at + show_tutorial_over)
+	$Tutorial.modulate.a = ease(clampf((hasnt_moved_for - show_tutorial_at) / show_tutorial_over, 0.0, 1.0), 3)
 
 func _physics_process(delta):
 	# TODO: can i add these as colision shapes at runtime? doesnt matter too much
