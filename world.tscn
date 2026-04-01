@@ -104,9 +104,12 @@
 [ext_resource type="Texture2D" uid="uid://bexsmvruak6tg" path="res://TessieTachyon/005.png" id="71_vsnf8"]
 [ext_resource type="Texture2D" uid="uid://curx2baqude51" path="res://TessieTachyon/006.png" id="72_afx2c"]
 [ext_resource type="Texture2D" uid="uid://blrx2cfe1278a" path="res://TessieTachyon/007.png" id="73_xkj61"]
+[ext_resource type="Script" uid="uid://bksxpe380ifpc" path="res://ice_planet.gd" id="74_8343f"]
 [ext_resource type="Texture2D" uid="uid://dw0a8p7gt17vn" path="res://TessieTachyon/008.png" id="74_ednsc"]
 [ext_resource type="Texture2D" uid="uid://doy3crrsfo5j3" path="res://TessieTachyon/009.png" id="75_su0yx"]
+[ext_resource type="Texture2D" uid="uid://fug03ytvs7pp" path="res://CyanPlanetSuccess.png" id="76_2lhbq"]
 [ext_resource type="Texture2D" uid="uid://c1ilm42xvtl7r" path="res://TessieTachyon/010.png" id="76_3o3pd"]
+[ext_resource type="Texture2D" uid="uid://svv1q7as3ynr" path="res://CyanPlanetUnfinished.png" id="76_5wt1p"]
 [ext_resource type="Texture2D" uid="uid://df6usgs0dej86" path="res://iceblock2.png" id="76_awgtj"]
 [ext_resource type="Texture2D" uid="uid://cqr80ox3ac5gt" path="res://TessieTachyon/011.png" id="77_1hr04"]
 [ext_resource type="Texture2D" uid="uid://cgmcuuvytfwjd" path="res://TessieTachyon/012.png" id="78_remcq"]
@@ -1170,12 +1173,22 @@ horizontal_alignment = 1
 script = ExtResource("48_tj74d")
 
 [node name="IcePlanet" type="Area2D" parent="Level" unique_id=817110578]
-position = Vector2(-1320.0001, -96)
+position = Vector2(-2097, -1513.0001)
 scale = Vector2(5.4773846, 5.4773846)
+script = ExtResource("74_8343f")
 
 [node name="IcePlanet" type="Sprite2D" parent="Level/IcePlanet" unique_id=2146616657]
 scale = Vector2(1.3068061, 1.3068061)
 texture = ExtResource("105_aq2cj")
+
+[node name="Fader" parent="Level/IcePlanet" unique_id=2015985553 instance=ExtResource("9_olr1q")]
+scale = Vector2(1.307, 1.307)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/IcePlanet/Fader" unique_id=1993537410]
+texture = ExtResource("76_5wt1p")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Level/IcePlanet/Fader" unique_id=1456361306]
+texture = ExtResource("76_2lhbq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/IcePlanet" unique_id=1338123250]
 visible = false
