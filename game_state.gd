@@ -3,11 +3,7 @@ extends Node
 var _save_file_name = "user://tessie._save"
 var _serializable: Array[String] = ["_planets_solved", "_steps_solved", "clicker_clicks", "clicker_purchases", "clicker_lifetime"]
 
-<<<<<<< HEAD
-var all_planets: Array[String] = ["wordle", "clicker", "riddle", "tutorial", "music", "math0", "math1", "games", "ice"]
-=======
-var all_planets: Array[String] = ["wordle", "clicker", "riddle", "tutorial", "music", "math0", "math1", "games", "arg"]
->>>>>>> 02363249307d2900f632298cb51562016be3c64c
+var all_planets: Array[String] = ["wordle", "clicker", "riddle", "tutorial", "music", "math0", "math1", "games", "ice", "arg"]
 var _planets_solved: Array[String] = []
 var _steps_solved: Array[String] = []
 

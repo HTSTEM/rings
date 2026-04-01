@@ -125,9 +125,7 @@
 [ext_resource type="Script" uid="uid://cbioo82qvykh1" path="res://earth.gd" id="75_2lhbq"]
 [ext_resource type="Texture2D" uid="uid://b17okl7swfg2g" path="res://qr.png" id="75_ofgfh"]
 [ext_resource type="Texture2D" uid="uid://doy3crrsfo5j3" path="res://TessieTachyon/009.png" id="75_su0yx"]
-[ext_resource type="Texture2D" uid="uid://fug03ytvs7pp" path="res://CyanPlanetSuccess.png" id="76_2lhbq"]
 [ext_resource type="Texture2D" uid="uid://c1ilm42xvtl7r" path="res://TessieTachyon/010.png" id="76_3o3pd"]
-[ext_resource type="Texture2D" uid="uid://svv1q7as3ynr" path="res://CyanPlanetUnfinished.png" id="76_5wt1p"]
 [ext_resource type="Texture2D" uid="uid://df6usgs0dej86" path="res://iceblock2.png" id="76_awgtj"]
 [ext_resource type="Texture2D" uid="uid://cqr80ox3ac5gt" path="res://TessieTachyon/011.png" id="77_1hr04"]
 [ext_resource type="Texture2D" uid="uid://cgmcuuvytfwjd" path="res://TessieTachyon/012.png" id="78_remcq"]
@@ -188,7 +186,6 @@
 [ext_resource type="Texture2D" uid="uid://dqf0yocwprasp" path="res://TessieDunkyl/013.png" id="124_k1m7y"]
 [ext_resource type="Texture2D" uid="uid://d2xh4sgip1b01" path="res://TessieDunkyl/014.png" id="125_ewy8o"]
 [ext_resource type="Texture2D" uid="uid://ceafhg5kjq51p" path="res://TessieDunkyl/015.png" id="126_nq2gl"]
->>>>>>> 02363249307d2900f632298cb51562016be3c64c
 
 [sub_resource type="Gradient" id="Gradient_6ah6f"]
 offsets = PackedFloat32Array(0.1746988, 0.8614458)
@@ -1469,23 +1466,13 @@ texture = ExtResource("75_ofgfh")
 shape = SubResource("CircleShape2D_8343f")
 
 [node name="IcePlanet" type="Area2D" parent="Level" unique_id=817110578]
-position = Vector2(-2097, -1513.0001)
+position = Vector2(-1320.0001, -96)
 scale = Vector2(5.4773846, 5.4773846)
-script = ExtResource("74_8343f")
 
 [node name="IcePlanet" type="Sprite2D" parent="Level/IcePlanet" unique_id=2146616657]
 texture_filter = 1
 scale = Vector2(1.3068061, 1.3068061)
 texture = ExtResource("105_aq2cj")
-
-[node name="Fader" parent="Level/IcePlanet" unique_id=2015985553 instance=ExtResource("9_olr1q")]
-scale = Vector2(1.307, 1.307)
-
-[node name="Sprite2D" type="Sprite2D" parent="Level/IcePlanet/Fader" unique_id=1993537410]
-texture = ExtResource("76_5wt1p")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Level/IcePlanet/Fader" unique_id=1456361306]
-texture = ExtResource("76_2lhbq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/IcePlanet" unique_id=1338123250]
 visible = false
