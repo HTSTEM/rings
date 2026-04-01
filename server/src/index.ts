@@ -4,6 +4,7 @@ import prism from "prism-media";
 import { Client, Events, GatewayIntentBits } from "discord.js";
 import "dotenv/config";
 import { WebSocketServer } from "ws";
+import tmi from 'tmi.js';
 
 (async function () {
   const client = new Client({
@@ -30,8 +31,28 @@ import { WebSocketServer } from "ws";
   }
 
   wss.on("connection", function connection(ws) {
-    ws.send("hello");
+    // ws.send("hello");
   });
+
+  if (process.env.TWITCH_CHANNEL) {
+    const twitchClient = new tmi.Client({
+      channels: [process.env.TWITCH_CHANNEL],
+      connection: { reconnect: true },
+      identity: process.env.TWITCH_USERNAME && process.env.TWITCH_OAUTH_TOKEN ? {
+        username: process.env.TWITCH_USERNAME,
+        password: process.env.TWITCH_OAUTH_TOKEN,
+      } : undefined,
+    });
+
+    twitchClient.on('message', (channel, userstate, message, self) => {
+      if (self) return;
+      sendAll(`{${userstate['user-id'] || userstate.username}}${message}`);
+    });
+
+    twitchClient.connect().catch(err => {
+      console.error('Twitch client connection error:', err);
+    });
+  }
 
   client.on(Events.ClientReady, (readyClient) => {
     console.log(`Logged in as ${readyClient.user.tag}!`);

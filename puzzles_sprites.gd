@@ -25,9 +25,10 @@ func display_pencil(word: String) -> void:
 	mark.modulate.a = 0
 	get_tree().create_tween().tween_property(mark, "modulate:a", 1.0, .3)
 
-func show_chess(solved: bool = false) -> void:
+func show_chess(solved: bool = false, secret: bool = false) -> void:
 	$chess.visible = true
 	$chess/ChessFinished.visible = solved
+	$chess/ChessFinished/Label.visible = secret
 
 func hide_chess() -> void:
 	$chess.visible = false

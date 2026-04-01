@@ -3,7 +3,7 @@ extends Node
 var _save_file_name = "user://tessie._save"
 var _serializable: Array[String] = ["_planets_solved", "_steps_solved", "clicker_clicks", "clicker_purchases", "clicker_lifetime"]
 
-var all_planets: Array[String] = ["wordle", "clicker", "riddle", "tutorial", "music", "math0", "math1", "games", "ice"]
+var all_planets: Array[String] = ["wordle", "clicker", "riddle", "tutorial", "music", "math0", "math1", "games", "ice", "arg"]
 var _planets_solved: Array[String] = []
 var _steps_solved: Array[String] = []
 
@@ -24,31 +24,36 @@ var clicker_rates = {
 	"image": 1,
 	"video": 10,
 	"meta": 50,
-	"chess": 100
+	"chess": 100,
+	"805": 1000000
 }
 var clicker_costs = {
 	"text": 10.0,
 	"image": 50.0,
 	"video": 100.0,
 	"meta": 500.0,
-	"chess": 1000.0
+	"chess": 1000.0,
+	"805": 500000.0,
 }
 var clicker_purchases = {
 	"text": 0,
 	"image": 0,
 	"video": 0,
 	"meta": 0,
-	"chess": 0
+	"chess": 0,
+	"805": 0
 }
 var clicker_names = {
 	"text": "Text",
 	"image": "Image",
 	"video": "Video",
 	"meta": "Meta",
-	"chess": "Chessboard"
+	"chess": "Chessboard",
+	"805": "80/5"
 }
 var clicker_by_name = {}
 var clicker_next_cost = {}
+var in_intro: bool = true
 var running_credits: bool = false
 
 func update_cookie_data():
@@ -147,7 +152,7 @@ func _ready():
 	update_cookie_data()
 	
 	
-	if FileAccess.file_exists(_save_file_name) and false:
+	if FileAccess.file_exists(_save_file_name):
 		var save_file = FileAccess.open(_save_file_name, FileAccess.READ)
 		var json_string = save_file.get_line().strip_edges()
 		print("exists", json_string)

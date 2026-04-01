@@ -45,6 +45,11 @@ func _ready():
 		current_word = goal_words[current_index]
 
 func _on_message(content: String, is_voice: bool, user_id: String):
+	if content.strip_edges().to_upper() == "ZZZZZ":
+		GameState.solve_step("ZZZZZ")
+		WSClient.emit_message_consumed(content)
+		return
+	
 	var original_content = content
 	if current_index >= len(goal_words):
 		return
@@ -111,6 +116,17 @@ func _on_message(content: String, is_voice: bool, user_id: String):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# i've given up on fading sorry
+	if GameState.clicker_purchases["805"] > 0:
+		get_node("../GleepGlorpARG").modulate.a = 0.0
+		get_node("../GleepGlorpComplete").modulate.a = 1.0
+	elif GameState.is_step_solved("ZZZZZ"):
+		get_node("../GleepGlorpARG").modulate.a = 1.0
+		get_node("../GleepGlorpComplete").modulate.a = 0.0
+	else:
+		get_node("../GleepGlorpARG").modulate.a = 0.0
+		get_node("../GleepGlorpComplete").modulate.a = 0.0
+	
 	if since_guess < max_since_guess:
 		since_guess = minf(since_guess + delta, max_since_guess)
 	if since_solve < max_since_solve:
