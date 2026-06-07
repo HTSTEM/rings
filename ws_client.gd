@@ -50,6 +50,8 @@ func emit_message(packet_text: String):
 	packet_text = packet_text.strip_edges()
 	if packet_text.is_empty():
 		return
+	if GameState.in_intro and packet_text.to_lower() != "take control":
+		packet_text = "" # avoid pre commands
 	chat_message.emit(packet_text, is_voice, user_id)
 
 

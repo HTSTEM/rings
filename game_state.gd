@@ -1,7 +1,7 @@
 extends Node
 
 var _save_file_name = "user://tessie._save"
-var _serializable: Array[String] = ["_planets_solved", "_steps_solved", "clicker_clicks", "clicker_purchases", "clicker_lifetime"]
+var _serializable: Array[String] = ["_planets_solved", "_steps_solved", "clicker_clicks", "clicker_purchases", "clicker_lifetime", "xword_words"]
 
 var all_planets: Array[String] = ["wordle", "clicker", "riddle", "tutorial", "music", "math0", "math1", "games", "ice", "arg"]
 var _planets_solved: Array[String] = []
@@ -9,6 +9,7 @@ var _steps_solved: Array[String] = []
 
 var _base_progression_radius = 1250
 var _incremental_progression_radius = 500
+var _max_progression_radius = 3000
 var _target_progression_radius = _base_progression_radius
 var _radius_animating_from = -1
 var _radius_animation_elapsed = -1
@@ -55,6 +56,22 @@ var clicker_by_name = {}
 var clicker_next_cost = {}
 var in_intro: bool = true
 var running_credits: bool = false
+var xword_words: Dictionary[String, int] = {
+"antidisestablishmentarianism": 0,
+"tessie": 0,
+"htstem": 0,
+"hans": 0,
+"lemxiqixils": 0,
+"donottypemenotarealword": 0,
+"glorpglorpglorp": 0,
+"thankyoucatie": 0,
+"thankyougizmote": 0,
+"shoutoutstosimpleflips": 0,
+"accordingtoallknownlaws...": 0,
+"ringringringring": 0,
+"owo": 0,
+"pickupthephone": 0,
+}
 
 func update_cookie_data():
 	clicker_cps = 0
@@ -79,7 +96,7 @@ func _save():
 	print("saved")
 
 func _set_new_radius():
-	_target_progression_radius = _base_progression_radius + (_incremental_progression_radius * len(_planets_solved))
+	_target_progression_radius = min(_max_progression_radius, _base_progression_radius + (_incremental_progression_radius * len(_planets_solved)))
 	_radius_animating_from = progression_radius
 	_radius_animation_elapsed = 0
 	print("stuff ", _planets_solved, " ", len(_planets_solved), " ", _target_progression_radius, " ", _radius_animating_from, " ", _radius_animation_elapsed)

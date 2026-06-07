@@ -1,27 +1,14 @@
 extends Area2D
 @onready var ui = $"../PuzzlesSprites"
 @export_storage var inside: bool = 0
-@export var words: Dictionary[String, int] = {
-"antidisestablishmentarianism": 0,
-"tessie": 0,
-"htstem": 0,
-"hans": 0,
-"lemxiqixils": 0,
-"donottypemenotarealword": 0,
-"glorpglorpglorp": 0,
-"thankyoucatie": 0,
-"thankyougizmote": 0,
-"shoutoutstosimpleflips": 0,
-"accordingtoallknownlaws...": 0,
-"ringringringring": 0,
-"owo": 0,
-"pickupthephone": 0,
-}
 # gamestate ^  ?
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	WSClient.chat_message.connect(_on_message)
+	for key in GameState.xword_words:
+		if GameState.xword_words[key]:
+			ui.display_pencil(key)
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,9 +32,9 @@ func _on_message(content: String, is_voice: bool, uid: String):
 	var original_content = content
 	content = content.to_lower()
 	if inside:
-		if words.has(content) && !words[content]:
+		if GameState.xword_words.has(content) && !GameState.xword_words[content]:
 			WSClient.emit_message_consumed(original_content)
-			words[content] = 1
+			GameState.xword_words[content] = 1
 			ui.display_pencil(content)
 			$"../AudioStreamPlayer".stream = preload("res://pencil_marks.mp3")
 			$"../AudioStreamPlayer".play()
@@ -58,7 +45,7 @@ func _on_message(content: String, is_voice: bool, uid: String):
 		# >    turns into foldl1 when Nothing is passed to foldl as the
 		# >    initial value for the accumulator.
 		# oh,,, ofc,.. ive been waiting for a language like this:fire::100:
-		var count = len(words.values().filter(func(__): return __))
+		var count = len(GameState.xword_words.values().filter(func(__): return __))
 		if count > 3 && !GameState.is_step_solved("xword_solved"):
 			ui.show_xword(true)
 			GameState.solve_step("xword_solved")

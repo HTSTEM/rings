@@ -5,6 +5,8 @@ extends Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	WSClient.chat_message.connect(_on_message)
+	if GameState.is_step_solved("chess_solved"):
+		ui.show_chess(true, GameState.is_step_solved("chessie_hi"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,7 +27,7 @@ func _on_body_exited(body):
 
 func _on_message(content: String, is_voice: bool, uid: String) -> void:
 	if inside:
-		if content == "Rh4#":
+		if content.to_lower().begins_with("rh4"):
 			WSClient.emit_message_consumed(content)
 			ui.show_chess(true)
 			GameState.solve_step("chess_solved")

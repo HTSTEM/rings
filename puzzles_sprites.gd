@@ -1,5 +1,6 @@
 extends Node2D
 
+var non_letter = RegEx.create_from_string("[^A-Za-z]")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +21,7 @@ func hide_xword() -> void:
 	$xword.visible = false
 
 func display_pencil(word: String) -> void:
-	var mark = get_node("xword/{0}".format([word]))
+	var mark = get_node("xword/{0}".format([non_letter.sub(word, "", true)]))
 	mark.visible = true
 	mark.modulate.a = 0
 	get_tree().create_tween().tween_property(mark, "modulate:a", 1.0, .3)

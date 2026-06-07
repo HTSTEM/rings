@@ -19,8 +19,8 @@ func _ready():
 	WSClient.chat_message.connect(_on_message)
 
 func _on_message(content: String, is_voice: bool, user_id: String):
-	if not is_voice:
-		return
+	#if not is_voice:
+		#return
 	var original_content = content
 	content = content.to_lower().strip_edges()
 	if content != "cucumber":

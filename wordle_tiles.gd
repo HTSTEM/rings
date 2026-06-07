@@ -104,7 +104,7 @@ func _on_message(content: String, is_voice: bool, user_id: String):
 			if letter == remaining_word[y]:
 				if len(GameState._planets_solved) >= requirements[x]:
 					get_child(x).set_tile(letter, "yellow")
-				remaining_word[y] = "?"
+				# remaining_word[y] = "?"
 				guessed_word[x] = "!"
 	# grays
 	for x in range(len(guessed_word)):

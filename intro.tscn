@@ -333,7 +333,7 @@ tracks/23/keys = {
 
 [sub_resource type="Animation" id="Animation_dk2oa"]
 resource_name = "intro"
-length = 200.0
+length = 75.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -683,6 +683,20 @@ tracks/25/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-2.0, -12.0]
+}
+tracks/26/type = "method"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath(".")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(72.96667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"clear_filter"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ufi4"]

@@ -1,8 +1,9 @@
+class_name IntroPlayer
 extends Node2D
 
 @onready var guy = preload("res://intro_guy.tscn")
 var guys: Array[String] = []
-var remaining: float = 180.0
+var remaining: float = 15.0
 var particles_at: float = 10.0
 var rocket_terminal_speed: float = 10.0
 var rocket_speed: float = 1.0
@@ -35,8 +36,7 @@ func _ready():
 		return
 	
 	var one_hour: float = 60.0 * 60.0
-	remaining = one_hour - fmod(Time.get_unix_time_from_system(), one_hour)
-	remaining = 10
+	#remaining = one_hour - fmod(Time.get_unix_time_from_system(), one_hour)
 	
 	$IntroMusicPlayer.play()
 
@@ -46,7 +46,7 @@ func spawn_guy():
 	$CameraFeed.add_sibling(new_guy)
 
 func on_message(content: String, is_voice: bool, user_id: String):
-	if content == "take control":
+	if content.to_lower() == "take control":
 		if $TakeControlText.modulate.a <= 0.0:
 			return
 		clear_filter()

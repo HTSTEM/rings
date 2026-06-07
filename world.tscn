@@ -84,10 +84,12 @@
 [ext_resource type="Script" uid="uid://q6q17wihau18" path="res://word_found.gd" id="35_1hr04"]
 [ext_resource type="Texture2D" uid="uid://cl16e1xa5xiwt" path="res://chess_moved.png" id="35_ednsc"]
 [ext_resource type="AudioStream" uid="uid://bgty2brvmvebt" path="res://chess_move.mp3" id="36_su0yx"]
+[ext_resource type="Texture2D" uid="uid://im0kkuwx37vw" path="res://GamesPlanetWallsUnfinished.png" id="38_ems4d"]
 [ext_resource type="Texture2D" uid="uid://dg83nxboobrrv" path="res://RingItem/000.png" id="38_fnoqa"]
 [ext_resource type="Script" uid="uid://dfqq7plm646lw" path="res://ring_count.gd" id="38_nx736"]
 [ext_resource type="Texture2D" uid="uid://chfalugt86jvl" path="res://GamesPlanetBack.png" id="38_p4psn"]
 [ext_resource type="Texture2D" uid="uid://w1f6e7xt7dn2" path="res://GamesPlanetWalls.png" id="39_ei5xn"]
+[ext_resource type="Texture2D" uid="uid://dlu7ermrjdoft" path="res://GamesPlanetWallsSuccess.png" id="39_j8wha"]
 [ext_resource type="Texture2D" uid="uid://d4bwa54ae8chv" path="res://RingItem/001.png" id="39_nx736"]
 [ext_resource type="Texture2D" uid="uid://c4m68dqo4v2pq" path="res://RingItem/002.png" id="40_55kwu"]
 [ext_resource type="Texture2D" uid="uid://cijsbex8jnjkt" path="res://GamesPlanetItems.png" id="40_ems4d"]
@@ -106,7 +108,7 @@
 [ext_resource type="Texture2D" uid="uid://nb21r2l816el" path="res://Planets/PurplePlanetTop.png" id="47_ir1d4"]
 [ext_resource type="Texture2D" uid="uid://dh8syo6iynpbc" path="res://RingItem/009.png" id="47_kkgr2"]
 [ext_resource type="Script" uid="uid://cv3j8o6mjqg7g" path="res://riddle_label.gd" id="48_tj74d"]
-[ext_resource type="Script" path="res://mus_secret_region.gd" id="49_8343f"]
+[ext_resource type="Script" uid="uid://b3va30pbynw2e" path="res://mus_secret_region.gd" id="49_8343f"]
 [ext_resource type="Texture2D" uid="uid://ckh3wpqn7p47j" path="res://thud_moon_shade.png" id="49_su0yx"]
 [ext_resource type="Texture2D" uid="uid://rghpejwkseuq" path="res://Planets/BluePlanet.png" id="62_37ykd"]
 [ext_resource type="Texture2D" uid="uid://kgecc1rnyy10" path="res://TessieTachyon/000.png" id="66_t55hq"]
@@ -121,10 +123,10 @@
 [ext_resource type="Texture2D" uid="uid://cc0u1wguni67v" path="res://Planets/Home.png" id="72_xh3xj"]
 [ext_resource type="Texture2D" uid="uid://h2jjejvtk0qq" path="res://Planets/EarthMoon.png" id="73_ofgfh"]
 [ext_resource type="Texture2D" uid="uid://blrx2cfe1278a" path="res://TessieTachyon/007.png" id="73_xkj61"]
-[ext_resource type="Script" path="res://moon_sprite.gd" id="74_6d1iy"]
+[ext_resource type="Script" uid="uid://c04ibhh8hlspv" path="res://moon_sprite.gd" id="74_6d1iy"]
 [ext_resource type="Script" uid="uid://5puhxyaigvyk" path="res://ice_planet.gd" id="74_8343f"]
 [ext_resource type="Texture2D" uid="uid://dw0a8p7gt17vn" path="res://TessieTachyon/008.png" id="74_ednsc"]
-[ext_resource type="Script" path="res://earth.gd" id="75_2lhbq"]
+[ext_resource type="Script" uid="uid://cbioo82qvykh1" path="res://earth.gd" id="75_2lhbq"]
 [ext_resource type="Texture2D" uid="uid://b17okl7swfg2g" path="res://qr.png" id="75_ofgfh"]
 [ext_resource type="Texture2D" uid="uid://doy3crrsfo5j3" path="res://TessieTachyon/009.png" id="75_su0yx"]
 [ext_resource type="Texture2D" uid="uid://c1ilm42xvtl7r" path="res://TessieTachyon/010.png" id="76_3o3pd"]
@@ -134,6 +136,8 @@
 [ext_resource type="Texture2D" uid="uid://f3ym2h1pincv" path="res://TessieTachyon/013.png" id="79_kcilg"]
 [ext_resource type="Texture2D" uid="uid://c3kfq07phr0k3" path="res://TessieTachyon/014.png" id="80_1amq5"]
 [ext_resource type="Texture2D" uid="uid://cdc1320hn0jvu" path="res://TessieTachyon/015.png" id="81_oosws"]
+[ext_resource type="AudioStream" uid="uid://dbh3w6fww43nb" path="res://ShopItems/audio 805 1.wav" id="86_pyim2"]
+[ext_resource type="AudioStream" uid="uid://dhxj542k1kxoy" path="res://ShopItems/audio 805 2.wav" id="87_euhs6"]
 [ext_resource type="Script" uid="uid://dscgs1r4ktevn" path="res://camera_2d.gd" id="88_xkj61"]
 [ext_resource type="Texture2D" uid="uid://c67apjqsdwayf" path="res://TessieMilli/000.png" id="89_e6jkr"]
 [ext_resource type="Texture2D" uid="uid://vhj2ymi6anjn" path="res://TessieMilli/001.png" id="90_2vwdk"]
@@ -166,10 +170,10 @@
 [ext_resource type="Texture2D" uid="uid://cwb2iv4v5qbq0" path="res://iceplanet.png" id="105_aq2cj"]
 [ext_resource type="Texture2D" uid="uid://df2a13m4bcfvb" path="res://TessieAvery/010.png" id="105_ems4d"]
 [ext_resource type="Texture2D" uid="uid://crcxokmlbbxmy" path="res://TessieAvery/011.png" id="106_j8wha"]
-[ext_resource type="Script" uid="uid://bqd7eye0ns1w4" path="res://ice_walls.gd" id="107_4ll5h"]
+[ext_resource type="Script" uid="uid://cor6ieulyaf6g" path="res://ice_walls.gd" id="107_4ll5h"]
 [ext_resource type="Texture2D" uid="uid://dei5put0a21v4" path="res://TessieAvery/012.png" id="107_pyim2"]
 [ext_resource type="Texture2D" uid="uid://bo30c8sgj1rl4" path="res://TessieAvery/013.png" id="108_euhs6"]
-[ext_resource type="Script" uid="uid://74clxb3wx2mj" path="res://ice_ring.gd" id="108_t63o8"]
+[ext_resource type="Script" uid="uid://cppb031lnq6ae" path="res://ice_ring.gd" id="108_t63o8"]
 [ext_resource type="Texture2D" uid="uid://cwt5x4fwv7lmy" path="res://TessieAvery/014.png" id="109_1lvjw"]
 [ext_resource type="Texture2D" uid="uid://cj01bmurrphgc" path="res://TessieAvery/015.png" id="110_sc57l"]
 [ext_resource type="Texture2D" uid="uid://bj7522dasq1ov" path="res://TessieDunkyl/000.png" id="111_8vx13"]
@@ -228,8 +232,8 @@ offsets = PackedFloat32Array(0.6927711, 0.6987952)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_o3ebs"]
 gradient = SubResource("Gradient_wukud")
-width = 4000
-height = 4000
+width = 6000
+height = 6000
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -634,10 +638,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_tlwt5"]
 radius = 32.0
 
-[sub_resource type="SystemFont" id="SystemFont_tlwt5"]
-font_names = PackedStringArray("Product Sans")
-subpixel_positioning = 0
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_su0yx"]
 load_path = "res://.godot/imported/green_palette.png-1a702b9a321c46885e67e327a3ace34c.ctex"
 
@@ -832,6 +832,14 @@ position = Vector2(2268.0002, -210.00003)
 scale = Vector2(1.1392632, 1.1392632)
 script = ExtResource("26_vsnf8")
 
+[node name="Fader" parent="Level/GamesPlanet" unique_id=516513213 instance=ExtResource("9_olr1q")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/GamesPlanet/Fader" unique_id=1668631786]
+texture = ExtResource("38_ems4d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Level/GamesPlanet/Fader" unique_id=1175967040]
+texture = ExtResource("39_j8wha")
+
 [node name="GamesPlanet" type="Sprite2D" parent="Level/GamesPlanet" unique_id=708365129]
 texture = ExtResource("38_p4psn")
 
@@ -895,13 +903,13 @@ position = Vector2(-103.57569, -154.48586)
 script = ExtResource("29_v27xk")
 
 [node name="xword" type="Sprite2D" parent="Level/GamesPlanet/PuzzlesSprites" unique_id=2077567641]
-visible = false
 position = Vector2(-267.7169, 157.99695)
 scale = Vector2(0.7910948, 0.7910948)
 texture = ExtResource("33_3o3pd")
 region_filter_clip_enabled = true
 
 [node name="XwordFinished" type="Sprite2D" parent="Level/GamesPlanet/PuzzlesSprites/xword" unique_id=887620219]
+visible = false
 z_index = 1
 position = Vector2(190.84283, -276.27826)
 rotation = 0.17594305
@@ -937,7 +945,7 @@ radius = 10.0
 height = 102.36
 width = 2.5
 
-[node name="ringringring" type="Node2D" parent="Level/GamesPlanet/PuzzlesSprites/xword" unique_id=654060839]
+[node name="ringringringring" type="Node2D" parent="Level/GamesPlanet/PuzzlesSprites/xword" unique_id=654060839]
 visible = false
 position = Vector2(-203.0479, 23.300598)
 rotation = 1.5707964
@@ -1059,8 +1067,26 @@ radius = 10.0
 height = 55.205
 width = 2.5
 
-[node name="chess" type="Sprite2D" parent="Level/GamesPlanet/PuzzlesSprites" unique_id=1763445124]
+[node name="thankyoucatie" type="Node2D" parent="Level/GamesPlanet/PuzzlesSprites/xword" unique_id=856964104]
 visible = false
+position = Vector2(43.272236, 260.74457)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("35_1hr04")
+radius = 10.0
+height = 232.21
+width = 2.5
+
+[node name="lemxiqixils" type="Node2D" parent="Level/GamesPlanet/PuzzlesSprites/xword" unique_id=938452741]
+visible = false
+position = Vector2(-133.14645, -22.191072)
+rotation = 1.5707964
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("35_1hr04")
+radius = 10.0
+height = 195.63
+width = 2.5
+
+[node name="chess" type="Sprite2D" parent="Level/GamesPlanet/PuzzlesSprites" unique_id=1763445124]
 position = Vector2(-34.96622, 48.63823)
 scale = Vector2(0.23934826, 0.23934826)
 texture = ExtResource("34_xkj61")
@@ -1082,6 +1108,22 @@ theme_override_font_sizes/font_size = 48
 text = "I love shouting at the barbershop orb
 after a long day at work"
 horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Level/GamesPlanet/PuzzlesSprites/chess" unique_id=2062856953]
+offset_left = 135.08667
+offset_top = -364.57178
+offset_right = 362.08667
+offset_bottom = -275.57178
+theme = ExtResource("5_4h6ng")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 12
+text = "A1
+black to move"
+horizontal_alignment = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/GamesPlanet" unique_id=1264398107]
 stream = ExtResource("36_su0yx")
@@ -1352,15 +1394,25 @@ item = "805"
 texture = ExtResource("68_awgtj")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/WordlePlanet/GleepGlorpARG" unique_id=248954378]
-stream = ExtResource("20_8gw3t")
+stream = ExtResource("86_pyim2")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Level/WordlePlanet/GleepGlorpARG" unique_id=706022268]
-stream = ExtResource("21_iyplw")
+stream = ExtResource("87_euhs6")
 
 [node name="GleepGlorpComplete" parent="Level/WordlePlanet" unique_id=1744297358 instance=ExtResource("28_o3ebs")]
 position = Vector2(278, 202)
 item = "805"
 texture = ExtResource("69_mou3f")
+
+[node name="Label" type="Label" parent="Level/WordlePlanet" unique_id=479909799]
+offset_left = 80.0
+offset_top = -133.0
+offset_right = 464.0
+offset_bottom = -90.0
+theme = ExtResource("5_4h6ng")
+theme_override_font_sizes/font_size = 16
+text = "sorry for any bugs here"
+horizontal_alignment = 1
 
 [node name="RiddlePlanet" type="StaticBody2D" parent="Level" unique_id=2091398895]
 position = Vector2(-289, -1493)
@@ -1424,14 +1476,14 @@ script = ExtResource("48_tj74d")
 [node name="Label2" type="Label" parent="Level/RiddlePlanet/VBoxContainer" unique_id=428712531]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "My name must not be written."
+text = "What am I?"
 horizontal_alignment = 1
 script = ExtResource("48_tj74d")
 
 [node name="Label3" type="Label" parent="Level/RiddlePlanet/VBoxContainer" unique_id=2025302493]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Aloud you must speak it."
+text = "I rhyme with slumber."
 horizontal_alignment = 1
 script = ExtResource("48_tj74d")
 
@@ -1481,7 +1533,7 @@ texture = ExtResource("75_ofgfh")
 shape = SubResource("CircleShape2D_8343f")
 
 [node name="IcePlanet" type="Area2D" parent="Level" unique_id=817110578]
-position = Vector2(-1320.0001, -96)
+position = Vector2(-1928, -599)
 scale = Vector2(5.4773846, 5.4773846)
 script = ExtResource("74_8343f")
 
@@ -1494,9 +1546,11 @@ texture = ExtResource("105_aq2cj")
 scale = Vector2(1.3, 1.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="Level/IcePlanet/Fader" unique_id=463620552]
+texture_filter = 1
 texture = ExtResource("93_i3h0w")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Level/IcePlanet/Fader" unique_id=308408081]
+texture_filter = 1
 texture = ExtResource("94_0iono")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/IcePlanet" unique_id=1338123250]
@@ -1547,6 +1601,17 @@ frame_progress = 0.060263164
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/IcePlanet/Area2D" unique_id=1720401157]
 shape = SubResource("CircleShape2D_75cpn")
 
+[node name="Label" type="Label" parent="Level/IcePlanet/Area2D" unique_id=611168126]
+offset_left = -645.47577
+offset_top = -625.5229
+offset_right = 74.52423
+offset_bottom = -536.5229
+theme = ExtResource("5_4h6ng")
+theme_override_font_sizes/font_size = 10
+text = "u might get stuck here
+just try moving again"
+horizontal_alignment = 1
+
 [node name="Player" type="CharacterBody2D" parent="Level" unique_id=743382705]
 unique_name_in_owner = true
 script = ExtResource("1_f3sb7")
@@ -1572,12 +1637,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -163.8
-offset_top = -99.06
+offset_top = 43.915
 offset_right = 166.2
-offset_bottom = -59.059998
+offset_bottom = 83.914986
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = SubResource("SystemFont_tlwt5")
+theme = ExtResource("5_4h6ng")
+theme_override_colors/font_color = Color(1, 1, 1, 0.5882353)
 theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1591,13 +1657,14 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -266.5
-offset_top = 68.305
+offset_top = 120.69
 offset_right = 266.5
-offset_bottom = 111.30505
+offset_bottom = 163.69005
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_4h6ng")
-text = "Try typing \"up\" in the voice chat!"
+text = "Try typing \"up\"!"
+horizontal_alignment = 1
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1819104696]
 unique_name_in_owner = true
