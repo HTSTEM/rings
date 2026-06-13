@@ -179,10 +179,16 @@ func _ready():
 			for i in json.keys():
 				# hack for it refusing to save the array
 				if json[i] is Array:
-					get(i).append_array(json[i])
+					if get(i) == null:
+						printerr("Trying to append null array " + i)
+					else:
+						get(i).append_array(json[i])
 				elif json[i] is Dictionary:
-					for x in json[i]:
-						get(i)[x] = json[i][x]
+					if get(i) == null:
+						printerr("Trying to append null dict " + i)
+					else:
+						for x in json[i]:
+							get(i)[x] = json[i][x]
 				else:
 					set(i, json[i])
 				print("set ", i, " ", json[i], " ", self.get(i))

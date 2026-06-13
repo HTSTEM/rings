@@ -11,10 +11,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var state = WSClient.socket.get_ready_state()
-	if state == WebSocketPeer.STATE_OPEN:
-		fadein = max(0, fadein - delta)
-	else:
-		fadein = min(waitfor + 1, fadein + delta)
-	
-	self.position.x = lerp(-self.size.x, 0.0, ease(clampf(fadein-waitfor, 0, 1), 0.2))
+	pass
