@@ -19,7 +19,7 @@ func handle_input(value: String, is_voice: bool, user_id: String):
 		$Label.text = "Tell Chessie hi for me!"
 		return
 	
-	if GameState.is_solved("math%d" % current_level) or is_voice:
+	if GameState.is_solved("math%d" % current_level):
 		return
 
 	var original_content = value

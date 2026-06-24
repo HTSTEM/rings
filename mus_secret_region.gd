@@ -17,7 +17,7 @@ func _on_body_exited(body):
 	inside = false
 
 func _on_message(content: String, is_voice: bool, uid: String) -> void:
-	if inside and is_voice and GameState.is_step_solved("chessie_hi"):
+	if inside and content.contains("AA") and GameState.is_step_solved("chessie_hi"):
 		WSClient.emit_message_consumed(content)
 		GameState.solve("arg")
 		$Label.visible = true

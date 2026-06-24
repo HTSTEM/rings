@@ -72,6 +72,7 @@ var xword_words: Dictionary[String, int] = {
 "owo": 0,
 "pickupthephone": 0,
 }
+var can_solve_wordle: bool = false
 
 func update_cookie_data():
 	clicker_cps = 0
